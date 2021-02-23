@@ -1,0 +1,61 @@
+@import 'global';
+
+body {
+  background-color: $blue-extra-dark;
+}
+
+h1 {
+  @include heading-h1();
+}
+
+h2 {
+  @include heading-h2();
+}
+
+.nav-title {
+  @include font-base($font-family-oswald-bold, bold, 500);
+  color: $white;
+  font-size: 1.5rem; // 24x
+  line-height: 133.1%;
+  text-align: left;
+  @include respond-to(mobile) {
+    font-size: 1.125rem; // 18px
+  }
+}
+
+.nav-menu-item {
+  @include font-base($font-family-barlow-bold, bold, 500);
+  color: $white;
+  font-size: 0.938rem; // 15x
+  line-height: 133.1%;
+  text-align: left;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.nav-container {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111111;
+  }
+}
+
+
