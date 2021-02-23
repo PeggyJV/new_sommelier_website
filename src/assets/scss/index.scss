@@ -40,11 +40,10 @@ h2 {
     padding: 0;
     overflow: hidden;
   }
-  
   li {
     float: left;
+    height: 100%;
   }
-  
   li a {
     display: block;
     color: white;
@@ -52,9 +51,22 @@ h2 {
     padding: 16px;
     text-decoration: none;
   }
-  
   li a:hover {
     background-color: #111111;
+  }
+  .nav-menu-item--launch {
+    // width: 12.313rem; //197px
+    height: 2.688rem; //43px
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 1px solid $dark-white;
+  }
+  .nav-menu-item--launch:hover {
+    background-color: $dark-white;
+    color: $blue-extra-dark;
   }
 }
 
