@@ -1,0 +1,53 @@
+/*
+RESPONSIVE BREAKPOINTS
+*/
+$breakpoints: (
+  'mobile': (
+    max-width: 767px,
+  ),
+  'tablet': (
+    min-width: 768px,
+  ),
+  'desktop': (
+    min-width: 1152px,
+  ),
+) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: mobile, tablet, desktop";
+  }
+}
+
+// breakpoint test - uncomment to view
+// body {
+//   border-right: 3px solid red;
+//   @include respond-to(tablet) {
+//     border-right: 3px solid blue;
+//   }
+//   @include respond-to(desktop) {
+//     border-right: 3px solid green;
+//   }
+// }
+
+/*
+RESPONSIVE PADDING
+*/
+
+// NOTE: for responsive container padding all sides
+@mixin padding-responsive($mobile: 1rem, $tablet: 1.25rem, $desktop: 1.5rem) {
+  padding: $mobile;
+  @include respond-to(tablet) {
+    padding: $tablet;
+  }
+  @include respond-to(desktop) {
+    padding: $desktop;
+  }
+}
+
+// TODO: create Left/right only padding option
+// TODO: create Bottom/Top only padding option
