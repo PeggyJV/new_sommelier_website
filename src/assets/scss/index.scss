@@ -92,6 +92,13 @@ h4 {
 
 // Main Component
 .main-container {
+  .section-container {
+    padding-top: 3.625rem; // 58px
+    padding-bottom: 3.625rem; // 58px
+    margin-top: 6.5rem; // 104px
+    margin-right: 3.625rem; // 58px
+    margin-left: 3.625rem; // 58px
+  }
   h1 span {
     color: $pink;
   }
@@ -172,13 +179,10 @@ h4 {
   }
   // Why Sommelier
   .main-why {
-    padding-top: 3.625rem; // 58px
-    padding-bottom: 3.625rem; // 58px
-    margin-top: 6.5rem; // 104px
-    margin-right: 3.625rem; // 58px
     background-color: $blue-extra-light;
     border-top-right-radius: 3.125rem; // 50px
     border-bottom-right-radius: 3.125rem; // 50px
+    margin-left: 0;
   }
   .main-why__content {
     margin-top: 45px;
@@ -215,6 +219,46 @@ h4 {
     }
     p {
       @include text-body();
+    }
+  }
+
+  // Use Cases
+  .main-usecases {
+    h2 {
+      margin-left: calc(30% - 3.625rem);
+    }
+    .main-usecases__content {
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      li {
+        float: left;
+        width: 50%;
+        min-height: 26rem;
+        
+        h3 {
+          margin-top: 2.5rem; // 40px
+          text-transform: uppercase;
+        }
+        div {
+          // width: 98%;
+          // height: 98%;
+          height: 28rem;
+          margin: 13px;
+          padding: 46px 90px 42px 90px;
+          background-color: $blue-extra-light;
+          border-radius: 3.125rem; // 50px
+        }
+      }
+      p {
+        @include text-body();
+        margin-top: 1.625rem; // 26px
+        display: block;
+        max-width: 26.313rem; // 421px
+      }
     }
   }
 }
