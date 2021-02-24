@@ -94,6 +94,22 @@ h4 {
   }
 }
 
+// Footer
+footer {
+  @include text-body();
+  .footer_container {
+    display: flex;
+    // background-color: $blue-extra-light;
+  }
+  .footer__social-container {
+    margin-left: auto;
+    a {
+      padding-left: 3rem;
+      color: $gray-dark;
+    }
+  }
+}
+
 // Main Component
 .main-container {
   .section-container {
@@ -376,6 +392,17 @@ h4 {
         .profile-container {
           margin: 13px;
         }
+      }
+    }
+  }
+  // Investors
+  .main-investors {
+    .main-investors__img-container {
+      margin-top: 6.125rem;
+      text-align: center;
+      img {
+        padding-left: 3.635rem;
+        height: 100%;
       }
     }
   }

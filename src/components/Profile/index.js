@@ -38,7 +38,7 @@ const ContainerLandscape = styled.div`
   text-align: center;
   h3 {
     margin-top: 1.625rem;
-    text-align: center;
+    text-align: left;
   }
   p {
     margin-top: 0.625rem;
