@@ -18,7 +18,6 @@ const greaterImg = require('/src/assets/images/greater.png')
 const stickImg = require('/src/assets/images/roadmap-stick1.png')
 // About
 const aboutImg = require('/src/assets/images/img-about1.png')
-
 // Team
 const teamMembers1 = [
   {
@@ -59,6 +58,11 @@ const teamMembers2 = [
     avatar: require('/src/assets/images/avatar/avatar-jehan.png')
   }
 ]
+// Investors
+const cygnilabsImg = require('/src/assets/images/investors/ico-cygnilabs.png')
+const standardImg = require('/src/assets/images/investors/ico-standard.png')
+const multicoinImg = require('/src/assets/images/investors/ico-multicoin.png')
+const alamedaImg = require('/src/assets/images/investors/ico-alameda.png')
 
 export default function Main(){
   return (
@@ -247,6 +251,15 @@ export default function Main(){
               ))}
             </ul>
           )}
+        </div>
+      </div>
+      <div className='main-investors section-container'>
+        <h2 className="text-center">INVESTORS</h2>
+        <div className='main-investors__img-container'>
+          <img src={cygnilabsImg} />
+          <img src={standardImg} />
+          <img src={multicoinImg} />
+          <img src={alamedaImg} />
         </div>
       </div>
     </div>
