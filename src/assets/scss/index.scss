@@ -12,6 +12,19 @@ h2 {
   @include heading-h2();
 }
 
+h3 {
+  @include heading-h3();
+}
+
+h4 {
+  @include heading-h4();
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .nav-title {
   @include font-base($font-family-oswald-bold, bold, 500);
   color: $white;
@@ -34,6 +47,9 @@ h2 {
 }
 
 .nav-container {
+  @include respond-to(desktop) {
+    max-width: 1440px;
+  }
   ul {
     list-style-type: none;
     margin: 0;
@@ -63,6 +79,10 @@ h2 {
     transition-duration: 0.4s;
     cursor: pointer;
     border: 1px solid $dark-white;
+    img {
+      width: 0.813rem; // 13px
+      height: 0.813rem; // 13px
+    }
   }
   .nav-menu-item--launch:hover {
     background-color: $dark-white;
@@ -70,4 +90,132 @@ h2 {
   }
 }
 
+// Main Component
+.main-container {
+  h1 span {
+    color: $pink;
+  }
+  h2 span {
+    color: $pink;
+  }
+  .caption-text-large {
+    @include font-base($font-family-source, bold, 500);
+    color: $gray-dark;
+    font-size: 1.563rem; // 25x
+    line-height: 149%;
+    text-align: left;
+    letter-spacing: -0.01em;
+    @include respond-to(mobile) {
+      font-size: 1.125rem; // 18px
+    }
+  }
+  .caption-text-small {
+    @include font-base($font-family-source, bold, 500);
+    color: $gray-dark;
+    font-size: 1.5rem; // 24x
+    line-height: 133.1%;
+    text-align: left;
+    @include respond-to(mobile) {
+      font-size: 1.125rem; // 18px
+    }
+  }
+  .launch-button {
+    width: 19.625rem; // 314px
+    height: 4.813rem; // 77px
+    background-color: $pink;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font-base($font-family-barlow-bold, bold, 500);
+    font-size: 1.625rem; // 26px
+    color: $dark-white;
+    text-transform: uppercase; 
+    @include respond-to(mobile) {
+      font-size: 17.938rem; // 287px
+    }
+    img {
+      width: 2.188rem; // 35px
+      height: 2.063rem; // 33px
+    }
+  }
+  .main-top {
+    // padding-right: 100px;
+  }
+  .main-top__left-container {
+    width: 50%;
+    display: flex;
+    padding-right: 3.125rem; // 50px
+    div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 30%;
+    }
+    h2 {
+      margin-left: 30%;
+    }
+  }
+  .main-top__right-container {
+    width: 47%;
+    margin-left: auto;
+    background-color: $blue-extra-light;
+    border-top-left-radius: 3.125rem; // 50px
+    border-bottom-left-radius: 3.125rem; // 50px
+    img {
+      margin: 77px;
+      width: 100%;
+      height: 100%;
+      max-width: 35.688rem;
+      max-height: 42.688rem;
+    }
+  }
+  // Why Sommelier
+  .main-why {
+    padding-top: 3.625rem; // 58px
+    padding-bottom: 3.625rem; // 58px
+    margin-top: 6.5rem; // 104px
+    margin-right: 3.625rem; // 58px
+    background-color: $blue-extra-light;
+    border-top-right-radius: 3.125rem; // 50px
+    border-bottom-right-radius: 3.125rem; // 50px
+  }
+  .main-why__content {
+    margin-top: 45px;
+  }
+  .main-why__content__img-container {
+    width: 30%;
+    margin-right: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: 14.75rem;
+      max-height: 33.625rem;
+    }
+  }
+  .main-why__right-container {
+    width: 70%;
+    padding-right: 3.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    li {
+      float: left;
+      width: 50%;
+      padding: 20px;
+      h4 {
+        text-transform: uppercase;
+      }
+    }
+    p {
+      @include text-body();
+    }
+  }
+}
 
