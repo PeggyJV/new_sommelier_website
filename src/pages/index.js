@@ -1,6 +1,7 @@
 import React from "react"
 import Page from '../components/Page'
 import Layout from "../components/Layout"
+import Main from "../components/Main"
 import { graphql } from 'gatsby'
 import StoryblokService from '../utils/storyblok-service'
 
@@ -27,7 +28,8 @@ export default class extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
-        <Page blok={this.state.story.content} />
+        <Main />
+        {/* <Page blok={this.state.story.content} /> */}
       </Layout>
     )
   }
