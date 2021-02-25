@@ -67,11 +67,14 @@ const alamedaImg = require('/src/assets/images/investors/ico-alameda.png')
 export default function Main(){
   return (
     <div className='mt-5 main-container'>
-      <div className='main-top row'>
+      <div className='main-top'>
         <div className='main-top__left-container'>
           <div>
-            <h1 className='text-uppercase'>
+            <h1 className='text-uppercase d-lg-block d-md-none'>
               Welcome to<br/>Sommelier<br />the <span >new brain</span><br />for Ethereum
+            </h1>
+            <h1 className='text-uppercase d-lg-none d-md-block'>
+              Welcome to Sommelier the <span >new brain</span><br />for Ethereum
             </h1>
             <p className='caption-text-small' style={{marginTop: '2rem'}}>Move your DeFi assets into higher<br />yields faster and cheaper</p>
             <Link to={``} prefetch='true' className='launch-button' style={{ marginTop: '4.063rem'}}>
