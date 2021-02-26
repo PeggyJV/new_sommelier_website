@@ -58,6 +58,8 @@ const teamMembers2 = [
     avatar: require('/src/assets/images/avatar/avatar-jehan.png')
   }
 ]
+
+const teamMembers3 = [...teamMembers1, ...teamMembers2]
 // Investors
 const cygnilabsImg = require('/src/assets/images/investors/ico-cygnilabs.png')
 const standardImg = require('/src/assets/images/investors/ico-standard.png')
@@ -133,7 +135,7 @@ export default function Main(){
           <ul>
             <li>
               <div>
-                <img src={imperImg} alt='Cosmos Image' />
+                <img src={imperImg} alt='Cosmos Image' width='106' />
                 <h3>Impermanent Loss Protection</h3>
                 <p>Automatically rebalance your portfolio when pool performance changes such that Impermanent and unrealized losses require a change in strategy</p>
               </div>
@@ -141,21 +143,21 @@ export default function Main(){
             </li>
             <li>
               <div>
-                <img src={rebalancingImg} alt='Ether Bridge Image' />
+                <img src={rebalancingImg} alt='Ether Bridge Image' width='106' />
                 <h3>Automated Portfolio Rebalancing</h3>
                 <p>Automatically rebalance portfolio to focus on high yield Liquidity Provider opportunities and exit lower yielding opportunities</p>
               </div>
             </li>
             <li>
               <div>
-                <img src={lowerImg} alt='Secure Image' />
+                <img src={lowerImg} alt='Secure Image' width='106' />
                 <h3>Lower Ethereum Gas<br />Transaction Fees</h3>
                 <p>Aggregating and batching transactions with Sommelier will yield lower gas prices for LP growing demand to manage pool position and performance</p>
               </div>
             </li>
             <li>
               <div>
-                <img src={greaterImg} alt='Automated Image' />
+                <img src={greaterImg} alt='Automated Image' width='106' />
                 <h3>Greater Liquidity Momentum</h3>
                 <p>Automatically rebalance your portfolio when pool performance changes such that Impermanent and unrealized losses require a change in strategy</p>
               </div>
@@ -174,10 +176,11 @@ export default function Main(){
             <div>
               <h3>Q2 2021</h3>
               <p>
-                Uniswap and Ethereum Oracles on Cosmos SDK<br />
-                Ethereum Liquidity Logic implemented on Gravity<br />
-                Ethereum and Cosmos wallet integration complete<br />
-                Sommelier Impermanent Loss tracking app live
+                Sommelier Testnet Alpha 1 Live<br />
+                Sommelier Testnet Audit complete<br />
+                Sommelier Testnet Alpha 2 Live<br />
+                Sommelier Public Validator Invite<br />
+                Sommelier Mainnet 1 Live
               </p>
             </div>
           </div>
@@ -186,11 +189,10 @@ export default function Main(){
             <div className='main-roadmap__content__q-right__1'>
               <h3>Q1 2021</h3>
               <p>
-                Sommelier Testnet Alpha 1 Live<br />
-                Sommelier Testnet Audit complete<br />
-                Sommelier Testnet Alpha 2 Live<br />
-                Sommelier Public Validator Invite<br />
-                Sommelier Mainnet 1 Live
+                Uniswap and Ethereum Oracles on Cosmos SDK<br />
+                Ethereum Liquidity Logic implemented on Gravity<br />
+                Ethereum and Cosmos wallet integration complete<br />
+                Sommelier Impermanent Loss tracking app live
               </p>
             </div>
             <div className='main-roadmap__content__q-right__2'>
@@ -207,7 +209,7 @@ export default function Main(){
       </div>
       <div className='main-about section-container'>
         <div className='main-about__left'>
-          <img src={aboutImg} />
+          <div />
         </div>
         <div className='main-about__right'>
           <h2>About</h2>
@@ -250,6 +252,17 @@ export default function Main(){
               {teamMembers2.map((item, index) => (
                 <li>
                   <Profile data={item} isPortrait={false} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div className='main-team__all'>
+          {teamMembers3 && (
+            <ul>
+              {teamMembers3.map((item, index) => (
+                <li style={index < 6 ? {width: '50%'} : {width: '100%'}}>
+                  <Profile data={item} isPortrait={index < 6 ? true : false} />
                 </li>
               ))}
             </ul>

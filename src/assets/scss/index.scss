@@ -258,11 +258,21 @@ footer {
   // Why Sommelier
   .main-why {
     background-color: $blue-extra-light;
-    border-top-right-radius: 3.125rem; // 50px
-    border-bottom-right-radius: 3.125rem; // 50px
-    margin-left: 0;
-    margin-right: 3rem;
+    
     padding: 4rem 0 4rem 0;
+
+    @include respond-to(tablet) {
+      border-radius: 3.125rem;
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+    @include respond-to(desktop) {
+      border-radius: 0 3.125rem 3.125rem 0;
+      // border-top-right-radius: 3.125rem; // 50px
+      // border-bottom-right-radius: 3.125rem; // 50px
+      margin-left: 0;
+      margin-right: 3rem;
+    }
   }
   .main-why__content {
     margin-top: 45px;
@@ -276,10 +286,17 @@ footer {
       max-width: 14.75rem;
       max-height: 33.625rem;
     }
+    @include respond-to(mobile) {
+      display: none;
+    }
+    @include respond-to(tablet) {
+      display: none;
+    }
+    @include respond-to(desktop) {
+      display: block;
+    }
   }
   .main-why__right-container {
-    width: 70%;
-    padding-right: 3.625rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -300,12 +317,27 @@ footer {
     p {
       @include text-body();
     }
+    @include respond-to(mobile) {
+      width: 100%;
+      padding-left: 3.625rem;
+    }
+    @include respond-to(tablet) {
+      width: 100%;
+      padding-left: 3.625rem;
+    }
+    @include respond-to(desktop) {
+      width: 70%;
+      padding-right: 3.625rem;
+    }
   }
 
   // Use Cases
   .main-usecases {
     h2 {
       margin-left: calc(30% - 3.625rem);
+      @include respond-to(tablet) {
+        margin-left: 0;
+      }
     }
     .main-usecases__content {
       ul {
@@ -317,8 +349,18 @@ footer {
       li {
         float: left;
         width: 50%;
-        min-height: 26rem;
+        min-height: 27.125rem;
         
+        @include respond-to(tablet) {
+          width: 100%;
+          float: none;
+          min-height: 27.125rem;
+        }
+        @include respond-to(desktop) {
+          float: left;
+          width: 50%;
+          min-height: 27.125rem;
+        }
         h3 {
           margin-top: 2.5rem; // 40px
           text-transform: uppercase;
@@ -326,11 +368,27 @@ footer {
         div {
           // width: 98%;
           // height: 98%;
-          height: 28rem;
+          height: 26.5rem;
           margin: 13px;
-          padding: 46px 90px 42px 90px;
+          padding: 46px 63px 42px 63px;
           background-color: $blue-extra-light;
           border-radius: 3.125rem; // 50px
+          @include respond-to(tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            p {
+              text-align: center;
+            }
+          }
+          @include respond-to(desktop) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            p {
+              text-align: left;
+            }
+          }
         }
       }
       p {
@@ -350,13 +408,22 @@ footer {
     
   }
   .main-roadmap__content {
-    margin-left: 3rem;
-    padding: 3.125rem 3rem 3.125rem 0;
+    
     background-color: $blue-extra-light;
     border-top-left-radius: 3.125rem; // 50px
     border-bottom-left-radius: 3.125rem; // 50px
     display: flex;
     justify-content: center;
+    @include respond-to(tablet) {
+      margin: 0 3rem 0 3rem;
+      padding: 3.125rem 0 3.125rem 0;
+      border-radius: 3.125rem; // 50px
+    }
+    @include respond-to(desktop) {
+      margin: 0 0 0 3rem;
+      padding: 3.125rem 3rem 3.125rem 0;
+      border-radius: 3.125rem 0 0 3.125rem; // 50px
+    }
     img {
       width: 35px;
     }
@@ -366,6 +433,9 @@ footer {
       display: flex;
       align-items: flex-end;
       padding-right: 4.25rem;
+      @include respond-to(tablet) {
+        padding-right: 2.9rem;
+      }
       div {
         margin-top: 21.2rem;
       }
@@ -383,11 +453,14 @@ footer {
       display: flex;
       align-items: flex-start;
       padding-left: 4.25rem;
+      @include respond-to(tablet) {
+        padding-left: 2.9rem;
+      }
       .main-roadmap__content__q-right__1 {
         margin-top: 7.6rem;
       }
       .main-roadmap__content__q-right__2 {
-        margin-top: 16.3rem;
+        margin-top: 17.7rem;
       }
       h3 {
         text-align: left;
@@ -404,13 +477,30 @@ footer {
     margin-left: -3.625rem;
     .main-about__left {
       flex: 1;
+      div {
+        @include respond-to(tablet) {
+          background-image: url('/images/img-about-tablet.png');
+          width: 423px;
+          height: 757px;
+        }
+        @include respond-to(desktop) {
+          background-image: url('/images/img-about1.png');
+          width: 684px;
+          height: 787px;
+        }
+      }
     }
     .main-about__right {
-      padding-left: 15rem;
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      @include respond-to(tablet) {
+        padding-left: 0;
+      }
+      @include respond-to(desktop) {
+        padding-left: 20%;
+      }
       p {
         @include text-body();
         margin-top: 2.125rem; // 24px
@@ -422,8 +512,23 @@ footer {
     h2 {
       text-align: center;
     }
-    .margin-team__top {
-      
+    .main-team__top, .main-team__down {
+      display: none;
+      @include respond-to(tablet) {
+        display: none;
+      }
+      @include respond-to(desktop) {
+        display: block;
+      }
+    }
+    .main-team__all {
+      display: block;
+      @include respond-to(tablet) {
+        display: block;
+      }
+      @include respond-to(desktop) {
+        display: none;
+      }
     }
     .main-team__top ul {
       display: flex;
@@ -440,7 +545,7 @@ footer {
         }
       }
     }
-    .main-team__down ul {
+    .main-team__down ul, .main-team__all ul {
       list-style-type: none;
       padding: 0;
       overflow: hidden;
@@ -452,6 +557,18 @@ footer {
         }
       }
     }
+    // .main-team__all ul {
+    //   list-style-type: none;
+    //   padding: 0;
+    //   overflow: hidden;
+    //   li {
+    //     float: left;
+    //     width: 50%;
+    //     .profile-container {
+    //       margin: 13px;
+    //     }
+    //   }
+    // }
   }
   // Investors
   .main-investors {
