@@ -2,7 +2,7 @@ import Link from 'gatsby-link'
 import React from 'react'
 import SbEditable from 'storyblok-react'
 
-const frameImg = require('/src/assets/images/Frame.png')
+const frameImg = '/images/Frame.png'
 
 const Nav = ({ settings, lang }) => (
   <header className='container-fluid'>

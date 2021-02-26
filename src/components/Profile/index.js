@@ -60,8 +60,8 @@ const ContainerLandscape = styled.div`
     }
   }
 `
-const fbIcon = require('/src/assets/images/ico-facebook.png')
-const liIcon = require('/src/assets/images/ico-linkedin.png')
+const fbIcon = '/images/ico-facebook.png'
+const liIcon = '/images/ico-linkedin.png'
 
 const Profile = ({data, isPortrait}) => {
   return (
