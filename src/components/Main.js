@@ -2,69 +2,69 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Profile from '../components/Profile'
 
-const frameImg = require('/src/assets/images/Frame.png')
-const etheriumImg = require('/src/assets/images/etherium.png')
-const etheriumImg1 = require('/src/assets/images/etherium-1.png')
-const cosmosImg = require('/src/assets/images/cosmos.png')
-const etherbridgeImg = require('/src/assets/images/ether-bridge.png')
-const secureImg = require('/src/assets/images/secure.png')
-const automatedImg = require('/src/assets/images/automated.png')
+const frameImg = '/images/Frame.png'
+const etheriumImg = '/images/etherium.png'
+const etheriumImg1 = '/images/etherium-1.png'
+const cosmosImg = '/images/cosmos.png'
+const etherbridgeImg = '/images/ether-bridge.png'
+const secureImg = '/images/secure.png'
+const automatedImg = '/images/automated.png'
 // Use Cases
-const imperImg = require('/src/assets/images/impermanent.png')
-const rebalancingImg = require('/src/assets/images/rebalancing.png')
-const lowerImg = require('/src/assets/images/lower-ether.png')
-const greaterImg = require('/src/assets/images/greater.png')
+const imperImg = '/images/impermanent.png'
+const rebalancingImg = '/images/rebalancing.png'
+const lowerImg = '/images/lower-ether.png'
+const greaterImg = '/images/greater.png'
 // Roadmap
-const stickImg = require('/src/assets/images/roadmap-stick1.png')
+const stickImg = '/images/roadmap-stick1.png'
 // About
-const aboutImg = require('/src/assets/images/img-about1.png')
+const aboutImg = '/images/img-about1.png'
 // Team
 const teamMembers1 = [
   {
     name: 'Zaki Mainan',
     role: 'Co-Founder',
-    avatar: require('/src/assets/images/avatar/avatar-zaki.png')
+    avatar: '/images/avatar/avatar-zaki.png'
   },
   {
     name: 'Jack Zampolin',
     role: 'Co-Founder',
-    avatar: require('/src/assets/images/avatar/avatar-jack.png')
+    avatar: '/images/avatar/avatar-jack.png'
   },
   {
     name: 'Kevin Kennis',
     role: 'Co-Founder',
-    avatar: require('/src/assets/images/avatar/avatar-kevin.png')
+    avatar: '/images/avatar/avatar-kevin.png'
   }
 ]
 const teamMembers2 = [
   {
     name: 'Tony Arcieri',
     role: 'Co-Founder',
-    avatar: require('/src/assets/images/avatar/avatar-tony.png')
+    avatar: '/images/avatar/avatar-tony.png'
   },
   {
     name: 'Justin Kilpatrick',
     role: 'Co-Founder',
-    avatar: require('/src/assets/images/avatar/avatar-justin.png')
+    avatar: '/images/avatar/avatar-justin.png'
   },
   {
     name: 'Deborah Simpier',
     role: 'Co-Founder',
-    avatar: require('/src/assets/images/avatar/avatar-deborah.png')
+    avatar: '/images/avatar/avatar-deborah.png'
   },
   {
     name: 'Jehan Tremback',
     role: 'Co-Founder',
-    avatar: require('/src/assets/images/avatar/avatar-jehan.png')
+    avatar: '/images/avatar/avatar-jehan.png'
   }
 ]
 
 const teamMembers3 = [...teamMembers1, ...teamMembers2]
 // Investors
-const cygnilabsImg = require('/src/assets/images/investors/ico-cygnilabs.png')
-const standardImg = require('/src/assets/images/investors/ico-standard.png')
-const multicoinImg = require('/src/assets/images/investors/ico-multicoin.png')
-const alamedaImg = require('/src/assets/images/investors/ico-alameda.png')
+const cygnilabsImg = '/images/investors/ico-cygnilabs.png'
+const standardImg = '/images/investors/ico-standard.png'
+const multicoinImg = '/images/investors/ico-multicoin.png'
+const alamedaImg = '/images/investors/ico-alameda.png'
 
 export default function Main(){
   return (
