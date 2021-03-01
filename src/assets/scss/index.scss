@@ -176,6 +176,7 @@ footer {
 
 // Main Component
 .main-container {
+  overflow: hidden;
   .section-container {
     // padding-top: 3.625rem; // 58px
     // padding-bottom: 3.625rem; // 58px
@@ -452,7 +453,13 @@ footer {
         margin-left: 10.563rem;
       }
     }
+    .main-usecases__content::-webkit-scrollbar {
+      display: none;
+    }
     .main-usecases__content {
+      @include respond-to(mobile) {
+        overflow: scroll;
+      }
       ul {
         list-style-type: none;
         margin: 0;
@@ -712,12 +719,18 @@ footer {
     }
     .main-team__all {
       display: block;
+      overflow: scroll;
       @include respond-to(tablet) {
         display: block;
+        overflow: hidden;
       }
       @include respond-to(desktop) {
         display: none;
+        overflow: hidden;
       }
+    }
+    .main-team__all::-webkit-scrollbar {
+      display: none;
     }
     .main-team__top ul {
       display: flex;
