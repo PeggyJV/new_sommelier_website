@@ -10,7 +10,6 @@ const Nav = ({ settings, lang }) => {
 
   const handleHamburger = () => {
     setShowMenu(!showMenu)
-    console.log(showMenu)
   }
   return (
     <header className='container-fluid'>

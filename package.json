@@ -6,6 +6,7 @@
   "author": "Adam Shing",
   "dependencies": {
     "@brainhubeu/react-carousel": "^2.0.0-v2-beta.6",
+    "@loadable/component": "^5.14.1",
     "bootstrap": "^4.6.0",
     "gatsby": "^2.32.3",
     "gatsby-image": "^2.11.0",
