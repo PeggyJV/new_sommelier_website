@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Adam Shing",
   "dependencies": {
+    "@brainhubeu/react-carousel": "^2.0.0-v2-beta.6",
     "bootstrap": "^4.6.0",
     "gatsby": "^2.32.3",
     "gatsby-image": "^2.11.0",
@@ -21,11 +22,11 @@
     "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-animated-css": "^1.2.1",
     "react-bootstrap": "^1.5.0",
     "react-device-detect": "^1.15.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
-    "react-responsive-carousel": "^3.2.12",
     "storyblok-react": "^0.1.2",
     "storyblok-rich-text-react-renderer": "^2.1.0",
     "styled-components": "^5.2.1"

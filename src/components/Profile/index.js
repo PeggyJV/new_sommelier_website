@@ -27,6 +27,32 @@ const Container = styled.div`
   }
 `
 
+const ContainerMobile = styled.div`
+  background-color: #211f3e;
+  border-radius: 3.125rem;
+  padding: 2.375rem 1.875rem 2.375rem 1.875rem;
+  text-align: center;
+  width: 220px;
+  h3 {
+    margin-top: 1.625rem;
+    text-align: center;
+  }
+  p {
+    margin-top: 0.625rem;
+    color: #FA5E9A;
+  }
+  .caption-container {
+    div {
+      justify-content: center;
+      margin-top: 1rem;
+      img {
+        margin-left: 0.9rem;
+        margin-right: 0.9rem;
+      }
+    }
+  }
+`
+
 const ContainerLandscape = styled.div`
   display: flex;
   background-color: #211f3e;
@@ -60,7 +86,26 @@ const ContainerLandscape = styled.div`
 const fbIcon = '/images/ico-facebook.png'
 const liIcon = '/images/ico-linkedin.png'
 
+const MobileProfile = ({data}) => {
+  return (
+    <ContainerMobile className='profile-container'>
+      <img src={data.avatar} className='img-avatar' width={isMobileOnly ? 106 : 172}/>
+      <div className='caption-container'>
+        <h3>{data.name}</h3>
+        <p>Co-Founder</p>
+        <div>
+          <img src={fbIcon} />
+          <img src={liIcon} />
+        </div>
+      </div>
+    </ContainerMobile>
+  )
+}
+
 const Profile = ({data, isPortrait}) => {
+  if (isMobileOnly) {
+    return (<MobileProfile data={data} />)
+  }
   return (
     <div>
       {isPortrait ? (
