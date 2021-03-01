@@ -3,12 +3,13 @@ import Link from 'gatsby-link'
 import Profile from '../components/Profile'
 import {isMobileOnly} from 'react-device-detect'
 // Carousel
-import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
+// import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css'
 
 import loadable from '@loadable/component'
 
 const Carousel = loadable(() => import('@brainhubeu/react-carousel'))
+// const slidesToShowPlugin = Carousel.slidesToShowPlugin
 
 const frameImg = '/images/Frame.png'
 const etheriumImg = '/images/etherium.png'
@@ -195,15 +196,15 @@ export default function Main(){
         <div className='main-usecases__content'>
           {true ? (
             <Carousel 
-              plugins={[
-                'centered',
-                {
-                  resolve: slidesToShowPlugin,
-                  options: {
-                    numberOfSlides: 1,
-                  },
-                },
-              ]}
+              // plugins={[
+              //   'centered',
+              //   {
+              //     resolve: slidesToShowPlugin,
+              //     options: {
+              //       numberOfSlides: 1,
+              //     },
+              //   },
+              // ]}
             >
               {usecasesData.map((item, index) => (
                 <div>
@@ -334,15 +335,15 @@ export default function Main(){
         <div className='main-team__all'>
           {isMobileOnly ? (
             <Carousel 
-              plugins={[
-                'centered',
-                {
-                  resolve: slidesToShowPlugin,
-                  options: {
-                    numberOfSlides: 1.5,
-                  },
-                },
-              ]}
+              // plugins={[
+              //   'centered',
+              //   {
+              //     resolve: slidesToShowPlugin,
+              //     options: {
+              //       numberOfSlides: 1.5,
+              //     },
+              //   },
+              // ]}
             >
               {teamMembers3.map((item, index) => (
                 <div>
