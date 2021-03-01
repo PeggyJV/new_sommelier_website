@@ -36,6 +36,7 @@ h4 {
   text-align: left;
   @include respond-to(mobile) {
     font-size: 1.125rem; // 18px
+    text-align: center;
   }
 }
 
@@ -51,14 +52,44 @@ h4 {
 
 .nav-container {
   margin-top: 1.313rem;
+  align-items: center;
   @include respond-to(desktop) {
     max-width: 1440px;
+  }
+  @include respond-to(mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-container__menu-container {
+    display: flex;
+    @include respond-to(mobile) {
+      // display: none;
+    }
+  }
+  .nav-container__title {
+    @include respond-to(mobile) {
+      display: flex;
+      width: 100%;
+      button {
+        margin-top: -3px;
+        float: left;
+        background-color: transparent;
+        border: none;
+      }
+      a {
+        flex: 1;
+      }
+    }
   }
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    @include respond-to(mobile) {
+      display: flex;
+      flex-direction: column;
+    }
   }
   li {
     float: left;
@@ -87,6 +118,9 @@ h4 {
     img {
       width: 0.813rem; // 13px
       height: 0.813rem; // 13px
+    }
+    @include respond-to(desktop) {
+      margin-left: 1rem;
     }
   }
   .nav-menu-item--launch:hover {
@@ -149,6 +183,9 @@ footer {
     margin-top: 6.5rem; // 104px
     margin-right: 3.625rem; // 58px
     margin-left: 3.625rem; // 58px
+    @include respond-to(mobile) {
+      margin: 5.25rem 2.75rem 5.25rem 2.75rem;
+    }
   }
   h1 span {
     color: $pink;
@@ -212,24 +249,6 @@ footer {
     flex: 1;
     justify-content: center;
     margin-top: 2.75rem;
-    div {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1, p {
-      text-align: left;
-      @include respond-to(tablet) {
-        text-align: center;
-      }
-    }
-    .launch-button {
-      margin-top: 4.063rem;
-      @include respond-to(mobile) {
-        margin-top: 2.125rem;
-      }
-    }
     @include respond-to(desktop) {
       width: 50%;
       padding-right: 3.125rem; // 50px
@@ -246,9 +265,26 @@ footer {
           margin-right: auto;
         }
       }
-      
       h1 {
         // margin-left: 30%;
+      }
+    }
+    div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1, p {
+      text-align: left;
+      @include respond-to(tablet) {
+        text-align: center;
+      }
+    }
+    .launch-button {
+      margin-top: 4.063rem;
+      @include respond-to(mobile) {
+        margin-top: 2.125rem;
       }
     }
   }
@@ -309,7 +345,7 @@ footer {
       margin-top: 0;
       h2 {
         @include respond-to(mobile) {
-          margin-left: -3rem;
+          margin-left: -2.75rem;
         }
       }
     }
@@ -390,17 +426,30 @@ footer {
   // Use Cases
   .main-usecases {
     @include respond-to(mobile) {
-      margin-left: 2.75rem;
-      margin-right: 2.75rem;
+      margin-left: 0;
+      margin-right: 0;
       .main-top__left-container {
         justify-content: left;
+        margin-bottom: 3rem;
+        margin-left: 3.625rem;
+      }
+      .main-usecases__content li {
+        padding: 0 2.75rem 0 2.75rem !important;
+      }
+    }
+    .main-top__left-container {
+      @include respond-to(mobile) {
+        margin-left: 0;
         margin-bottom: 3rem;
       }
     }
     h2 {
-      margin-left: 0;
+      margin-left: 2.75rem;
+      @include respond-to(tablet) {
+        margin-left: 0;
+      }
       @include respond-to(desktop) {
-        margin-left: calc(30% - 3.625rem);
+        margin-left: 10.563rem;
       }
     }
     .main-usecases__content {
@@ -641,8 +690,16 @@ footer {
   }
   // Team
   .main-team {
+    @include respond-to(mobile) {
+      margin-left: 0;
+      margin-right: 0;
+    }
     h2 {
       text-align: center;
+      @include respond-to(mobile) {
+        text-align: left;
+        margin-left: 2.75rem;
+      }
     }
     .main-team__top, .main-team__down {
       display: none;
@@ -684,9 +741,6 @@ footer {
       li {
         float: left;
         width: 50%;
-        @include respond-to(mobile) {
-          width: 100% !important;
-        }
         .profile-container {
           margin: 13px;
         }

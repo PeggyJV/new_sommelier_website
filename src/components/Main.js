@@ -2,7 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Profile from '../components/Profile'
 import {isMobileOnly} from 'react-device-detect'
-import {Carousel} from 'react-responsive-carousel'
+import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
 
 const frameImg = '/images/Frame.png'
 const etheriumImg = '/images/etherium.png'
@@ -62,6 +63,50 @@ const teamMembers2 = [
     avatar: '/images/avatar/avatar-jehan.png'
   }
 ]
+const whyData = [
+  {
+    img: cosmosImg,
+    title: 'Cosmos Stargate SDK',
+    description: 'Modular and robust protocol with Tendermint Consensus delivers world class and tested protocol layer',
+  },
+  {
+    img: etherbridgeImg,
+    title: 'Bi-Directional Ethereum Bridge',
+    description: 'Automatically rebalance your portfolio when pool performance changes such that Impermanent and unrealized losses require a change in strategy',
+  },
+  {
+    img: secureImg,
+    title: 'Secure',
+    description: 'Transactions are managed by Sommelier validator set with decentralized governance. Sommelier cannot steal user funds',
+  },
+  {
+    img: automatedImg,
+    title: 'Automated',
+    description: 'Automate signature intense Ethereum transactions enable automated DeFi trading for increased liquidity momentum and yield capture',
+  },
+]
+const usecasesData = [
+  {
+    img: imperImg,
+    title: 'Impermanent Loss Protection',
+    description: 'Automatically rebalance your portfolio when pool performance changes such that Impermanent and unrealized losses require a change in strategy',
+  },
+  {
+    img: rebalancingImg,
+    title: 'Automated Portfolio Rebalancing',
+    description: 'Automatically rebalance portfolio to focus on high yield Liquidity Provider opportunities and exit lower yielding opportunities',
+  },
+  {
+    img: lowerImg,
+    title: 'Lower Ethereum Gas Transaction Fees',
+    description: 'Aggregating and batching transactions with Sommelier will yield lower gas prices for LP growing demand to manage pool position and performance',
+  },
+  {
+    img: greaterImg,
+    title: 'Greater Liquidity Momentum',
+    description: 'Automatically rebalance your portfolio when pool performance changes such that Impermanent and unrealized losses require a change in strategy',
+  },
+]
 
 const teamMembers3 = [...teamMembers1, ...teamMembers2]
 // Investors
@@ -70,6 +115,12 @@ const standardImg = '/images/investors/ico-standard.png'
 const multicoinImg = '/images/investors/ico-multicoin.png'
 const alamedaImg = '/images/investors/ico-alameda.png'
 
+const sliderSettings = {
+  dots: true,
+  duration: 100,
+  dots: false,
+  centerMode: true
+}
 export default function Main(){
   return (
     <div className='mt-5 main-container'>
@@ -137,41 +188,43 @@ export default function Main(){
           </h2>
         </div>
         <div className='main-usecases__content'>
-          <ul>
-            <li>
-              <div>
-                <img src={imperImg} alt='Cosmos Image' width='106' />
-                <h3>Impermanent Loss Protection</h3>
-                <p>Automatically rebalance your portfolio when pool performance changes such that Impermanent and unrealized losses require a change in strategy</p>
-              </div>
-              
-            </li>
-            <li>
-              <div>
-                <img src={rebalancingImg} alt='Ether Bridge Image' width='106' />
-                <h3>Automated Portfolio Rebalancing</h3>
-                <p>Automatically rebalance portfolio to focus on high yield Liquidity Provider opportunities and exit lower yielding opportunities</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src={lowerImg} alt='Secure Image' width='106' />
-                <h3>Lower Ethereum Gas<br />Transaction Fees</h3>
-                <p>Aggregating and batching transactions with Sommelier will yield lower gas prices for LP growing demand to manage pool position and performance</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src={greaterImg} alt='Automated Image' width='106' />
-                <h3>Greater Liquidity Momentum</h3>
-                <p>Automatically rebalance your portfolio when pool performance changes such that Impermanent and unrealized losses require a change in strategy</p>
-              </div>
-            </li>
-          </ul>
+          {isMobileOnly ? (
+            <Carousel 
+              plugins={[
+                'centered',
+                {
+                  resolve: slidesToShowPlugin,
+                  options: {
+                    numberOfSlides: 1,
+                  },
+                },
+              ]}
+            >
+              {usecasesData.map((item, index) => (
+                <div>
+                  <img src={item.img} width='106' />
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </Carousel>
+          ) : (
+            <ul>
+              {usecasesData.map((item, index) => (
+                <li>
+                  <div>
+                    <img src={item.img} width='106' />
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
       <div className='main-roadmap'>
-        <div className=''>
+        <div className='main-top__left-container'>
           <h2 className='text-uppercase'>
             Roadmap
           </h2>
@@ -274,27 +327,32 @@ export default function Main(){
           )}
         </div>
         <div className='main-team__all'>
-
-          {teamMembers3 && (
-            <Carousel showArrows={true} axis='horizontal'>
-              <div>
-              <img src={cygnilabsImg} width='112' />
-              </div>
-              <div>
-              <img src={cygnilabsImg} width='112' />
-              </div>
-              <div>
-              <img src={cygnilabsImg} width='112' />
-              </div>
-              
+          {isMobileOnly ? (
+            <Carousel 
+              plugins={[
+                'centered',
+                {
+                  resolve: slidesToShowPlugin,
+                  options: {
+                    numberOfSlides: 1.5,
+                  },
+                },
+              ]}
+            >
+              {teamMembers3.map((item, index) => (
+                <div>
+                  <Profile data={item} isPortrait={index < 6 ? true : isMobileOnly ? true : false} /> 
+                </div>
+              ))}
             </Carousel>
-            // <ul>
-            //   {teamMembers3.map((item, index) => (
-            //     <li style={index < 6 ? {width: '50%'} : {width: '100%'}}>
-            //       <Profile data={item} isPortrait={index < 6 ? true : isMobileOnly ? true : false} />
-            //     </li>
-            //   ))}
-            // </ul>
+          ) : (
+            <ul>
+              {teamMembers3.map((item, index) => (
+                <li style={index < 6 ? {width: '50%'} : {width: '100%'}}>
+                  <Profile data={item} isPortrait={index < 6 ? true : isMobileOnly ? true : false} />
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       </div>
