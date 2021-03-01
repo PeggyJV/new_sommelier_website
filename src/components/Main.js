@@ -188,7 +188,7 @@ export default function Main(){
           </h2>
         </div>
         <div className='main-usecases__content'>
-          {isMobileOnly ? (
+          {true ? (
             <Carousel 
               plugins={[
                 'centered',
