@@ -222,7 +222,8 @@ export default function Main() {
         </div>
         <div className='main-usecases__content'>
           {isMobileOnly ? (
-            <ul className='main-usecases__content__carousel' style={{width: carsouselUsecasesWidth, display: 'flex'}}
+            <div style={{width: carsouselUsecasesWidth, display: 'flex'}}>
+            <ul className='main-usecases__content__carousel' 
               // plugins={[
               //   'centered',
               //   {
@@ -243,6 +244,7 @@ export default function Main() {
                 </li>
               ))}
             </ul>
+            </div>
           ) : (
             <ul>
               {usecasesData.map((item, index) => (
