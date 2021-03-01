@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { css } from 'styled-components'
+import {isMobile, isMobileOnly} from 'react-device-detect'
 
 const Container = styled.div`
   background-color: #211f3e;
@@ -13,10 +14,6 @@ const Container = styled.div`
   p {
     margin-top: 0.625rem;
     color: #FA5E9A;
-  }
-  .img-avatar {
-    max-width: 10.75rem;
-    width: 100%;
   }
   .caption-container {
     div {
@@ -68,7 +65,7 @@ const Profile = ({data, isPortrait}) => {
     <div>
       {isPortrait ? (
         <Container className='profile-container'>
-          <img src={data.avatar} className='img-avatar'/>
+          <img src={data.avatar} className='img-avatar' width={isMobileOnly ? 106 : 172}/>
           <div className='caption-container'>
             <h3>{data.name}</h3>
             <p>Co-Founder</p>

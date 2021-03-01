@@ -1,10 +1,13 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Profile from '../components/Profile'
+import {isMobileOnly} from 'react-device-detect'
+import {Carousel} from 'react-responsive-carousel'
 
 const frameImg = '/images/Frame.png'
 const etheriumImg = '/images/etherium.png'
 const etheriumImg1 = '/images/etherium-1.png'
+const etheriumMobileImg = '/images/img-ether-mobile.png'
 const cosmosImg = '/images/cosmos.png'
 const etherbridgeImg = '/images/ether-bridge.png'
 const secureImg = '/images/secure.png'
@@ -16,6 +19,7 @@ const lowerImg = '/images/lower-ether.png'
 const greaterImg = '/images/greater.png'
 // Roadmap
 const stickImg = '/images/roadmap-stick1.png'
+const stickMobileImg = '/images/roadmap-stick-mobile.png'
 // About
 const aboutImg = '/images/img-about1.png'
 // Team
@@ -72,14 +76,14 @@ export default function Main(){
       <div className='main-top'>
         <div className='main-top__left-container'>
           <div>
-            <h1 className='text-uppercase d-lg-block d-md-none'>
+            <h1 className='text-uppercase d-lg-block d-md-none d-block'>
               Welcome to<br/>Sommelier<br />the <span >new brain</span><br />for Ethereum
             </h1>
-            <h1 className='text-uppercase d-lg-none d-md-block'>
+            <h1 className='text-uppercase d-lg-none d-md-block d-none'>
               Welcome to Sommelier the <span >new brain</span><br />for Ethereum
             </h1>
             <p className='caption-text-small' style={{marginTop: '2rem'}}>Move your DeFi assets into higher<br />yields faster and cheaper</p>
-            <Link to={``} prefetch='true' className='launch-button' style={{ marginTop: '4.063rem'}}>
+            <Link to={``} prefetch='true' className='launch-button'>
               <img src={frameImg} alt='frame image' />
               {`Launch Application`}
             </Link>
@@ -97,7 +101,8 @@ export default function Main(){
         </div>
         <div className='main-why__content row'>
           <div className='main-why__content__img-container'>
-            <img src={etheriumImg1} alt='etherium image' className='mr-2'/>
+            <img src={etheriumImg1} alt='etherium image' className='mr-2 main-why__content__img-container__img'/>
+            <img src={etheriumMobileImg} alt='etherium image' className='mr-2 main-why__content__img-container__img-mobile' width='74'/>
           </div>
           <div className='main-why__right-container'>
             <ul>
@@ -175,41 +180,52 @@ export default function Main(){
           <div className='main-roadmap__content__q-left'>
             <div>
               <h3>Q2 2021</h3>
-              <p>
-                Sommelier Testnet Alpha 1 Live<br />
-                Sommelier Testnet Audit complete<br />
-                Sommelier Testnet Alpha 2 Live<br />
-                Sommelier Public Validator Invite<br />
-                Sommelier Mainnet 1 Live
-              </p>
+              <ul>
+                <li><span>Sommelier Testnet Alpha 1 Live</span></li>
+                <li>Sommelier Testnet Audit complete<br /></li>
+                <li>Sommelier Testnet Alpha 2 Live<br /></li>
+                <li>Sommelier Public Validator Invite<br /></li>
+                <li>Sommelier Mainnet 1 Live</li>
+              </ul>
             </div>
           </div>
-          <img src={stickImg}></img>
+          <img className='main-roadmap__content__stick' src={stickImg} width='35' height='794'></img>
+          <img className='main-roadmap__content__stick-mobile' src={stickMobileImg} width='30' height='824'></img>
           <div className='main-roadmap__content__q-right'>
             <div className='main-roadmap__content__q-right__1'>
               <h3>Q1 2021</h3>
-              <p>
-                Uniswap and Ethereum Oracles on Cosmos SDK<br />
-                Ethereum Liquidity Logic implemented on Gravity<br />
-                Ethereum and Cosmos wallet integration complete<br />
-                Sommelier Impermanent Loss tracking app live
-              </p>
+              <ul>
+                <li><span>Uniswap and Ethereum Oracles on Cosmos SDK<br /></span></li>
+                <li>Ethereum Liquidity Logic implemented on Gravity<br /></li>
+                <li>Ethereum and Cosmos wallet integration complete<br /></li>
+                <li>Sommelier Impermanent Loss tracking app live</li>
+              </ul>
+            </div>
+            <div className='main-roadmap__content__q-right__3'>
+              <h3>Q2 2021</h3>
+              <ul>
+                <li>Sommelier Testnet Alpha 1 Live<br /></li>
+                <li>Sommelier Testnet Audit complete<br /></li>
+                <li>Sommelier Testnet Alpha 2 Live<br /></li>
+                <li>Sommelier Public Validator Invite<br /></li>
+                <li>Sommelier Mainnet 1 Live</li>
+              </ul>
             </div>
             <div className='main-roadmap__content__q-right__2'>
               <h3>Q1 2021</h3>
-              <p>
-                Sommelier Automated DeFi Selections on Uniswap<br />
-                Sommelier Automated DeFi Selections on Sushiswap<br />
-                Sommelier Automated DeFi Selections on Binance Chain<br />
-                Sommelier DAO launches
-              </p>
+              <ul>
+                <li>Sommelier Automated DeFi Selections on Uniswap<br /></li>
+                <li>Sommelier Automated DeFi Selections on Sushiswap<br /></li>
+                <li>Sommelier Automated DeFi Selections on Binance Chain<br /></li>
+                <li>Sommelier DAO launches</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
       <div className='main-about section-container'>
         <div className='main-about__left'>
-          <div />
+          <div className='main-about__left__img-container'/>
         </div>
         <div className='main-about__right'>
           <h2>About</h2>
@@ -258,24 +274,37 @@ export default function Main(){
           )}
         </div>
         <div className='main-team__all'>
+
           {teamMembers3 && (
-            <ul>
-              {teamMembers3.map((item, index) => (
-                <li style={index < 6 ? {width: '50%'} : {width: '100%'}}>
-                  <Profile data={item} isPortrait={index < 6 ? true : false} />
-                </li>
-              ))}
-            </ul>
+            <Carousel showArrows={true} axis='horizontal'>
+              <div>
+              <img src={cygnilabsImg} width='112' />
+              </div>
+              <div>
+              <img src={cygnilabsImg} width='112' />
+              </div>
+              <div>
+              <img src={cygnilabsImg} width='112' />
+              </div>
+              
+            </Carousel>
+            // <ul>
+            //   {teamMembers3.map((item, index) => (
+            //     <li style={index < 6 ? {width: '50%'} : {width: '100%'}}>
+            //       <Profile data={item} isPortrait={index < 6 ? true : isMobileOnly ? true : false} />
+            //     </li>
+            //   ))}
+            // </ul>
           )}
         </div>
       </div>
       <div className='main-investors section-container'>
         <h2 className="text-center">INVESTORS</h2>
         <div className='main-investors__img-container'>
-          <img src={cygnilabsImg} />
-          <img src={standardImg} />
-          <img src={multicoinImg} />
-          <img src={alamedaImg} />
+          <img src={cygnilabsImg} width='112' />
+          <img src={standardImg} width='134' />
+          <img src={multicoinImg} width='271' />
+          <img src={alamedaImg} width='261' />
         </div>
       </div>
     </div>
