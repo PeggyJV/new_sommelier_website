@@ -11,6 +11,11 @@ const Footer = () => {
           <a href='#'>Discord</a>
           <a href='#'>Twitter</a>
         </div>
+        <div className='footer__social-container-mobile'>
+          <a href='#'><img src='/images/ico-telegram.png' alt='Automated Image' width='24' /></a>
+          <a href='#' className='ml-4'><img src='/images/ico-discord.png' alt='Automated Image' width='24' /></a>
+          <a href='#' className='ml-4'><img src='/images/ico-twitter.png' alt='Automated Image' width='24' /></a>
+        </div>
       </div>
     </footer>
   )
