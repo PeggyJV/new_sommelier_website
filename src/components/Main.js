@@ -1,14 +1,14 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Link from 'gatsby-link'
 import Profile from '../components/Profile'
 import {isMobileOnly} from 'react-device-detect'
 // Carousel
-// import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css'
+// import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
+// import '@brainhubeu/react-carousel/lib/style.css'
 
-import loadable from '@loadable/component'
+// import loadable from '@loadable/component'
 
-const Carousel = loadable(() => import('@brainhubeu/react-carousel'))
+// const Carousel = loadable(() => import('@brainhubeu/react-carousel'))
 // const slidesToShowPlugin = Carousel.slidesToShowPlugin
 
 const frameImg = '/images/Frame.png'
@@ -127,7 +127,34 @@ const sliderSettings = {
   dots: false,
   centerMode: true
 }
-export default function Main(){
+const windowGlobal = typeof window !== 'undefined' && window
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = windowGlobal;
+  return {
+    width,
+    height
+  };
+}
+
+export default function Main() {
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    windowGlobal.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  const teamItemWidth = 250
+  const carsouselWidth = teamItemWidth * teamMembers3.length
+  const carsouselUsecasesWidth = windowDimensions.width * usecasesData.length
+
   return (
     <div className='mt-5 main-container'>
       <div className='main-top'>
@@ -194,8 +221,8 @@ export default function Main(){
           </h2>
         </div>
         <div className='main-usecases__content'>
-          {true ? (
-            <Carousel 
+          {isMobileOnly ? (
+            <ul className='main-usecases__content__carousel' style={{width: carsouselUsecasesWidth, display: 'flex'}}
               // plugins={[
               //   'centered',
               //   {
@@ -207,13 +234,15 @@ export default function Main(){
               // ]}
             >
               {usecasesData.map((item, index) => (
+                <li style={{width: windowDimensions.width}}>
                 <div>
                   <img src={item.img} width='106' />
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
+                </li>
               ))}
-            </Carousel>
+            </ul>
           ) : (
             <ul>
               {usecasesData.map((item, index) => (
@@ -334,7 +363,7 @@ export default function Main(){
         </div>
         <div className='main-team__all'>
           {isMobileOnly ? (
-            <Carousel 
+            <div className='main-team__all__carousel' style={{width: carsouselWidth, display: 'flex'}}
               // plugins={[
               //   'centered',
               //   {
@@ -346,11 +375,11 @@ export default function Main(){
               // ]}
             >
               {teamMembers3.map((item, index) => (
-                <div>
+                <div style={{width: teamItemWidth, display: 'flex', justifyContent: 'center'}}>
                   <Profile data={item} isPortrait={index < 6 ? true : isMobileOnly ? true : false} /> 
                 </div>
               ))}
-            </Carousel>
+            </div>
           ) : (
             <ul>
               {teamMembers3.map((item, index) => (
