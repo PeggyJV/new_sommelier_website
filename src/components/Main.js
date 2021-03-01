@@ -2,8 +2,13 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Profile from '../components/Profile'
 import {isMobileOnly} from 'react-device-detect'
-import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
+// Carousel
+import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+
+import loadable from '@loadable/component'
+
+const Carousel = loadable(() => import('@brainhubeu/react-carousel'))
 
 const frameImg = '/images/Frame.png'
 const etheriumImg = '/images/etherium.png'
