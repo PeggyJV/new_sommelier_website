@@ -55,11 +55,25 @@ const teamMembers1 = [
 ]
 const teamMembers2 = [
   {
+    name: 'Federico Kunze',
+    role: 'Co-Founder',
+    avatar: '/images/avatar/avatar-federico.png',
+    twitter: 'https://twitter.com/fekunze',
+    linkedin: 'https://www.linkedin.com/in/fekunze/'
+  },
+  {
     name: 'Tony Arcieri',
     role: 'Co-Founder',
     avatar: '/images/avatar/avatar-tony.png',
     twitter: 'https://twitter.com/bascule',
     linkedin: 'https://www.linkedin.com/in/tarcieri'
+  },
+  {
+    name: 'Lucky Odisetti',
+    role: 'Co-Founder',
+    avatar: '/images/avatar/avatar-lucky.png',
+    twitter: 'https://twitter.com/luckyOdiseti',
+    linkedin: 'https://www.linkedin.com/in/lucky-odisetti-701b5437'
   },
   {
     name: 'Justin Kilpatrick',
@@ -181,16 +195,17 @@ export default function Main() {
               Welcome to Sommelier the <span >new brain</span><br />for Ethereum
             </h1>
             <p className='caption-text-small' style={{marginTop: '2rem'}}>Move your DeFi assets into higher<br />yields faster and cheaper</p>
-            <Link to={``} prefetch='true' className='launch-button'>
-              <img src={frameImg} alt='frame image' />
-              {`Launch Application`}
-            </Link>
+            <a href="https://apps.sommelier.finance/" className='launch-button' style={{ marginTop: '4.063rem'}} target="_blank">
+            <img src={frameImg} alt='frame image' className='mr-2'/>&nbsp;
+              Launch Application
+            </a>
           </div>
         </div>
         <div className='main-top__right-container'>
           <img src={etheriumImg} alt='frame image' />
         </div>
       </div>
+      <a name="features"></a>
       <div className='main-why section-container'>
         <div className='main-top__left-container'>
           <h2 className='text-uppercase'>
@@ -228,6 +243,7 @@ export default function Main() {
           </div>
         </div>
       </div>
+      <a name="usecases"></a>
       <div className='main-usecases section-container'>
         <div className='main-top__left-container'>
           <h2 className='text-uppercase'>
@@ -274,6 +290,7 @@ export default function Main() {
           )}
         </div>
       </div>
+      <a name="roadmap"></a>
       <div className='main-roadmap'>
         <div className='main-top__left-container'>
           <h2 className='text-uppercase'>
@@ -328,11 +345,14 @@ export default function Main() {
         </div>
       </div>
       <div className='main-about section-container'>
+
         <div className='main-about__left'>
           <div className='main-about__left__img-container'/>
         </div>
         <div className='main-about__right'>
+          <a name="about"></a>
           <h2>About</h2>
+
           <p>
           Sommelier is a bet that Ethereum will be a dominant<br />
           player in the global economy. Sommelier consists of the<br />
@@ -347,12 +367,18 @@ export default function Main() {
           traders have come to expect from CeFi, but that are not<br />
           currently available in DeFi.
           </p>
-          <Link to={``} prefetch='true' className='launch-button' style={{ marginTop: '4.063rem'}}>
-            <img src={frameImg} alt='frame image' className='mr-2'/>
-            {`Launch Application`}
-          </Link>
+          // <Link to={``} prefetch='true' className='launch-button' style={{ marginTop: '4.063rem'}}>
+          //   <img src={frameImg} alt='frame image' className='mr-2'/>
+          //   {`Launch Application`}
+          // </Link>
+
+          <a href="https://apps.sommelier.finance/" className='launch-button' style={{ marginTop: '4.063rem'}} target="_blank">
+          <img src={frameImg} alt='frame image' className='mr-2'/>&nbsp
+            Launch Application
+          </a>
         </div>
       </div>
+      <a name="team"></a>
       <div className='main-team section-container'>
         <h2>Team</h2>
         <div className='main-team__top'>
