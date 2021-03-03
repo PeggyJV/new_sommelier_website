@@ -57,7 +57,7 @@ const teamMembers2 = [
   {
     name: 'Federico Kunze',
     role: 'Co-Founder',
-    avatar: '/images/avatar/avatar-tony.png',
+    avatar: '/images/avatar/avatar-federico.png',
     twitter: 'https://twitter.com/fekunze',
     linkedin: 'https://www.linkedin.com/in/fekunze/'
   },
@@ -71,7 +71,7 @@ const teamMembers2 = [
   {
     name: 'Lucky Odisetti',
     role: 'Co-Founder',
-    avatar: '/images/avatar/avatar-tony.png',
+    avatar: '/images/avatar/avatar-lucky.png',
     twitter: 'https://twitter.com/luckyOdiseti',
     linkedin: 'https://www.linkedin.com/in/lucky-odisetti-701b5437'
   },
