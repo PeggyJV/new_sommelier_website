@@ -83,7 +83,7 @@ const ContainerLandscape = styled.div`
     }
   }
 `
-const fbIcon = '/images/ico-facebook.png'
+const twIcon = '/images/ico-twitter.png'
 const liIcon = '/images/ico-linkedin.png'
 
 const MobileProfile = ({data}) => {
@@ -94,8 +94,8 @@ const MobileProfile = ({data}) => {
         <h3>{data.name}</h3>
         <p>Co-Founder</p>
         <div>
-          <img src={fbIcon} />
-          <img src={liIcon} />
+          <a href={data.twitter} target="_blank"><img src={twIcon} /></a>
+          <a href={data.linkedin} target="_blank"><img src={liIcon} /></a>
         </div>
       </div>
     </ContainerMobile>
@@ -115,8 +115,8 @@ const Profile = ({data, isPortrait}) => {
             <h3>{data.name}</h3>
             <p>Co-Founder</p>
             <div>
-              <img src={fbIcon} />
-              <img src={liIcon} />
+              <a href={data.twitter} target="_blank"><img src={twIcon} /></a>
+              <a href={data.linkedin} target="_blank"><img src={liIcon} /></a>
             </div>
           </div>
         </Container>
@@ -127,8 +127,8 @@ const Profile = ({data, isPortrait}) => {
             <h3>{data.name}</h3>
             <p>Co-Founder</p>
             <div>
-              <img src={fbIcon} />
-              <img src={liIcon} style={{marginTop: '-5px'}}/>
+              <a href={data.twitter} target="_blank"><img src={twIcon} /></a>
+              <a href={data.linkedin} target="_blank"><img src={liIcon} style={{marginTop: '-5px'}}/></a>
             </div>
           </div>
         </ContainerLandscape>
