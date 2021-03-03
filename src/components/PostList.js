@@ -1,5 +1,6 @@
 import React from "react"
 import SbEditable from "storyblok-react"
+
 const PostsList = ({ blok }) => {
   console.log('--postslist data---', blok.posts)
   return (

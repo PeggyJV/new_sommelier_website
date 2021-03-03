@@ -1,7 +1,8 @@
 import React from "react"
 import DynamicComponent from "../components/DynamicComponent"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import StoryblokService from '../utils/storyblok-service'
+
 export default class extends React.Component {
   state = {
     story: {
