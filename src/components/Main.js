@@ -55,11 +55,25 @@ const teamMembers1 = [
 ]
 const teamMembers2 = [
   {
+    name: 'Federico Kunze',
+    role: 'Co-Founder',
+    avatar: '/images/avatar/avatar-federico.png',
+    twitter: 'https://twitter.com/fekunze',
+    linkedin: 'https://www.linkedin.com/in/fekunze/'
+  },
+  {
     name: 'Tony Arcieri',
     role: 'Co-Founder',
     avatar: '/images/avatar/avatar-tony.png',
     twitter: 'https://twitter.com/bascule',
     linkedin: 'https://www.linkedin.com/in/tarcieri'
+  },
+  {
+    name: 'Lucky Odisetti',
+    role: 'Co-Founder',
+    avatar: '/images/avatar/avatar-lucky.png',
+    twitter: 'https://twitter.com/luckyOdiseti',
+    linkedin: 'https://www.linkedin.com/in/lucky-odisetti-701b5437'
   },
   {
     name: 'Justin Kilpatrick',
@@ -175,10 +189,10 @@ export default function Main() {
         <div className='main-top__left-container'>
           <div>
             <h1 className='text-uppercase d-lg-block d-md-none d-block'>
-              Welcome to<br/>Sommelier<br />the <span >new brain</span><br />for Ethereum
+              Welcome to<br/>Sommelier<br />the <span >COPROCESSOR</span><br />for Ethereum
             </h1>
             <h1 className='text-uppercase d-lg-none d-md-block d-none'>
-              Welcome to Sommelier the <span >new brain</span><br />for Ethereum
+              Welcome to Sommelier the <span >COPROCESSOR</span><br />for Ethereum
             </h1>
             <p className='caption-text-small' style={{marginTop: '2rem'}}>Move your DeFi assets into higher<br />yields faster and cheaper</p>
             <a href="https://apps.sommelier.finance/" className='launch-button' style={{ marginTop: '4.063rem'}} target="_blank">
