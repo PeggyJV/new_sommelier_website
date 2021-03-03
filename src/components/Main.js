@@ -34,39 +34,53 @@ const teamMembers1 = [
   {
     name: 'Zaki Mainan',
     role: 'Co-Founder',
-    avatar: '/images/avatar/avatar-zaki.png'
+    avatar: '/images/avatar/avatar-zaki.png',
+    twitter: 'https://twitter.com/zmanian',
+    linkedin: 'https://www.linkedin.com/in/zmanian'
   },
   {
     name: 'Jack Zampolin',
     role: 'Co-Founder',
-    avatar: '/images/avatar/avatar-jack.png'
+    avatar: '/images/avatar/avatar-jack.png',
+    twitter: 'https://twitter.com/jack_zampolin',
+    linkedin: 'https://www.linkedin.com/in/jackzampolin/'
   },
   {
     name: 'Kevin Kennis',
     role: 'Co-Founder',
-    avatar: '/images/avatar/avatar-kevin.png'
+    avatar: '/images/avatar/avatar-kevin.png',
+    twitter: 'https://twitter.com/kevinvkennis',
+    linkedin: 'https://www.linkedin.com/in/kkennis/'
   }
 ]
 const teamMembers2 = [
   {
     name: 'Tony Arcieri',
     role: 'Co-Founder',
-    avatar: '/images/avatar/avatar-tony.png'
+    avatar: '/images/avatar/avatar-tony.png',
+    twitter: 'https://twitter.com/bascule',
+    linkedin: 'https://www.linkedin.com/in/tarcieri'
   },
   {
     name: 'Justin Kilpatrick',
     role: 'Co-Founder',
-    avatar: '/images/avatar/avatar-justin.png'
+    avatar: '/images/avatar/avatar-justin.png',
+    twitter: 'https://twitter.com/ttk314',
+    linkedin: 'https://www.linkedin.com/in/kilpatrickjustin/'
   },
   {
     name: 'Deborah Simpier',
     role: 'Co-Founder',
-    avatar: '/images/avatar/avatar-deborah.png'
+    avatar: '/images/avatar/avatar-deborah.png',
+    twitter: 'https://twitter.com/DeborahSimpier',
+    linkedin: 'https://www.linkedin.com/in/deborah-simpier-a88063169/'
   },
   {
     name: 'Jehan Tremback',
     role: 'Co-Founder',
-    avatar: '/images/avatar/avatar-jehan.png'
+    avatar: '/images/avatar/avatar-jehan.png',
+    twitter: 'https://twitter.com/JTremback',
+    linkedin: 'https://www.linkedin.com/in/jehantremback/'
   }
 ]
 const whyData = [
@@ -223,7 +237,7 @@ export default function Main() {
         <div className='main-usecases__content'>
           {isMobileOnly ? (
             <div style={{width: carsouselUsecasesWidth, display: 'flex'}}>
-            <ul className='main-usecases__content__carousel' 
+            <ul className='main-usecases__content__carousel'
               // plugins={[
               //   'centered',
               //   {
@@ -378,7 +392,7 @@ export default function Main() {
             >
               {teamMembers3.map((item, index) => (
                 <div style={{width: teamItemWidth, display: 'flex', justifyContent: 'center'}}>
-                  <Profile data={item} isPortrait={index < 6 ? true : isMobileOnly ? true : false} /> 
+                  <Profile data={item} isPortrait={index < 6 ? true : isMobileOnly ? true : false} />
                 </div>
               ))}
             </div>
