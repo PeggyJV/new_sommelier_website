@@ -4,7 +4,7 @@ import Teaser from './Teaser'
 // import Grid from './Grid'
 import Placeholder from './Placeholder'
 import PostsList from './PostList'
-import BlogPost from './Blogpost'
+import BlogPost from './BlogPost'
 
 const Components = {
   'teaser': Teaser,
