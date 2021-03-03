@@ -1,8 +1,6 @@
 import React from "react"
-import Page from '../components/Page'
 import Layout from "../components/Layout"
 import Main from "../components/Main"
-import BlogPost from "../components/Blogpost"
 import { graphql } from 'gatsby'
 import StoryblokService from '../utils/storyblok-service'
 
