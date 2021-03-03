@@ -8,6 +8,8 @@ const frameImg = '/images/Frame.png'
 const Nav = ({ settings, lang }) => {
   const [showMenu, setShowMenu] = React.useState(!isMobileOnly)
 
+  const host_url = window.location.protocol + "//" +  window.location.hostname  + ":" + window.location.port
+
   const handleHamburger = () => {
     setShowMenu(!showMenu)
   }
@@ -19,31 +21,49 @@ const Nav = ({ settings, lang }) => {
             <button onClick={handleHamburger} className='d-block d-sm-none'>
               <img src='/images/button-hamburger.png' width='24' />
             </button>
-            <Link to='/'> 
+            <Link to='/'>
               <p className='nav-title m-0'>SOMMELIER</p>
             </Link>
           </div>
           {showMenu && (
             <div className='flex-grow-1 nav-container__menu-container'>
               <ul className='ml-auto'>
-                {settings &&
-                  settings.content.main_navi.map((navitem, index) => (
-                    <SbEditable content={navitem} key={navitem._uid}>
-                    <li key={index}>
-                      <Link to={`/${navitem.link.cached_url.replace('en/', '').replace('home', '')}`} prefetch='true' className='nav-menu-item'>
-                        {navitem.name}
-                      </Link>
-                    </li>
-                    </SbEditable>
-                  ))}
-                <li key={999} className='d-flex align-items-center launch-button'>
-                  <Link to={``} prefetch='true' className='nav-menu-item nav-menu-item--launch'>
-                    <img src={frameImg} alt='frame image' className='mr-2'/>
-                    {`Launch Application`}
+                {
+
+                }
+
+
+                <li key={1} >
+                  <a href={host_url + `#features`} className='nav-menu-item'>Features</a>
+                </li>
+
+                <li key={2} >
+                  <a href={host_url + `#usecases`} className='nav-menu-item'>Use Cases</a>
+                </li>
+
+                <li key={3} >
+                  <a href={host_url + `#roadmap`} className='nav-menu-item'>Road Map</a>
+                </li>
+
+                <li key={4} >
+                  <a href={host_url + `#about`} className='nav-menu-item'>about</a>
+                </li>
+
+                <li key={5} >
+                  <Link to={`/blog/`}  className='nav-menu-item'>
+                    {`Blog`}
                   </Link>
+                </li>
+
+                <li key={999} className='d-flex align-items-center launch-button'>
+                  <a href="https://apps.sommelier.finance/" className='nav-menu-item nav-menu-item--launch' target="_blank">
+                  <img src={frameImg} alt='frame image' className='mr-2'/>
+                    Launch Application
+                  </a>
                 </li>
               </ul>
             </div>
+
           )}
         </div>
       </nav>
