@@ -3,11 +3,13 @@ import Teaser from './Teaser'
 // import Feature from './Feature'
 // import Grid from './Grid'
 import Placeholder from './Placeholder'
+import PostsList from './PostList'
+import BlogPost from './BlogPost'
 
 const Components = {
   'teaser': Teaser,
-//   'feature': Feature,
-//   'grid': Grid
+  'blogpost': BlogPost,
+  'posts-list': PostsList
 }
 
 const Component = ({blok}) => {

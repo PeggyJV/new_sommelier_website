@@ -2,6 +2,7 @@ import React from "react"
 import Page from '../components/Page'
 import Layout from "../components/Layout"
 import Main from "../components/Main"
+import BlogPost from "../components/Blogpost"
 import { graphql } from 'gatsby'
 import StoryblokService from '../utils/storyblok-service'
 
@@ -20,7 +21,6 @@ export default class extends React.Component {
 
   async componentDidMount() {
     let story = await this.getInitialStory()
-    console.log('--story--', story)
     if(story.content) this.setState({ story })
     setTimeout(() => StoryblokService.initEditor(this), 200)
   }
@@ -29,7 +29,7 @@ export default class extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Main />
-        {/* <Page blok={this.state.story.content} /> */}
+        {/* <BlogPost blok={this.state.story.content} /> */}
       </Layout>
     )
   }
