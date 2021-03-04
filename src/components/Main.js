@@ -70,7 +70,7 @@ const teamMembers2 = [
   },
   {
     name: 'Lucky Odisetti',
-    role: 'Co-Founder',
+    role: 'Product Lead',
     avatar: '/images/avatar/avatar-lucky.png',
     twitter: 'https://twitter.com/luckyOdiseti',
     linkedin: 'https://www.linkedin.com/in/lucky-odisetti-701b5437'
@@ -195,8 +195,8 @@ export default function Main() {
               Welcome to Sommelier the <span >coprocessor</span><br />for Ethereum
             </h1>
             <p className='caption-text-small' style={{marginTop: '2rem'}}>Move your DeFi assets into higher<br />yields faster and cheaper</p>
-            <a href="https://apps.sommelier.finance/" className='launch-button' style={{ marginTop: '4.063rem'}} target="_blank">
-            <img src={frameImg} alt='frame image' className='mr-2'/>&nbsp;
+            <a href="https://app.sommelier.finance" className='launch-button' style={{ marginTop: '4.063rem'}} target="_blank">
+            <img src={frameImg} alt='frame image' className='mr-2'/>
               Launch Application
             </a>
           </div>
@@ -367,13 +367,9 @@ export default function Main() {
           traders have come to expect from CeFi, but that are not<br />
           currently available in DeFi.
           </p>
-          // <Link to={``} prefetch='true' className='launch-button' style={{ marginTop: '4.063rem'}}>
-          //   <img src={frameImg} alt='frame image' className='mr-2'/>
-          //   {`Launch Application`}
-          // </Link>
 
-          <a href="https://apps.sommelier.finance/" className='launch-button' style={{ marginTop: '4.063rem'}} target="_blank">
-          <img src={frameImg} alt='frame image' className='mr-2'/>&nbsp
+          <a href="https://app.sommelier.finance" className='launch-button' style={{ marginTop: '4.063rem'}} target="_blank">
+          <img src={frameImg} alt='frame image' className='mr-2'/>
             Launch Application
           </a>
         </div>
