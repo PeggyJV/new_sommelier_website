@@ -64,6 +64,10 @@ class StoryblokService {
   getQuery(param) {
     return this.query.includes(param)
   }
+
+  clearCache() {
+    this.client.flushCache()
+  }
 }
 
 const storyblokInstance = new StoryblokService()
