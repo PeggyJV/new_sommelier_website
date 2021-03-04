@@ -41,11 +41,13 @@ export default class extends React.Component {
 
   async componentDidMount() {
     let story = await this.getInitialStory()
+    console.log('--getInitialStory--', story)
     if(story.content) this.setState({ story })
     setTimeout(() => StoryblokService.initEditor(this), 200)
   }
 
   render() {
+    // console.log('--blog content--', this.state.story.content)
     return (
       <Layout location={this.props.location}>
         <Page blok={this.state.story.content} />
