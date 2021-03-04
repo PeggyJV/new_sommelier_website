@@ -1,0 +1,106 @@
+@import 'global';
+
+@mixin blog-h1($color: $dark-white, $textAlign: left) {
+  @include font-base($font-family-barlow-bold, bold, 700);
+  color: $color;
+  font-size: 2.75rem; // 44px
+  letter-spacing: -0.01em;
+  line-height: 96.1%; // 72px
+  text-align: $textAlign;
+  @include respond-to(tablet) {
+    font-size: 3.25rem; // 52px
+    letter-spacing: -0.01em;
+    line-height: 113%; //
+  }
+  @include respond-to(desktop) {
+    font-size: 4.063rem; // 65px
+    letter-spacing: -0.01em;
+    line-height: 4.5rem; // 72px
+  }
+}
+
+@mixin blog-h2($color: $dark-white, $textAlign: left) {
+  @include font-base($font-family-barlow-bold, bold, 700);
+  color: $color;
+  text-align: $textAlign;
+  font-size: 1.75rem; // 44px
+  letter-spacing: -0.01em;
+  line-height: 118.1%; // 72px
+  @include respond-to(tablet) {
+    font-size: 2.188rem; // 35px
+    letter-spacing: -0.01em;
+    line-height: 114.1%; 
+  }
+  @include respond-to(desktop) {
+    font-size: 2.375rem; // 38px
+    letter-spacing: -0.01em;
+    line-height: 2.688rem; // 43px
+  }
+}
+
+@mixin text-subtitle($color: $gray-dark, $textAlign: left) {
+  @include font-base($font-family-source, bold, 700);
+  color: $color;
+  text-align: $textAlign;
+  font-size: 1.5rem; // 24px
+  letter-spacing: -0.01em;
+  line-height: 149%;
+  @include respond-to(mobile) {
+    font-size: 1.125rem; // 52px
+    letter-spacing: -0.01em;
+    line-height: 149%;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.container__featured-section {
+  ul {
+    display: flex;
+    justify-content: center;
+    li div {
+      text-align: center;
+    }
+  }
+  img {
+    width: 100%;
+    margin-left: 2.75rem; // 44px
+    object-fit: contain;
+    border-radius: 1.25rem; // 20px
+    @include respond-to(desktop) {
+      margin-left: 0;
+    }
+    @include respond-to(tablet) {
+      margin-left: 0;
+    }
+  }
+  .top-post {
+    width: 100%;
+    margin-left: 2.75rem; // 44px
+    object-fit: contain;
+    border-radius: 1.25rem; // 20px
+    @include respond-to(desktop) {
+      max-width: 51rem;
+      width: 60%;
+      margin-left: 0;
+    }
+    @include respond-to(tablet) {
+      max-width: 51rem;
+      width: 80%;
+      margin-left: 0;
+    }
+  }
+  .container__featured-section__title {
+    @include blog-h1();
+    text-align: center !important;
+  }
+  .container__featured-section__intro {
+    @include text-subtitle();
+    text-align: center !important;
+  }
+}

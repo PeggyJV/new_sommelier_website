@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react'
 import Link from 'gatsby-link'
 import Profile from '../components/Profile'
 import {isMobileOnly} from 'react-device-detect'
+
+import "../assets/scss/main.scss"
+
 // Carousel
 // import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 // import '@brainhubeu/react-carousel/lib/style.css'
@@ -354,17 +357,17 @@ export default function Main() {
           <h2>About</h2>
 
           <p>
-          Sommelier is a bet that Ethereum will be a dominant<br />
-          player in the global economy. Sommelier consists of the<br />
-          Cosmos Stargate SDK, its Tendermint-based consensus<br />
-          layer and a decentralized, bi-directional Ethereum bridge,<br />
-          managed by a global network of validators.<br />
-          <br />
-          Liquidity Providers (LPs) will be able to use the Sommelier<br />
-          to author and execute complex, and automated financial<br />
-          transactions, such as portfolio rebalancing, limit orders,<br />
-          batched orders, as well as a host of other features that<br />
-          traders have come to expect from CeFi, but that are not<br />
+          Sommelier is a bet that Ethereum will be a dominant
+          player in the global economy. Sommelier consists of the
+          Cosmos Stargate SDK, its Tendermint-based consensus
+          layer and a decentralized, bi-directional Ethereum bridge,
+          managed by a global network of validators.
+          <br /><br />
+          Liquidity Providers (LPs) will be able to use the Sommelier
+          to author and execute complex, and automated financial
+          transactions, such as portfolio rebalancing, limit orders,
+          batched orders, as well as a host of other features that
+          traders have come to expect from CeFi, but that are not
           currently available in DeFi.
           </p>
 
