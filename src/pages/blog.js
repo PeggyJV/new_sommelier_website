@@ -33,19 +33,19 @@ export default class extends React.Component {
 
   async getInitialStory() {
     let { data: { story } } = await StoryblokService.get(`cdn/stories/${this.props.data.story.full_slug}`,{
-        "resolve_relations": "posts-list.posts"
+        "resolve_relations": "posts-list.posts",
+        "version": "published"
       })
     return story
   }
 
   async componentDidMount() {
-    // let story = await this.getInitialStory()
-    // if(story.content) this.setState({ story })
-    // setTimeout(() => StoryblokService.initEditor(this), 200)
+    let story = await this.getInitialStory()
+    if(story.content) this.setState({ story })
+    setTimeout(() => StoryblokService.initEditor(this), 200)
   }
 
   render() {
-    console.log('--blog content--', this.state.story.content)
     return (
       <Layout location={this.props.location}>
         <Page blok={this.state.story.content} />
