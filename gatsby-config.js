@@ -13,7 +13,7 @@ module.exports = {
       options: {
         accessToken: 'Hx9jd3xuH0cARCTgIBio2Qtt',
         homeSlug: 'home',
-        version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
+        version: 'published' // 'draft'
       }
     },
     `gatsby-plugin-react-helmet`,
