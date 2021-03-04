@@ -24,7 +24,7 @@ class StoryblokService {
     params = params || {}
 
     if (this.getQuery('_storyblok') || this.devMode || (typeof window !== 'undefined' && window.storyblok)) {
-      params.version = 'draft'
+      params.version = 'published' //draft
     }
 
     if (typeof window !== 'undefined' && typeof window.StoryblokCacheVersion !== 'undefined') {

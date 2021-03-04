@@ -33,7 +33,8 @@ export default class extends React.Component {
 
   async getInitialStory() {
     let { data: { story } } = await StoryblokService.get(`cdn/stories/${this.props.data.story.full_slug}`,{
-        "resolve_relations": "posts-list.posts"
+        "resolve_relations": "posts-list.posts",
+        "version": "published"
       })
     return story
   }
