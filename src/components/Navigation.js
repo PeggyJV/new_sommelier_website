@@ -10,6 +10,10 @@ const Nav = ({ settings, lang }) => {
 
   const host_url = window.location.protocol + "//" +  window.location.hostname  + ":" + window.location.port
 
+  const showAlert = () => {
+      alert("I'm an alert");
+    }
+
   const handleHamburger = () => {
     setShowMenu(!showMenu)
   }
@@ -34,19 +38,19 @@ const Nav = ({ settings, lang }) => {
 
 
                 <li key={1} >
-                  <a href={host_url + `#features`} className='nav-menu-item'>Features</a>
+                  <a href='/#features' className='nav-menu-item'>Features</a>
                 </li>
 
                 <li key={2} >
-                  <a href={host_url + `#usecases`} className='nav-menu-item'>Use Cases</a>
+                  <a href='/#usecases' className='nav-menu-item'>Use Cases</a>
                 </li>
 
                 <li key={3} >
-                  <a href={host_url + `#roadmap`} className='nav-menu-item'>Road Map</a>
+                  <a href='/#roadmap' className='nav-menu-item'>Road Map</a>
                 </li>
 
                 <li key={4} >
-                  <a href={host_url + `#about`} className='nav-menu-item'>about</a>
+                  <a href='/#about' className='nav-menu-item'>About</a>
                 </li>
 
                 <li key={5} >
