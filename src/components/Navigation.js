@@ -8,8 +8,6 @@ const frameImg = '/images/Frame.png'
 const Nav = ({ settings, lang }) => {
   const [showMenu, setShowMenu] = React.useState(!isMobileOnly)
 
-  const host_url = window.location.protocol + "//" +  window.location.hostname  + ":" + window.location.port
-
   const showAlert = () => {
       alert("I'm an alert");
     }
