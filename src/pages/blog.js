@@ -40,8 +40,9 @@ export default class extends React.Component {
   }
 
   async componentDidMount() {
+    StoryblokService.clearCache()
+
     let story = await this.getInitialStory()
-    console.log('--getInitialStory--', story)
     if(story.content) this.setState({ story })
     setTimeout(() => StoryblokService.initEditor(this), 200)
   }

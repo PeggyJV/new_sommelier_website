@@ -62,8 +62,13 @@ h4 {
   }
   .nav-container__menu-container {
     display: flex;
+    position: relative;
     @include respond-to(mobile) {
       // display: none;
+      margin-top: 2rem;
+      background-color: #211f3e;
+      opacity: 0.9;
+      position: absolute;
     }
   }
   .nav-container__title {
