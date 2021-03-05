@@ -26,9 +26,9 @@ class StoryblokService {
     if (this.getQuery('_storyblok') || this.devMode || (typeof window !== 'undefined' && window.storyblok)) {
       params.version = 'published' //draft
     }
-
+    this.client.flushCache()
     if (typeof window !== 'undefined' && typeof window.StoryblokCacheVersion !== 'undefined') {
-      params.cv = window.StoryblokCacheVersion
+      params.cv = this.client.cacheVersion
     }
     console.log('---window get----', params)
     return this.client.get(slug, params)
