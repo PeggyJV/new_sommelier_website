@@ -29,6 +29,7 @@ export default class extends React.Component {
           content
         }
     };
+    console.log('---load content---', content)
   }
 
   async getInitialStory() {
