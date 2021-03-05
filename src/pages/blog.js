@@ -29,7 +29,6 @@ export default class extends React.Component {
           content
         }
     };
-    console.log('---load content---', content)
   }
 
   async getInitialStory() {
@@ -42,9 +41,7 @@ export default class extends React.Component {
 
   async componentDidMount() {
     // await StoryblokService.clearCache()
-console.log('---componentDidMount----')
     let story = await this.getInitialStory()
-    console.log('---story content---', story.content)
     if(story.content) {
       setTimeout(() => this.setState({ story }), 200)
     }
