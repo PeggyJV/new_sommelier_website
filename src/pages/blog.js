@@ -40,7 +40,7 @@ export default class extends React.Component {
   }
 
   async componentDidMount() {
-    StoryblokService.clearCache()
+    await StoryblokService.clearCache()
 
     let story = await this.getInitialStory()
     if(story.content) this.setState({ story })
