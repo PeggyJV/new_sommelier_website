@@ -1,11 +1,79 @@
-import React from "react"
+import React, {useEffect, useState} from 'react'
 import SbEditable from "storyblok-react"
 import { render } from "storyblok-rich-text-react-renderer"
+import {isMobileOnly} from 'react-device-detect'
+
+const windowGlobal = typeof window !== 'undefined' && window
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = windowGlobal;
+  return {
+    width,
+    height
+  };
+}
 
 const BlogPost = ({ blok }) => {
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    windowGlobal.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : []
+  const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0
   return (
     <SbEditable content={blok} key={blok._uid}>
-      <div className="bg-white w-full">
+      <div className='blog-container mt-5 mb-5'>
+        <div className='container__featured-section'>
+          <div className='container__featured-section__top'>
+            <div className='social-container'>
+              <a href='https://t.me/getsomm' target="_blank"><img src='/images/ico-blog-fb.png' alt='Telegram' width='24' /></a>
+              <a href='https://t.me/getsomm' target="_blank"><img src='/images/ico-blog-tw.png' alt='Telegram' width='24' /></a>
+              <a href='https://t.me/getsomm' target="_blank"><img src='/images/ico-blog-li.png' alt='Telegram' width='24' /></a>
+            </div>
+            <div className='container__featured-section__top__post'>
+              <div className='post-container'>
+                <h1>{blok.title}</h1>
+                <p>{blok.intro}</p>
+                <img className="" src={blok.image} />
+                <div className='post-container__content'>
+                  {render(blok.long_text)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='container__more-section'>
+          <p>MORE ARTICLES</p>
+          <div className='container__more-section__content'>
+            <ul style={{width: isMobileOnly ? moreWidth : '100%'}}>
+              {morePosts.map((post, index) => {
+                return (
+                  <li key={post.name} style={{width: isMobileOnly ? windowDimensions.width : '33%'}}>
+                    <div className='more-li__content'>
+                      <img src={post.content.image}></img>
+                      <div className='mt-2'>
+                        <a className='container__more-section__title' href={`/${post.full_slug}`}>
+                          {post.content.title}
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/* <div className="bg-white w-full">
         <div className="max-w-3xl mx-auto text-center pt-20 flex flex-col items-center">
           <h1 className="text-5xl font-bold font-serif text-purple-700 tracking-wide">
             {blok.title}
@@ -22,7 +90,7 @@ const BlogPost = ({ blok }) => {
           <div className="p-4 bg-purple-700 rounded-full mx-auto">
           </div>
         </div>
-      </div>
+      </div> */}
     </SbEditable>
   )
 }
