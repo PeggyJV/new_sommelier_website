@@ -39,7 +39,7 @@
 }
 
 @mixin text-subtitle($color: $gray-dark, $textAlign: left) {
-  @include font-base($font-family-source, bold, 700);
+  @include font-base($font-family-source, bold, 400);
   color: $color;
   text-align: $textAlign;
   font-size: 1.5rem; // 24px
