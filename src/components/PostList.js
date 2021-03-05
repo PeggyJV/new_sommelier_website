@@ -38,7 +38,7 @@ const PostsList = ({ blok }) => {
             {featuredPosts.map((post, index) => {
               if (index === 0) {
                 return (
-                  <li key={post.name} className='top-post'>
+                  <li key={post.full_slug} className='top-post'>
                     <img src={post.content.image}></img>
                     <div className='mt-5'>
                       <a className='container__featured-section__title' href={`/${post.full_slug}`}>
@@ -50,7 +50,7 @@ const PostsList = ({ blok }) => {
                 )
               } else {
                 return (
-                  <li key={post.name} className='featured-post'>
+                  <li key={post.full_slug} className='featured-post'>
                     <div className='featured-post__content'>
                       <img src={post.content.image}></img>
                       <div className='featured-post__text'>
