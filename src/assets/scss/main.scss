@@ -47,6 +47,7 @@
     padding-left: 2rem;
     padding-right: 2rem;
     background-color: $pink;
+    text-decoration: none;
     display: block;
     display: flex;
     align-items: center;
@@ -62,6 +63,10 @@
       width: 2.188rem; // 35px
       height: 2.063rem; // 33px
     }
+  }
+  .launch-button:hover {
+    background-color: $dark-white;
+    color: #ff488e;
   }
   .main-top {
     // padding-right: 100px;

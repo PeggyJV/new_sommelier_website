@@ -72,6 +72,9 @@ h4 {
     }
   }
   .nav-container__title {
+    a {
+      text-decoration: none !important;
+    }
     @include respond-to(mobile) {
       display: flex;
       width: 100%;
@@ -108,7 +111,7 @@ h4 {
     text-decoration: none;
   }
   li a:hover {
-    background-color: #111111;
+    background-color: #03cdf0;
   }
   .nav-menu-item--launch {
     // width: 12.313rem; //197px
@@ -130,7 +133,7 @@ h4 {
   }
   .nav-menu-item--launch:hover {
     background-color: $dark-white;
-    color: $blue-extra-dark;
+    color: #ff488e;
   }
 }
 
