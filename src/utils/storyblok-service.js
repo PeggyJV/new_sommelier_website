@@ -30,6 +30,7 @@ class StoryblokService {
     if (typeof window !== 'undefined' && typeof window.StoryblokCacheVersion !== 'undefined') {
       params.cv = window.StoryblokCacheVersion
     }
+    console.log('---window get----', params)
     return this.client.get(slug, params)
   }
 
