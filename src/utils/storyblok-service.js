@@ -26,20 +26,38 @@ class StoryblokService {
     if (this.getQuery('_storyblok') || this.devMode || (typeof window !== 'undefined' && window.storyblok)) {
       params.version = 'published' //draft
     }
-
+    // this.client.flushCache()
+    /*
     if (typeof window !== 'undefined' && typeof window.StoryblokCacheVersion !== 'undefined') {
       params.cv = window.StoryblokCacheVersion
     }
-
+    */
+    if (this.client.cacheVersion) params.cv = this.client.cacheVersion
     return this.client.get(slug, params)
   }
 
   initEditor(reactComponent) {
+    this.client.flushCache()
     if (window.storyblok) {
       window.storyblok.init({
         accessToken: sbConfig.options.accessToken
       })
-      window.storyblok.on(['change', 'published'], () => window.location.reload(true))
+      // window.storyblok.pingEditor(() => {
+      //   if (window.storyblok.isInEditor) {
+      //     window.storyblok.enterEditmode()
+      //   }
+      // })
+      window.storyblok.on(['change', 'published'], () => {
+        console.log('---published---')
+        this.client.flushCache()
+        
+        window.location.reload()
+      })
+      window.storyblok.on(['change', 'unpublished'], () => {
+        console.log('---unpublished---')
+        this.client.flushCache()
+        window.location.reload()
+      })
 
       // this will alter the state and replaces the current story with a current raw story object
       window.storyblok.on('input', (event) => {
@@ -63,6 +81,10 @@ class StoryblokService {
 
   getQuery(param) {
     return this.query.includes(param)
+  }
+
+  clearCache() {
+    this.client.flushCache()
   }
 }
 

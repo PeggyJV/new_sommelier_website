@@ -7,6 +7,11 @@ const Container = styled.div`
   border-radius: 3.125rem;
   padding: 5.313rem 1.875rem 5.313rem 1.875rem;
   text-align: center;
+  .img-avatar {
+    max-width: 10.75rem;
+    border-radius: 2.75rem;
+    width: 100%;
+  }
   h3 {
     margin-top: 1.625rem;
     text-align: center;
@@ -33,6 +38,11 @@ const ContainerMobile = styled.div`
   padding: 2.375rem 1.875rem 2.375rem 1.875rem;
   text-align: center;
   width: 220px;
+  .img-avatar {
+    max-width: 10.75rem;
+    border-radius: 2.75rem;
+    width: 100%;
+  }
   h3 {
     margin-top: 1.625rem;
     text-align: center;
@@ -69,6 +79,7 @@ const ContainerLandscape = styled.div`
   }
   .img-avatar {
     max-width: 10.75rem;
+    border-radius: 2.75rem;
     width: 100%;
   }
   .caption-container {
