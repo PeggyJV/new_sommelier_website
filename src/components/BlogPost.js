@@ -3,7 +3,6 @@ import SbEditable from "storyblok-react"
 import { render } from "storyblok-rich-text-react-renderer"
 
 const BlogPost = ({ blok }) => {
-  console.log('---content--', blok)
   return (
     <SbEditable content={blok} key={blok._uid}>
       <div className="bg-white w-full">

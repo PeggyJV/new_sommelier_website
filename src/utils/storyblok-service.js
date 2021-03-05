@@ -26,18 +26,19 @@ class StoryblokService {
     if (this.getQuery('_storyblok') || this.devMode || (typeof window !== 'undefined' && window.storyblok)) {
       params.version = 'published' //draft
     }
-    this.client.flushCache()
+    // this.client.flushCache()
+    /*
     if (typeof window !== 'undefined' && typeof window.StoryblokCacheVersion !== 'undefined') {
-      params.cv = this.client.cacheVersion
+      params.cv = window.StoryblokCacheVersion
     }
-    console.log('---window get----', params)
+    */
+    if (this.client.cacheVersion) params.cv = this.client.cacheVersion
     return this.client.get(slug, params)
   }
 
   initEditor(reactComponent) {
     this.client.flushCache()
     if (window.storyblok) {
-      console.log('---window editor----', window.StoryblokCacheVersion)
       window.storyblok.init({
         accessToken: sbConfig.options.accessToken
       })
