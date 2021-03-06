@@ -30,11 +30,11 @@ const BlogPost = ({ blok }) => {
   );
 
 
-  const location = useLocation();
-  console.log(location);
-  const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + location.href;
-  const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + location.href;
-  const twitter_url = 'http://twitter.com/share?url='+ location.href;
+  const anothername = useLocation();
+  console.log(anothername);
+  const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + anothername.href;
+  const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + anothername.href;
+  const twitter_url = 'http://twitter.com/share?url='+ anothername.href;
   console.log(facebook_url);
 
   const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
