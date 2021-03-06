@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import SbEditable from "storyblok-react"
 import { render } from "storyblok-rich-text-react-renderer"
 import {isMobileOnly} from 'react-device-detect'
+import { globalHistory as history } from '@reach/router'
 
 const windowGlobal = typeof window !== 'undefined' && window
 
@@ -27,17 +28,28 @@ const BlogPost = ({ blok }) => {
     getWindowDimensions()
   );
 
-  const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : []
-  const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0
+  const { location, navigate } = history
+
+
+  const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
+  const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0;
+  const current_url = location.href
+  const text = 'Check this article out.';
+  const twitter_url = 'http://twitter.com/share?text=' + text + '&url=' + current_url
+  const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + current_url
+  const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + current_url
+  console.log(blok);
+
+
   return (
     <SbEditable content={blok} key={blok._uid}>
       <div className='blog-container mt-5 mb-5'>
         <div className='container__featured-section'>
           <div className='container__featured-section__top'>
             <div className='social-container'>
-              <a href='https://t.me/getsomm' target="_blank"><img src='/images/ico-blog-fb.png' alt='Telegram' width='24' /></a>
-              <a href='https://t.me/getsomm' target="_blank"><img src='/images/ico-blog-tw.png' alt='Telegram' width='24' /></a>
-              <a href='https://t.me/getsomm' target="_blank"><img src='/images/ico-blog-li.png' alt='Telegram' width='24' /></a>
+              <a href={twitter_url} target="_blank"><img src='/images/ico-blog-fb.png' alt='Facebook' width='24' /></a>
+              <a href={facebook_url} target="_blank"><img src='/images/ico-blog-tw.png' alt='Twitter' width='24' /></a>
+              <a href={linkedin_url} target="_blank"><img src='/images/ico-blog-li.png' alt='Linked In' width='24' /></a>
             </div>
             <div className='container__featured-section__top__post'>
               <div className='post-container'>
