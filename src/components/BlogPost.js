@@ -30,12 +30,12 @@ const BlogPost = ({ blok }) => {
   );
 
 
-  const anothername = useLocation();
-  console.log(anothername);
-  const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + anothername.href;
-  const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + anothername.href;
-  const twitter_url = 'http://twitter.com/share?url='+ anothername.href;
-  console.log(facebook_url);
+  // const anothername = useLocation();
+  // console.log(anothername);
+  // const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + anothername.href;
+  // const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + anothername.href;
+  // const twitter_url = 'http://twitter.com/share?url='+ anothername.href;
+  // console.log(facebook_url);
 
   const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
   const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0;
@@ -57,9 +57,15 @@ const BlogPost = ({ blok }) => {
         <div className='container__featured-section'>
           <div className='container__featured-section__top'>
             <div className='social-container'>
+<<<<<<< HEAD
               <a href={twitter_url} target="_blank"><img src='/images/ico-blog-tw.png' alt='Facebook' width='24' /></a>
               <a href={facebook_url} target="_blank"><img src='/images/ico-blog-fb.png' alt='Twitter' width='24' /></a>
               <a href={linkedin_url} target="_blank"><img src='/images/ico-blog-li.png' alt='Linked In' width='24' /></a>
+=======
+              <a href='notset' target="_blank" id='twitter'><img src='/images/ico-blog-fb.png' alt='Facebook' width='24' /></a>
+              <a href='notset' target="_blank" id='facebook'><img src='/images/ico-blog-tw.png' alt='Twitter' width='24' /></a>
+              <a href='notset' target="_blank" id='linkedin'><img src='/images/ico-blog-li.png' alt='Linked In' width='24' /></a>
+>>>>>>> 2caed83 (delay set)
             </div>
             <div className='container__featured-section__top__post'>
               <div className='post-container'>
