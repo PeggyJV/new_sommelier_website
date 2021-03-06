@@ -3,6 +3,7 @@ import SbEditable from "storyblok-react"
 import { render } from "storyblok-rich-text-react-renderer"
 import {isMobileOnly} from 'react-device-detect'
 import { globalHistory as history } from '@reach/router'
+import { useLocation } from "@reach/router"
 
 const windowGlobal = typeof window !== 'undefined' && window
 
@@ -38,10 +39,13 @@ const BlogPost = ({ blok }) => {
   const twitter_url = 'http://twitter.com/share?text=' + text + '&url=' + current_url
   const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + current_url
   const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + current_url
+  const alocation = useLocation();
   console.log(blok);
+  console.log(alocation);
 
 
   return (
+
     <SbEditable content={blok} key={blok._uid}>
       <div className='blog-container mt-5 mb-5'>
         <div className='container__featured-section'>
