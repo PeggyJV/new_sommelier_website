@@ -4,7 +4,6 @@ import Main from "../components/Main"
 import { graphql } from 'gatsby'
 import StoryblokService from '../utils/storyblok-service'
 
-window.addEventListener("load", () => console.log("jason 1"));
 
 setTimeout(function(){
   console.log("jason 2")
