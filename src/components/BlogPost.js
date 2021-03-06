@@ -7,6 +7,18 @@ import { useLocation } from "@reach/router"
 
 const windowGlobal = typeof window !== 'undefined' && window
 
+setTimeout(function(){
+  console.log("jason 2")
+  var href = window.location.href;
+  const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
+  const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
+  const twitter_url = 'http://twitter.com/share?url='+ href;
+
+  document.getElementById('facebook').setAttribute("href", facebook_url);
+  document.getElementById('linkedin').setAttribute("href", linkedin_url);
+  document.getElementById('twitter').setAttribute("href", twitter_url);
+}, 2000);
+
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = windowGlobal;
   return {
