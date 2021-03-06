@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import SbEditable from "storyblok-react"
 import { render } from "storyblok-rich-text-react-renderer"
 import {isMobileOnly} from 'react-device-detect'
+import { globalHistory as history } from '@reach/router'
 
 const windowGlobal = typeof window !== 'undefined' && window
 
@@ -27,15 +28,17 @@ const BlogPost = ({ blok }) => {
     getWindowDimensions()
   );
 
+  const { location, navigate } = history
+
+
   const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
   const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0;
-  const current_url = windowGlobal.location.href;
+  const current_url = location.href
   const text = 'Check this article out.';
   const twitter_url = 'http://twitter.com/share?text=' + text + '&url=' + current_url
   const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + current_url
   const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + current_url
   console.log(blok);
-  console.log(twitter_url);
 
 
   return (
