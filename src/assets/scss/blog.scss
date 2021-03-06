@@ -29,7 +29,7 @@
   @include respond-to(tablet) {
     font-size: 2.188rem; // 35px
     letter-spacing: -0.01em;
-    line-height: 114.1%; 
+    line-height: 114.1%;
   }
   @include respond-to(desktop) {
     font-size: 2.375rem; // 38px
@@ -39,7 +39,7 @@
 }
 
 @mixin text-subtitle($color: $gray-dark, $textAlign: left) {
-  @include font-base($font-family-source, bold, 400);
+  @include font-base($font-family-source, normal, 18px);
   color: $color;
   text-align: $textAlign;
   font-size: 1.5rem; // 24px
@@ -243,7 +243,7 @@ ul {
   width: 100%;
   margin-left: 2.75rem;
   margin-right: 2.75rem;
-  
+
   @include respond-to(tablet) {
     width: 37.75rem;
     margin-left: -5.25rem;
@@ -280,7 +280,7 @@ ul {
     flex: 1;
     justify-content: center;
     .post-container {
-      
+
       h1 {
         @include blog-h1();
       }
