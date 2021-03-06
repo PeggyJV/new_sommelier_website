@@ -31,17 +31,18 @@ const BlogPost = ({ blok }) => {
 
 
   const location = useLocation();
+  console.log(location);
 
   const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
   const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0;
-  const current_url = location.href
+  const current_url = location.href;
   const text = 'Check this article out.';
   const twitter_url = 'http://twitter.com/share?text=' + text + '&url=' + current_url
   const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + current_url
   const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + current_url
 
   console.log(blok);
-  console.log(location);
+  //console.log(location);
 
 
   return (
