@@ -32,6 +32,8 @@ const BlogPost = ({ blok }) => {
 
   const location = useLocation();
   console.log(location);
+  href = location.href;
+  console.log(href);
 
   const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
   const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0;
