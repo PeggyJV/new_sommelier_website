@@ -42,6 +42,10 @@
     }
   }
   .launch-button {
+    @include font-base($font-family-barlow-bold, bold, 500);
+    font-size: 1.625rem; // 26px
+    color: $dark-white;
+    text-transform: uppercase; 
     max-width: 19.625rem; // 314px
     height: 4.813rem; // 77px
     padding-left: 2rem;
@@ -52,16 +56,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include font-base($font-family-barlow-bold, bold, 500);
-    font-size: 1.625rem; // 26px
-    color: $dark-white;
-    text-transform: uppercase; 
     @include respond-to(mobile) {
-      font-size: 1.375rem; // 287px
+      font-size: 1.175rem; //
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
     img {
       width: 2.188rem; // 35px
       height: 2.063rem; // 33px
+      @include respond-to(mobile) {
+        width: 1.6rem; // 25px
+        height: 1.6rem; // 25px
+      }
     }
   }
   .launch-button:hover {
@@ -104,11 +110,24 @@
         // margin-left: 30%;
       }
     }
+    @include respond-to(mobile) {
+      // margin-top: 0;
+    }
     div {
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: center;
+      @include respond-to(mobile) {
+        margin-left: 2.75rem;
+        margin-right: 2.75rem;
+      }
+      .launch-button {
+        margin-top: 4.063rem;
+        @include respond-to(mobile) {
+          margin-top: 1.75rem;
+        }
+      }
     }
     h1, p {
       text-align: left;
@@ -124,9 +143,9 @@
     }
   }
   .main-top__right-container {
-    display: flex;
-    flex: 1;
-    justify-content: center;
+    // display: flex;
+    // flex: 1;
+    // justify-content: center;
     background-color: $blue-extra-light;
     margin-left: 2.75rem;
     border-top-left-radius: 3.125rem; // 50px
@@ -136,12 +155,14 @@
       // background-color: unset;
       // border-top-left-radius: 0;
       // border-bottom-left-radius: 0;
+      // display: flex;
       background-color: $blue-extra-light;
       margin-left: 2.75rem;
       border-top-left-radius: 3.125rem; // 50px
       border-bottom-left-radius: 3.125rem; // 50px
     }
     @include respond-to(desktop) {
+      // display: flex;
       width: 47%;
       margin-left: auto;
       background-color: $blue-extra-light;
@@ -156,6 +177,10 @@
       max-width: 35.688rem;
       max-height: 42.688rem;
       object-fit: contain;
+      @include respond-to(mobile) {
+        padding: 25px;
+        width: 230px;
+      }
     }
   }
   // Why Sommelier
@@ -408,6 +433,9 @@
         text-align: left;
         display: table-row;
         line-height: 29px;
+        @include respond-to(mobile) {
+          line-height: 25px;
+        }
       }
     } 
     .main-roadmap__content__stick {
@@ -456,7 +484,7 @@
       display: flex;
       align-items: flex-start;
       padding-left: 1.5rem;
-      padding-right: 2rem;
+      padding-right: 1rem;
       @include respond-to(desktop) {
         padding-left: 4.25rem;
       }
@@ -472,14 +500,14 @@
       .main-roadmap__content__q-right__2 {
         margin-top: 17.7rem;
         @include respond-to(mobile) {
-          margin-top: 4.7rem;
+          margin-top: 2rem;
         }
       }
       .main-roadmap__content__q-right__3 {
         display: none;
         @include respond-to(mobile) {
           display: block;
-          margin-top: 2.5rem;
+          margin-top: 3.3rem;
         }
       }
       h3 {
@@ -586,6 +614,15 @@
         width: 33%;
         .profile-container {
           margin: 13px;
+          .img-avatar {
+            width: 10.75rem !important;
+            height: 10.75rem !important;
+            @include respond-to(mobile) {
+              width: 6.25rem !important;
+              height: 6.25rem !important;
+              border-radius: 1.625rem im !important;
+            }
+          }
         }
       }
     }
@@ -598,6 +635,15 @@
         width: 50%;
         .profile-container {
           margin: 13px;
+          .img-avatar {
+            width: 10.75rem !important;
+            height: 10.75rem !important;
+            @include respond-to(mobile) {
+              width: 6.25rem !important;
+              height: 6.25rem !important;
+              border-radius: 1.625rem im !important;
+            }
+          }
         }
       }
     }

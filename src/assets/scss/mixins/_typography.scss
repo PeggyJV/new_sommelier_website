@@ -90,7 +90,7 @@ NOTE: by default, type elements should not have top margins
 }
 
 @mixin text-body($color: $gray-dark, $textAlign: left) {
-  @include font-base($font-family-source, bold, 500);
+  @include font-base($font-family-source-light, normal, 400);
   color: $color;
   font-size: 1.125rem; // 18px
   letter-spacing: -0.01em;

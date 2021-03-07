@@ -198,8 +198,8 @@ export default function Main() {
               Welcome to Sommelier the <span >new coprocessor</span><br />for Ethereum
             </h1>
             <p className='caption-text-small' style={{marginTop: '2rem'}}>Move your DeFi assets into higher<br />yields faster and cheaper</p>
-            <a href="https://app.sommelier.finance" className='launch-button' style={{ marginTop: '4.063rem'}} target="_blank">
-            <img src={frameImg} alt='frame image' className='mr-2'/>
+            <a href="https://app.sommelier.finance" className='launch-button' target="_blank">
+              <img src={frameImg} alt='frame image' className='mr-2'/>
               Launch Application
             </a>
           </div>

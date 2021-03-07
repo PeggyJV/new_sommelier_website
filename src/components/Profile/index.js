@@ -10,7 +10,6 @@ const Container = styled.div`
   .img-avatar {
     max-width: 10.75rem;
     border-radius: 2.75rem;
-    width: 100%;
   }
   h3 {
     margin-top: 1.625rem;
@@ -41,7 +40,6 @@ const ContainerMobile = styled.div`
   .img-avatar {
     max-width: 10.75rem;
     border-radius: 2.75rem;
-    width: 100%;
   }
   h3 {
     margin-top: 1.625rem;
@@ -80,7 +78,6 @@ const ContainerLandscape = styled.div`
   .img-avatar {
     max-width: 10.75rem;
     border-radius: 2.75rem;
-    width: 100%;
   }
   .caption-container {
     text-align: left;
