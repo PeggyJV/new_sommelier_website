@@ -39,11 +39,7 @@
 }
 
 @mixin text-subtitle($color: $gray-dark, $textAlign: left) {
-<<<<<<< HEAD
   @include font-base($font-family-source-light, normal, 400);
-=======
-  @include font-base($font-family-source, normal, 18px);
->>>>>>> f1d6efe (Change to non bold and smaller pix)
   color: $color;
   text-align: $textAlign;
   font-size: 1.5rem; // 24px
@@ -77,7 +73,7 @@ ul {
       border-radius: 1.25rem; // 20px
       @include respond-to(desktop) {
         max-width: 51rem;
-        width: 60%;
+        width: 80%;
         margin-left: 0;
       }
       @include respond-to(tablet) {
@@ -98,24 +94,18 @@ ul {
         }
       }
       div {
-        text-align: center;
+        text-align: left;
         padding: 0 2.75rem 0 2.75rem;
         @include respond-to(mobile) {
           text-align: left;
         }
         .container__featured-section__title {
           @include blog-h1();
-          text-align: center;
-          @include respond-to(mobile) {
-            text-align: left;
-          }
+          text-align: left;
         }
         .container__featured-section__intro {
           @include text-subtitle();
-          text-align: center;
-          @include respond-to(mobile) {
-            text-align: left;
-          }
+          text-align: left;
         }
       }
     }
@@ -155,7 +145,7 @@ ul {
           .container__featured-section__title {
             @include blog-h2();
             text-align: left;
-            align-items: center;
+            align-items: left;
           }
           .container__featured-section__intro {
             @include text-subtitle();
@@ -249,12 +239,12 @@ ul {
   margin-right: 2.75rem;
 
   @include respond-to(tablet) {
-    width: 37.75rem;
+    width: 45.75rem;
     margin-left: -5.25rem;
     margin-right: 0;
   }
   @include respond-to(desktop) {
-    width: 42.75rem;
+    width: 60.75rem;
     margin-left: -5.25rem;
     margin-right: 0;
   }
@@ -291,6 +281,7 @@ ul {
       p {
         margin-top: 1.2rem !important;
         @include text-subtitle();
+
       }
       img {
         margin-top: 3.438rem;
