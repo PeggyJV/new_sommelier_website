@@ -6,17 +6,6 @@ import StoryblokService from '../utils/storyblok-service'
 
 import "../assets/scss/blog.scss"
 
-setTimeout(function(){
-  console.log("jason 2")
-  var href = window.location.href;
-  const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
-  const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
-  const twitter_url = 'http://twitter.com/share?url='+ href;
-
-  document.getElementById('facebook').setAttribute("href", facebook_url);
-  document.getElementById('linkedin').setAttribute("href", linkedin_url);
-  document.getElementById('twitter').setAttribute("href", twitter_url);
-}, 2000);
 
 export default class extends React.Component {
   constructor(props) {
