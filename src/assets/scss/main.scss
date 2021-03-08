@@ -119,19 +119,22 @@
       flex-direction: column;
       align-items: center;
       @include respond-to(mobile) {
-        margin-left: 2.75rem;
-        margin-right: 2.75rem;
+        // margin-left: 2.75rem;
+        // margin-right: 2.75rem;
       }
       .launch-button {
         margin-top: 4.063rem;
         @include respond-to(mobile) {
-          margin-top: 1.75rem;
+          margin-top: 1rem;
         }
       }
     }
     h1, p {
       text-align: left;
       @include respond-to(tablet) {
+        text-align: center;
+      }
+      @include respond-to(mobile) {
         text-align: center;
       }
     }
@@ -179,7 +182,7 @@
       object-fit: contain;
       @include respond-to(mobile) {
         padding: 25px;
-        width: 230px;
+        width: 180px;
       }
     }
   }
