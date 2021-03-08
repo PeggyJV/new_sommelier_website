@@ -35,7 +35,7 @@ const aboutImg = '/images/img-about1.png'
 // Team
 const teamMembers1 = [
   {
-    name: 'Zaki Mainan',
+    name: 'Zaki Manian',
     role: 'Co-Founder',
     avatar: '/images/avatar/avatar-zaki.png',
     twitter: 'https://twitter.com/zmanian',
