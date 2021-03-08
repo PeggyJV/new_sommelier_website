@@ -114,12 +114,12 @@ const whyData = [
   {
     img: secureImg,
     title: 'Secure',
-    description: 'Transactions are managed by Sommelier validator set with decentralized governance. Sommelier cannot steal user funds',
+    description: 'Transactions are managed by the Sommelier validator set with decentralized governance. Sommelier cannot steal user funds',
   },
   {
     img: automatedImg,
     title: 'Automated',
-    description: 'Automate signature intense Ethereum transactions enable automated DeFi trading for increased liquidity momentum and yield capture',
+    description: 'Automated signature management for Ethereum transactions enable automated DeFi trading for increased liquidity momentum and yield capture',
   },
 ]
 const usecasesData = [
@@ -235,7 +235,7 @@ export default function Main() {
               <li>
                 <img src={secureImg} alt='Secure Image' />
                 <h4>Secure</h4>
-                <p>Transactions are managed by Sommelier validator set with decentralized governance. Sommelier cannot steal user funds</p>
+                <p>Transactions are managed by the Sommelier validator set with decentralized governance. Sommelier cannot steal user funds</p>
               </li>
               <li>
                 <img src={automatedImg} alt='Automated Image' />
