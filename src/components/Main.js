@@ -197,7 +197,7 @@ export default function Main() {
             <h1 className='text-uppercase d-lg-none d-md-block d-none'>
               Welcome to Sommelier the <span >new coprocessor</span><br />for Ethereum
             </h1>
-            <p className='caption-text-small mt-3'>Move your DeFi assets faster<br />and cheaper into higher yields</p>
+            <p className='caption-text-small mt-3'>Move your DeFi assets into higher<br />yields faster and cheaper</p>
             <a href="https://app.sommelier.finance" className='launch-button' target="_blank">
               <img src={frameImg} alt='frame image' className='mr-2'/>
               Launch Application
