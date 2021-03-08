@@ -240,7 +240,11 @@ export default function Main() {
               <li>
                 <img src={automatedImg} alt='Automated Image' />
                 <h4>Automated</h4>
+<<<<<<< HEAD
                 <p>Automated signature intense Ethereum transactions enable automated DeFi trading for increased liquidity momentum and yield capture</p>
+=======
+                <p>Automated signature management for Ethereum transactions enable automated DeFi trading for increased liquidity momentum and yield capture</p>
+>>>>>>> fdbced5 (Fix the automate intense)
               </li>
             </ul>
           </div>
