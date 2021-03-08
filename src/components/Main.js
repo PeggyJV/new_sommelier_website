@@ -197,7 +197,7 @@ export default function Main() {
             <h1 className='text-uppercase d-lg-none d-md-block d-none'>
               Welcome to Sommelier the <span >new coprocessor</span><br />for Ethereum
             </h1>
-            <p className='caption-text-small mt-3'>Move your DeFi assets into higher<br />yields faster and cheaper</p>
+            <p className='caption-text-small mt-3'>Move your DeFi assets faster<br />and cheaper into higher yields</p>
             <a href="https://app.sommelier.finance" className='launch-button' target="_blank">
               <img src={frameImg} alt='frame image' className='mr-2'/>
               Launch Application
@@ -208,12 +208,12 @@ export default function Main() {
           <img src={etheriumImg} alt='frame image' />
         </div>
       </div>
-      <a name="features"></a>
+      <a name="features" id='features'></a>
       <div className='main-why section-container'>
         <div className='main-top__left-container'>
-          <h2 className='text-uppercase'>
+          <h1 className='text-uppercase'>
             Why <span >Sommelier</span>
-          </h2>
+          </h1>
         </div>
         <div className='main-why__content row'>
           <div className='main-why__content__img-container'>
@@ -240,13 +240,13 @@ export default function Main() {
               <li>
                 <img src={automatedImg} alt='Automated Image' />
                 <h4>Automated</h4>
-                <p>Automate signature intense Ethereum transactions enable automated DeFi trading for increased liquidity momentum and yield capture</p>
+                <p>Automated signature intense Ethereum transactions enable automated DeFi trading for increased liquidity momentum and yield capture</p>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <a name="usecases"></a>
+      <a name="usecases" id='usecases'></a>
       <div className='main-usecases section-container'>
         <div className='main-top__left-container'>
           <h2 className='text-uppercase'>
@@ -293,7 +293,7 @@ export default function Main() {
           )}
         </div>
       </div>
-      <a name="roadmap"></a>
+      <a name="roadmap" id="roadmap"></a>
       <div className='main-roadmap'>
         <div className='main-top__left-container'>
           <h2 className='text-uppercase'>
@@ -336,7 +336,7 @@ export default function Main() {
               </ul>
             </div>
             <div className='main-roadmap__content__q-right__2'>
-              <h3>Q1 2021</h3>
+              <h3>Q3 2021</h3>
               <ul>
                 <li>Sommelier Automated DeFi Selections on Uniswap<br /></li>
                 <li>Sommelier Automated DeFi Selections on Sushiswap<br /></li>
@@ -353,7 +353,7 @@ export default function Main() {
           <div className='main-about__left__img-container'/>
         </div>
         <div className='main-about__right'>
-          <a name="about"></a>
+          <a name="about" id="about"></a>
           <h2>About</h2>
 
           <p>
@@ -377,7 +377,7 @@ export default function Main() {
           </a>
         </div>
       </div>
-      <a name="team"></a>
+      <a name="team" id='team'></a>
       <div className='main-team section-container'>
         <h2>Team</h2>
         <div className='main-team__top'>

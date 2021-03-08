@@ -91,8 +91,8 @@
     justify-content: center;
     margin-top: 2.75rem;
     @include respond-to(desktop) {
-      width: 50%;
-      padding-right: 3.125rem; // 50px
+      // width: 50%;
+      // padding-right: 3.125rem; // 50px
       div {
         margin-left: 30%;
         display: flex;
@@ -212,7 +212,7 @@
       margin-top: 0;
       h2 {
         @include respond-to(mobile) {
-          margin-left: -2.75rem;
+          // margin-left: -2.75rem;
         }
       }
     }
@@ -256,6 +256,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 67rem;
     @include respond-to(mobile) {
       width: 100%;
       padding-left: 1.425rem;
@@ -292,6 +293,8 @@
 
   // Use Cases
   .main-usecases {
+    max-width: 82.75rem;
+    margin: 2.75rem auto;
     @include respond-to(mobile) {
       margin-left: 0;
       margin-right: 0;
@@ -316,7 +319,7 @@
         margin-left: 0;
       }
       @include respond-to(desktop) {
-        margin-left: 10.563rem;
+        // margin-left: 10.563rem;
       }
     }
     .main-usecases__content::-webkit-scrollbar {
@@ -503,7 +506,7 @@
       .main-roadmap__content__q-right__2 {
         margin-top: 17.7rem;
         @include respond-to(mobile) {
-          margin-top: 2rem;
+          margin-top: 5rem;
         }
       }
       .main-roadmap__content__q-right__3 {
@@ -570,6 +573,8 @@
   }
   // Team
   .main-team {
+    max-width: 82.75rem;
+    margin: 0 auto;
     @include respond-to(mobile) {
       margin-left: 0;
       margin-right: 0;

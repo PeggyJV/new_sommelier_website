@@ -15,6 +15,15 @@ const Nav = ({ settings, lang }) => {
   const handleHamburger = () => {
     setShowMenu(!showMenu)
   }
+
+  const handleMoveToSection = (e, msgId) => {
+    e.preventDefault();
+    const ref = document.querySelector(`#${msgId}`);
+    if (ref) {
+      ref.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
   return (
     <header className='container-fluid'>
       <nav className='' role='navigation'>
@@ -33,26 +42,24 @@ const Nav = ({ settings, lang }) => {
                 {
 
                 }
-
-
                 <li key={1} >
-                  <a href='/#features' className='nav-menu-item'>Features</a>
+                  <a href='/#features' onClick={(e) => handleMoveToSection(e, 'features')} className='nav-menu-item'>Features</a>
                 </li>
 
                 <li key={2} >
-                  <a href='/#usecases' className='nav-menu-item'>Use Cases</a>
+                  <a href='/#usecases' onClick={(e) => handleMoveToSection(e, 'usecases')} className='nav-menu-item'>Use Cases</a>
                 </li>
 
                 <li key={3} >
-                  <a href='/#roadmap' className='nav-menu-item'>Road Map</a>
+                  <a href='/#roadmap' onClick={(e) => handleMoveToSection(e, 'roadmap')} className='nav-menu-item'>Road Map</a>
                 </li>
 
                 <li key={4} >
-                  <a href='/#about' className='nav-menu-item'>About</a>
+                  <a href='/#about' onClick={(e) => handleMoveToSection(e, 'about')} className='nav-menu-item'>About</a>
                 </li>
 
                 <li key={5} >
-                  <Link to={`/blog/`}  className='nav-menu-item'>
+                  <Link to={`/blog/`} className='nav-menu-item'>
                     {`Blog`}
                   </Link>
                 </li>
