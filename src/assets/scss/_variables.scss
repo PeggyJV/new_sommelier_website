@@ -1,0 +1,105 @@
+// Colors - Reference (These come from styleguide)
+$blue-light: #92ccf0;
+$blue-extra-dark: #131128;
+$blue-extra-light: #211f3e;
+$black: #000;
+$gray-dark: #b5b2d6;
+$gray: #ecedef;
+$green-regular: #33a437;
+$red: #d00000;
+$pink: #d3387c;
+$dark-white: #f4f2ff;
+$transparent-black-light: rgba(0, 0, 0, 0.05);
+$transparent-black-regular: rgba(0, 0, 0, 0.1);
+$transparent-black-dark: rgba(0, 0, 0, 0.2);
+$interactive-blue: #0078b3;
+$contrast-blue: #006ba6;
+$interactive-blue-dark: #003b71;
+$kp-blue: #0078b3;
+$inky-blue: #0d1c3d;
+$dolphin: #677083;
+$graphite-dark: #d3d6dc;
+$graphite: #e9ebee;
+$graphite-light: #f4f5f6;
+$pebble: #f7f7f7;
+$midnight: #003b71;
+$sky: #90cef1;
+$moss: #4a7628;
+$grass: #57a635;
+$leaf: #a4d751;
+$burnt-sienna: #d1480c;
+$tiger-lily: #f36c0d;
+$tangerine: #fec941;
+$ocean: #066564;
+$aqua: #20a29e;
+$robin-egg: #7bd3cf;
+$acai: #bb1654;
+$fuchsia: #f05674;
+$rose: #ffa4b4;
+$plum: #583985;
+$lilac: #846ead;
+$lavender: #b2a8d2;
+$deep-red: #b63125;
+$deep-chalk: #585858;
+$mid-chalk: #666;
+$light-chalk: #d8d1ca;
+$mid-aqua: #ceecfd;
+$light-aqua: #e9f7fe;
+$pale-blue: #f0f7fa;
+$motion-blue: #94dfff;
+$white: #fff;
+$dolphin-light: #b3b6c5;
+$slate: #8f949d;
+
+// Borders
+$border-radius-sm: 0.5rem;
+$border-radius: 1rem;
+$border: 1px solid rgba(0, 0, 0, 0.08);
+$border-bg: 2px solid rgba(0, 0, 0, 0.08);
+
+$box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+
+// Padding - TODO: these should match font size scales
+$padding-xs: 0.5rem; // 8px
+$padding-sm: 0.8125rem; // 13px
+$padding-md: 1rem; // 16px
+$padding-lg: 2rem; // 32px
+$padding-xlg: 3rem; // 48px
+
+// Font - Variations
+$font-family-source: 'Source Sans Pro';
+$font-family-source-light: 'Source Sans Light';
+$font-family-source-bold: 'Source Sans Bold';
+$font-family-barlow: 'Barlow Condensed Regular';
+$font-family-barlow-bold: 'Barlow Condensed Bold';
+$font-family-oswald: 'Oswald';
+$font-family-oswald-bold: 'Oswald Bold';
+
+// Font - Sizes
+$font-size-xs: 0.8125rem; // 13px
+$font-size-md: 1rem; // 16px
+$font-size-lg: 1.5rem; // 24px
+$font-size-xl: 2rem; // 32px
+
+$font-size-h1: 3rem; // 48px
+
+// Links
+$link-color: $contrast-blue;
+
+// Panels
+$panel-border: $border;
+
+// Modals
+$modal-border: $border-bg;
+
+// Buttons
+$button-radius: 100px;
+
+$desktop-space-size: calc(
+  50vw - 640px + 2rem
+); // when desktop, container max-width: 1280px; padding: 0 2rem;
+$desktop-space-size-2: calc(100vw - 1280px + 4rem);
+$desktop-space-size-2-minus: calc(-100vw + 1280px - 4rem);
+$desktop-right-size-2: calc(100% + 100vw - 1280px + 4rem);
+
+$localImagePath: '/assets/images/' !default;

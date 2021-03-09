@@ -1,0 +1,692 @@
+@import 'global';
+
+// Main Component
+.main-container {
+  overflow: hidden;
+  .section-container {
+    // padding-top: 3.625rem; // 58px
+    // padding-bottom: 3.625rem; // 58px
+    margin-bottom: 6.5rem; // 104px
+    margin-top: 6.5rem; // 104px
+    margin-right: 3.625rem; // 58px
+    margin-left: 3.625rem; // 58px
+    @include respond-to(mobile) {
+      margin: 5.25rem 2.75rem 5.25rem 2.75rem;
+    }
+  }
+  h1 span {
+    color: $pink;
+  }
+  h2 span {
+    color: $pink;
+  }
+  .caption-text-large {
+    @include font-base($font-family-source, bold, 500);
+    color: $gray-dark;
+    font-size: 1.563rem; // 25x
+    line-height: 149%;
+    text-align: left;
+    letter-spacing: -0.01em;
+    @include respond-to(mobile) {
+      font-size: 1.125rem; // 18px
+    }
+  }
+  .caption-text-small {
+    @include font-base($font-family-source, bold, 500);
+    color: $gray-dark;
+    font-size: 1.5rem; // 24x
+    line-height: 133.1%;
+    text-align: left;
+    @include respond-to(mobile) {
+      font-size: 1.125rem; // 18px
+    }
+  }
+  .launch-button {
+    @include font-base($font-family-barlow-bold, bold, 500);
+    font-size: 1.625rem; // 26px
+    color: $dark-white;
+    text-transform: uppercase; 
+    max-width: 19.625rem; // 314px
+    height: 4.813rem; // 77px
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: $pink;
+    text-decoration: none;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include respond-to(mobile) {
+      font-size: 1.175rem; //
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    img {
+      width: 2.188rem; // 35px
+      height: 2.063rem; // 33px
+      @include respond-to(mobile) {
+        width: 1.6rem; // 25px
+        height: 1.6rem; // 25px
+      }
+    }
+  }
+  .launch-button:hover {
+    background-color: $dark-white;
+    color: #ff488e;
+  }
+  .main-top {
+    // padding-right: 100px;
+    display: flex;
+    flex-direction: column-reverse;
+    @include respond-to(tablet) {
+      flex-direction: row;
+    }
+    @include respond-to(desktop) {
+      flex-direction: row;
+    }
+  }
+  .main-top__left-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-top: 2.75rem;
+    @include respond-to(desktop) {
+      // width: 50%;
+      // padding-right: 3.125rem; // 50px
+      div {
+        margin-left: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        h1, p {
+          text-align: left;
+          margin-right: auto;
+        }
+        a {
+          margin-right: auto;
+        }
+      }
+      h1 {
+        // margin-left: 30%;
+      }
+    }
+    @include respond-to(mobile) {
+      // margin-top: 0;
+    }
+    div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      @include respond-to(mobile) {
+        // margin-left: 2.75rem;
+        // margin-right: 2.75rem;
+      }
+      .launch-button {
+        margin-top: 4.063rem;
+        @include respond-to(mobile) {
+          margin-top: 1rem;
+        }
+      }
+    }
+    h1, p {
+      text-align: left;
+      @include respond-to(tablet) {
+        text-align: center;
+      }
+      @include respond-to(mobile) {
+        text-align: center;
+      }
+    }
+    .launch-button {
+      margin-top: 4.063rem;
+      @include respond-to(mobile) {
+        margin-top: 2.125rem;
+      }
+    }
+  }
+  .main-top__right-container {
+    // display: flex;
+    // flex: 1;
+    // justify-content: center;
+    background-color: $blue-extra-light;
+    margin-left: 2.75rem;
+    border-top-left-radius: 3.125rem; // 50px
+    border-bottom-left-radius: 3.125rem; // 50px
+    
+    @include respond-to(tablet) {
+      // background-color: unset;
+      // border-top-left-radius: 0;
+      // border-bottom-left-radius: 0;
+      // display: flex;
+      background-color: $blue-extra-light;
+      margin-left: 2.75rem;
+      border-top-left-radius: 3.125rem; // 50px
+      border-bottom-left-radius: 3.125rem; // 50px
+    }
+    @include respond-to(desktop) {
+      // display: flex;
+      width: 47%;
+      margin-left: auto;
+      background-color: $blue-extra-light;
+      border-top-left-radius: 3.125rem; // 50px
+      border-bottom-left-radius: 3.125rem; // 50px
+    }
+
+    img {
+      padding: 77px;
+      width: 100%;
+      // height: 100%;
+      max-width: 35.688rem;
+      max-height: 42.688rem;
+      object-fit: contain;
+      @include respond-to(mobile) {
+        padding: 25px;
+        width: 180px;
+      }
+    }
+  }
+  // Why Sommelier
+  .main-why {
+    background-color: $blue-extra-light;
+    border-radius: 0 3.125rem 3.125rem 0;
+    padding: 2.75rem 0 2.75rem 0;
+    margin-left: 0;
+    margin-right: 2.75rem;
+
+    @include respond-to(tablet) {
+      border-radius: 3.125rem;
+      margin-left: 3rem;
+      margin-right: 3rem;
+      padding: 4rem 0 4rem 0;
+    }
+    @include respond-to(desktop) {
+      border-radius: 0 3.125rem 3.125rem 0;
+      padding: 4rem 0 4rem 0;
+      // border-top-right-radius: 3.125rem; // 50px
+      // border-bottom-right-radius: 3.125rem; // 50px
+      margin-left: 0;
+      margin-right: 3rem;
+    }
+    .main-top__left-container {
+      margin-top: 0;
+      h2 {
+        @include respond-to(mobile) {
+          // margin-left: -2.75rem;
+        }
+      }
+    }
+  }
+  .main-why__content {
+    margin-top: 45px;
+    @include respond-to(mobile) {
+      flex-wrap: nowrap;
+    }
+
+  }
+  .main-why__content__img-container {
+    width: 30%;
+    margin-right: auto;
+    .main-why__content__img-container__img {
+      width: 100%;
+      max-width: 14.75rem;
+      max-height: 33.625rem;
+      display: block;
+      @include respond-to(mobile) {
+        display: none;
+      }
+    }
+    .main-why__content__img-container__img-mobile {
+      display: none;
+      @include respond-to(mobile) {
+        display: block;
+      }
+    }
+    @include respond-to(mobile) {
+      display: block;
+    }
+    @include respond-to(tablet) {
+      display: none;
+    }
+    @include respond-to(desktop) {
+      display: block;
+    }
+  }
+  .main-why__right-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 67rem;
+    @include respond-to(mobile) {
+      width: 100%;
+      padding-left: 1.425rem;
+    }
+    @include respond-to(tablet) {
+      width: 100%;
+      padding-left: 3.625rem;
+    }
+    @include respond-to(desktop) {
+      width: 70%;
+      padding-right: 3.625rem;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    li {
+      float: left;
+      width: 50%;
+      padding: 20px;
+      h4 {
+        text-transform: uppercase;
+      }
+      @include respond-to(mobile) {
+        width: 100%;
+      }
+    }
+    p {
+      @include text-body();
+    }
+  }
+
+  // Use Cases
+  .main-usecases {
+    max-width: 82.75rem;
+    margin: 2.75rem auto;
+    @include respond-to(mobile) {
+      margin-left: 0;
+      margin-right: 0;
+      .main-top__left-container {
+        justify-content: left;
+        margin-bottom: 3rem;
+        margin-left: 3.625rem;
+      }
+      .main-usecases__content li {
+        padding: 0 2.75rem 0 2.75rem !important;
+      }
+    }
+    .main-top__left-container {
+      @include respond-to(mobile) {
+        margin-left: 0;
+        margin-bottom: 3rem;
+      }
+    }
+    h2 {
+      margin-left: 2.75rem;
+      @include respond-to(tablet) {
+        margin-left: 0;
+      }
+      @include respond-to(desktop) {
+        // margin-left: 10.563rem;
+      }
+    }
+    .main-usecases__content::-webkit-scrollbar {
+      display: none;
+    }
+    .main-usecases__content {
+      @include respond-to(mobile) {
+        overflow: scroll;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      li {
+        float: left;
+        width: 100%;
+        min-height: 27.125rem;
+        
+        @include respond-to(tablet) {
+          width: 100%;
+          float: none;
+          min-height: 27.125rem;
+        }
+        @include respond-to(desktop) {
+          float: left;
+          width: 50%;
+          min-height: 27.125rem;
+        }
+        h3 {
+          margin-top: 2.5rem; // 40px
+          text-transform: uppercase;
+        }
+        div {
+          // width: 98%;
+          // height: 98%;
+          height: 26.5rem;
+          margin: 0;
+          padding: 46px 34px 42px 34px;
+          background-color: $blue-extra-light;
+          border-radius: 3.125rem; // 50px
+          @include respond-to(tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 46px 63px 42px 63px;
+            border-radius: 3.125rem; // 50px
+            margin: 13px;
+            p {
+              text-align: center;
+            }
+          }
+          @include respond-to(desktop) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 46px 63px 42px 63px;
+            border-radius: 3.125rem; // 50px
+            margin: 13px;
+            p {
+              text-align: left;
+            }
+          }
+        }
+      }
+      p {
+        @include text-body();
+        margin-top: 1.625rem; // 26px
+        display: block;
+        max-width: 26.313rem; // 421px
+      }
+    }
+  }
+  // Roadmap
+  .main-roadmap {
+    h2 {
+      text-align: center;
+      margin-bottom: 4.688rem; // 75px
+    }
+    
+  }
+  .main-roadmap__content {
+    background-color: none;
+    border-radius: 0;;
+    display: flex;
+    justify-content: center;
+    @include respond-to(tablet) {
+      background-color: $blue-extra-light;
+      margin: 0 3rem 0 3rem;
+      padding: 3.125rem 0 3.125rem 0;
+      border-radius: 3.125rem; // 50px
+    }
+    @include respond-to(desktop) {
+      background-color: $blue-extra-light;
+      margin: 0 0 0 3rem;
+      padding: 3.125rem 3rem 3.125rem 0;
+      border-radius: 3.125rem 0 0 3.125rem; // 50px
+    }
+    ul {
+      // list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      // display: table;
+      @include respond-to(mobile) {
+        list-style: inside;
+        li::before {
+          content: "•";
+          display: table-cell;
+          text-align: right;
+          padding-right: .3em;
+        }
+      }
+      li {
+        @include text-body();
+        text-align: left;
+        display: table-row;
+        line-height: 29px;
+        @include respond-to(mobile) {
+          line-height: 25px;
+        }
+      }
+    } 
+    .main-roadmap__content__stick {
+      width: 35px;
+      display: block;
+      @include respond-to(mobile) {
+        display: none;
+      }
+    }
+    .main-roadmap__content__stick-mobile {
+      width: 30px;
+      display: none;
+      @include respond-to(mobile) {
+        display: block;
+        margin-left: 2.5rem;
+      }
+    }
+    .main-roadmap__content__q-left {
+      flex: 1;
+      flex-direction: column;
+      display: flex;
+      align-items: flex-end;
+      padding-right: 4.25rem;
+      display: none;
+      @include respond-to(desktop) {
+        display: block;
+      }
+      @include respond-to(tablet) {
+        padding-right: 2.9rem;
+        display: block;
+      }
+      div {
+        margin-top: 21.2rem;
+        float: right;
+      }
+      h3 {
+        text-align: right;
+      }
+      ul li {
+        text-align: right !important;
+      }
+    }
+    .main-roadmap__content__q-right {
+      flex: 1;
+      flex-direction: column;
+      display: flex;
+      align-items: flex-start;
+      padding-left: 1.5rem;
+      padding-right: 1rem;
+      @include respond-to(desktop) {
+        padding-left: 4.25rem;
+      }
+      @include respond-to(tablet) {
+        padding-left: 2.9rem;
+      }
+      .main-roadmap__content__q-right__1 {
+        margin-top: 7.6rem;
+        @include respond-to(mobile) {
+          margin-top: 1.7rem;
+        }
+      }
+      .main-roadmap__content__q-right__2 {
+        margin-top: 17.7rem;
+        @include respond-to(mobile) {
+          margin-top: 5rem;
+        }
+      }
+      .main-roadmap__content__q-right__3 {
+        display: none;
+        @include respond-to(mobile) {
+          display: block;
+          margin-top: 3.3rem;
+        }
+      }
+      h3 {
+        text-align: left;
+      }
+    }
+  }
+  // About
+  .main-about {
+    display: flex;
+    @include respond-to(mobile) {
+      display: flex;
+      flex-direction: column;
+    }
+    .main-about__left {
+      flex: 1;
+      margin-left: -3.625rem;
+      .main-about__left__img-container {
+        background-image: url('/images/img-about-mobile.png');
+        width: 291px;
+        height: 305px;
+        @include respond-to(tablet) {
+          background-image: url('/images/img-about-tablet.png');
+          width: 423px;
+          height: 757px;
+        }
+        @include respond-to(desktop) {
+          background-image: url('/images/img-about1.png');
+          width: 684px;
+          height: 787px;
+        }
+      }
+    }
+    .main-about__right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 4.3rem;
+      @include respond-to(tablet) {
+        margin-top: 0;
+        padding-left: 0;
+      }
+      @include respond-to(desktop) {
+        margin-top: 0;
+        padding-left: 6.25rem;
+      }
+      p {
+        @include text-body();
+        margin-top: 2.125rem; // 24px
+        width: 26.813rem; // 429px
+        @include respond-to(mobile) {
+          width: 17.875rem; // 286px;
+        }
+      }
+    }
+  }
+  // Team
+  .main-team {
+    max-width: 82.75rem;
+    margin: 0 auto;
+    @include respond-to(mobile) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    h2 {
+      text-align: center;
+      @include respond-to(mobile) {
+        text-align: left;
+        margin-left: 2.75rem;
+      }
+    }
+    .main-team__top, .main-team__down {
+      display: none;
+      @include respond-to(tablet) {
+        display: none;
+      }
+      @include respond-to(desktop) {
+        display: block;
+      }
+    }
+    .main-team__all {
+      display: block;
+      overflow: scroll;
+      @include respond-to(tablet) {
+        display: block;
+        overflow: hidden;
+      }
+      @include respond-to(desktop) {
+        display: none;
+        overflow: hidden;
+      }
+    }
+    .main-team__all::-webkit-scrollbar {
+      display: none;
+    }
+    .main-team__top ul {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      margin-top: 4.4rem;
+      list-style-type: none;
+      padding: 0;
+      overflow: hidden;
+      li {
+        width: 33%;
+        .profile-container {
+          margin: 13px;
+          .img-avatar {
+            width: 10.75rem !important;
+            height: 10.75rem !important;
+            @include respond-to(mobile) {
+              width: 6.25rem !important;
+              height: 6.25rem !important;
+              border-radius: 1.625rem im !important;
+            }
+          }
+        }
+      }
+    }
+    .main-team__down ul, .main-team__all ul {
+      list-style-type: none;
+      padding: 0;
+      overflow: hidden;
+      li {
+        float: left;
+        width: 50%;
+        .profile-container {
+          margin: 13px;
+          .img-avatar {
+            width: 10.75rem !important;
+            height: 10.75rem !important;
+            @include respond-to(mobile) {
+              width: 6.25rem !important;
+              height: 6.25rem !important;
+              border-radius: 1.625rem im !important;
+            }
+          }
+        }
+      }
+    }
+    // .main-team__all ul {
+    //   list-style-type: none;
+    //   padding: 0;
+    //   overflow: hidden;
+    //   li {
+    //     float: left;
+    //     width: 50%;
+    //     .profile-container {
+    //       margin: 13px;
+    //     }
+    //   }
+    // }
+  }
+  // Investors
+  .main-investors {
+    .main-investors__img-container {
+      margin-top: 6.125rem;
+      text-align: center;
+      img {
+        padding-left: 3.635rem;
+        // height: 100%;
+      }
+      @include respond-to(mobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+        img {
+          padding-left: 0;
+          margin-top: 3.5rem;
+        }
+      }
+    }
+  }
+}
