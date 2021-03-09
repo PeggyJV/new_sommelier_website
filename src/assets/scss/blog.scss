@@ -170,7 +170,6 @@ ul {
       @include blog-h2();
       border-bottom: 2px solid #2f2b4f;
       padding-bottom: 1.5rem;
-      font-size: 1.0rem;
     }
     .container__more-section__content::-webkit-scrollbar {
       display: none;
@@ -284,6 +283,7 @@ ul {
         @include text-subtitle();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
         font-size: 1.0rem; 
@@ -291,6 +291,9 @@ ul {
 =======
         font-size: 1.0rem;
 >>>>>>> 3797ee4 (Align text on left.. Made blogs wider.)
+=======
+  
+>>>>>>> c5920c7 (revert 1m)
       }
       img {
         margin-top: 3.438rem;
