@@ -141,7 +141,7 @@ const usecasesData = [
   {
     img: greaterImg,
     title: 'Greater Liquidity Momentum',
-    description: 'Automatically rebalance your portfolio when pool performance changes such that Impermanent and unrealized losses require a change in strategy',
+    description: 'Transaction batching and roll-up features deliver greater liquidity momentum to onchain deployment ooportunities anywhere on the Ethereum blockchain',
   },
 ]
 
