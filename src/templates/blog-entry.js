@@ -31,13 +31,13 @@ export default class extends React.Component {
       // This is to be figured out later
       story.content['allPosts'] = blogContent[0]
     }
-    console.log('---entry post---', story)
+
     return story
   }
 
   async componentDidMount() {
     let story = await this.getInitialStory()
-    console.log('--blog entry---', story)
+
     if(story.content) this.setState({ story })
     setTimeout(() => StoryblokService.initEditor(this), 200)
   }

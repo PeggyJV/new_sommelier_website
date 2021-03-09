@@ -8,7 +8,6 @@ import { useLocation } from "@reach/router"
 const windowGlobal = typeof window !== 'undefined' && window
 
 setTimeout(function(){
-  console.log("jason 2")
   var href = window.location.href;
   const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
   const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
@@ -16,7 +15,7 @@ setTimeout(function(){
 
   const fb = document.getElementById('facebook')
 
- console.log(fb);
+
   if (fb) {
     document.getElementById('facebook').setAttribute("href", facebook_url);
     document.getElementById('linkedin').setAttribute("href", linkedin_url);
@@ -47,25 +46,10 @@ const BlogPost = ({ blok }) => {
   );
 
 
-  // const anothername = useLocation();
-  // console.log(anothername);
-  // const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + anothername.href;
-  // const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + anothername.href;
-  // const twitter_url = 'http://twitter.com/share?url='+ anothername.href;
-  // console.log(facebook_url);
-
   const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
   const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0;
 
   const text = 'Check this article out.';
-
-  //const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u='
-  //const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url='
-
-  //twitter_url.concat(href);
-  console.log(blok);
-  //console.log(location);
-
 
   return (
 
