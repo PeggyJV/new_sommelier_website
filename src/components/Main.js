@@ -141,7 +141,7 @@ const usecasesData = [
   {
     img: greaterImg,
     title: 'Greater Liquidity Momentum',
-    description: 'Transaction batching and roll-up features deliver greater liquidity momentum to onchain deployment ooportunities anywhere on the Ethereum blockchain',
+    description: 'Native transaction batching and roll-ups deliver greater liquidity momentum to more onchain yield anywhere on the Ethereum blockchain',
   },
 ]
 
