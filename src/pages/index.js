@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import Main from "../components/Main"
 import { graphql } from 'gatsby'
 import StoryblokService from '../utils/storyblok-service'
-import SEO from "../components/seo"
+import SEO from "../components/Seo"
 
 export default class extends React.Component {
   state = {

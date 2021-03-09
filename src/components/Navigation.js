@@ -59,6 +59,12 @@ const Nav = ({ settings, lang }) => {
                 </li>
 
                 <li key={5} >
+                  <Link to={`https://t.me/getsomm`} className='nav-menu-item' target='new'>
+                    {`Community`}
+                  </Link>
+                </li>
+
+                <li key={6} >
                   <Link to={`/blog/`} className='nav-menu-item'>
                     {`Blog`}
                   </Link>
