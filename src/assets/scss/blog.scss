@@ -170,6 +170,7 @@ ul {
       @include blog-h2();
       border-bottom: 2px solid #2f2b4f;
       padding-bottom: 1.5rem;
+      font-size: 1.0rem;
     }
     .container__more-section__content::-webkit-scrollbar {
       display: none;
@@ -281,7 +282,11 @@ ul {
       p {
         margin-top: 1.2rem !important;
         @include text-subtitle();
+<<<<<<< HEAD
 
+=======
+        font-size: 1.0rem; 
+>>>>>>> eb2c91b (Blog text to 1rem)
       }
       img {
         margin-top: 3.438rem;
