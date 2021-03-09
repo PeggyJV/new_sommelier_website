@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Sommelier's New Website
-Updated the Sommelier website with new design and layout to replace the old and launch.
-=======
 # Sommelier Finance
 
 ---
@@ -25,5 +21,3 @@ Setup requires installing local "global" development dependencies (tools require
 After all dependencies are installed, to run the project for local development:
 
 `npm run develop`
-
->>>>>>> 63dcb0e (initial commit & storyblok & global css)
