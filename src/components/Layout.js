@@ -45,7 +45,7 @@ export default function Layout({ children, location, lang }){
             }
           ]}
       />
-      <Navigation settings={parsedSetting} lang={activeLanguage} />
+      <Navigation settings={parsedSetting} lang={activeLanguage} pathname={pathname}/>
       <main>
       { children }
       </main>
