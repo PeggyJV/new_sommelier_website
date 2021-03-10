@@ -98,7 +98,21 @@ const teamMembers2 = [
     avatar: '/images/avatar/avatar-jehan.png',
     twitter: 'https://twitter.com/JTremback',
     linkedin: 'https://www.linkedin.com/in/jehantremback/'
-  }
+  },
+  {
+    name: 'Kristi Põldsam',
+    role: 'Co-Founder',
+    avatar: '/images/avatar/avatar-kristi.png',
+    twitter: 'https://twitter.com/kpoldsam',
+    linkedin: 'https://www.linkedin.com/in/poldsam/'
+  },
+  {
+    name: 'Shella Stephens',
+    role: 'Co-Founder',
+    avatar: '/images/avatar/avatar-shella.png',
+    twitter: 'https://twitter.com/shella',
+    linkedin: 'https://www.linkedin.com/in/shellastephens/'
+  },
 ]
 const whyData = [
   {
