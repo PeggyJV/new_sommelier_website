@@ -5,7 +5,7 @@ import {isMobileOnly} from 'react-device-detect'
 
 const frameImg = '/images/Frame.png'
 
-const Nav = ({ settings, lang }) => {
+const Nav = ({ settings, lang, pathname }) => {
   const [showMenu, setShowMenu] = React.useState(!isMobileOnly)
 
   const showAlert = () => {
@@ -17,10 +17,12 @@ const Nav = ({ settings, lang }) => {
   }
 
   const handleMoveToSection = (e, msgId) => {
-    e.preventDefault();
-    const ref = document.querySelector(`#${msgId}`);
-    if (ref) {
-      ref.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (pathname === '/') { // Only apply to home page
+      e.preventDefault();
+      const ref = document.querySelector(`#${msgId}`);
+      if (ref) {
+        ref.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     }
   }
 
