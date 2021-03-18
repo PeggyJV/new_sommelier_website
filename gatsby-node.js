@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 const path = require('path')
-exports.createPages = ({ page, actions }) => {
+exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   // if (page.path.match(/^\/blog/)) {
