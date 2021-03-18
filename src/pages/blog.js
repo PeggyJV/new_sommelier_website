@@ -26,14 +26,12 @@ export default class extends React.Component {
     }
 
     this.state = {
-        story: {
-          content
-        }
+      story: content
     };
   }
 
   async getInitialStory() {
-    let { data: { story } } = await StoryblokService.get(`cdn/stories/${this.props.data.story.full_slug}`,{
+    let { data: { story } } = await StoryblokService.get(`cdn/stories/${this.props.data.story.full_slug}`, {
         "resolve_relations": "posts-list.posts",
         "version": "published"
       })
@@ -50,10 +48,9 @@ export default class extends React.Component {
   }
 
   render() {
-    // console.log('--blog content--', this.state.story.content)
     return (
       <Layout location={this.props.location}>
-        <Page blok={this.state.story.content} />
+        {this.state.story && <Page blok={this.state.story.content} />}
       </Layout>
     )
   }
