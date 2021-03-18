@@ -11,6 +11,7 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
 
+    /*
     let content =  this.props.data.story ? JSON.parse(this.props.data.story.content) : {}
     // we need to join the story posts with the full posts information
     let posts = this.props.data.posts.edges.map(n => n.node)
@@ -24,16 +25,14 @@ export default class extends React.Component {
         })
         content.body[index].posts = joinedPosts
     }
-
+    */
     this.state = {
-        story: {
-          content
-        }
+      story: null
     };
   }
 
   async getInitialStory() {
-    let { data: { story } } = await StoryblokService.get(`cdn/stories/${this.props.data.story.full_slug}`,{
+    let { data: { story } } = await StoryblokService.get(`cdn/stories/${this.props.data.story.full_slug}`, {
         "resolve_relations": "posts-list.posts",
         "version": "published"
       })
@@ -41,7 +40,7 @@ export default class extends React.Component {
   }
 
   async componentDidMount() {
-    // await StoryblokService.clearCache()
+    await StoryblokService.clearCache()
     let story = await this.getInitialStory()
     if(story.content) {
       setTimeout(() => this.setState({ story }), 200)
@@ -50,10 +49,9 @@ export default class extends React.Component {
   }
 
   render() {
-    // console.log('--blog content--', this.state.story.content)
     return (
       <Layout location={this.props.location}>
-        <Page blok={this.state.story.content} />
+        {this.state.story && <Page blok={this.state.story.content} />}
       </Layout>
     )
   }
