@@ -26,7 +26,7 @@ export default class extends React.Component {
     }
 
     this.state = {
-      story: content
+      story: { content }
     };
   }
 
