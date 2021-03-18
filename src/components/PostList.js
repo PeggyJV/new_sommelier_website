@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import SbEditable from 'storyblok-react'
 import {isMobileOnly} from 'react-device-detect'
+import { navigate } from 'gatsby-link';
 
 const windowGlobal = typeof window !== 'undefined' && window
 
@@ -27,7 +28,7 @@ const PostsList = ({ blok }) => {
   );
 
   const featuredPosts = blok.posts.filter(post => post.content && post.content.featured && post.content.featured == true)
-  const morePosts = blok.posts.filter(post => post.content && post.content.featured && post.content.featured == false)
+  const morePosts = blok.posts.filter(post => post.content && post.content.featured != null && post.content.featured == false)
   const moreWidth = windowDimensions.width * morePosts.length
 
   return (
@@ -41,7 +42,11 @@ const PostsList = ({ blok }) => {
                   <li key={post.full_slug} className='top-post'>
                     <img src={post.content.image}></img>
                     <div className='mt-5'>
-                      <a className='container__featured-section__title' href={`/${post.full_slug}`}>
+                      {/* <a className='container__featured-section__title' href={`/${post.full_slug}`}> */}
+                      <a className='container__featured-section__title' href='#' onClick={(e) => {
+                        e.preventDefault()
+                        navigate(`/blog/blogpost?${post.full_slug}`)
+                      }}>
                         {post.content.title}
                       </a>
                       <p className='container__featured-section__intro mt-3'>{post.content.intro}</p>
@@ -54,7 +59,10 @@ const PostsList = ({ blok }) => {
                     <div className='featured-post__content'>
                       <img src={post.content.image}></img>
                       <div className='featured-post__text'>
-                        <a className='container__featured-section__title' href={`/${post.full_slug}`}>
+                        <a className='container__featured-section__title' href='#' onClick={(e) => {
+                          e.preventDefault()
+                          navigate(`/blog/blogpost?${post.full_slug}`)
+                        }}>
                           {post.content.title}
                         </a>
                         <p className='container__featured-section__intro mt-3'>{post.content.intro}</p>
@@ -79,7 +87,10 @@ const PostsList = ({ blok }) => {
                     <div className='more-li__content'>
                       <img src={post.content.image}></img>
                       <div className='mt-2'>
-                        <a className='container__more-section__title' href={`/${post.full_slug}`}>
+                        <a className='container__more-section__title' href='#' onClick={(e) => {
+                          e.preventDefault()
+                          navigate(`/blog/blogpost?${post.full_slug}`)
+                        }}>
                           {post.content.title}
                         </a>
                       </div>

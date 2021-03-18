@@ -2,8 +2,7 @@ import React, {useEffect, useState} from 'react'
 import SbEditable from "storyblok-react"
 import { render } from "storyblok-rich-text-react-renderer"
 import {isMobileOnly} from 'react-device-detect'
-// import { globalHistory as history } from '@reach/router'
-import { useLocation } from "@reach/router"
+import { navigate } from 'gatsby-link';
 
 const windowGlobal = typeof window !== 'undefined' && window
 
@@ -84,7 +83,10 @@ const BlogPost = ({ blok }) => {
                     <div className='more-li__content'>
                       <img src={post.content.image}></img>
                       <div className='mt-2'>
-                        <a className='container__more-section__title' href={`/${post.full_slug}`}>
+                        <a className='container__more-section__title' href='#' onClick={(e) => {
+                          e.preventDefault()
+                          navigate(`/blog/blogpost?${post.full_slug}`)
+                        }}>
                           {post.content.title}
                         </a>
                       </div>

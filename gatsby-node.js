@@ -6,8 +6,14 @@
 
 // You can delete this file if you're not using it
 const path = require('path')
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ page, actions }) => {
   const { createPage } = actions
+
+  // if (page.path.match(/^\/blog/)) {
+  //   page.matchPath = `/blog/*`
+
+  //   createPage(page)
+  // }
   return new Promise((resolve, reject) => {
     const storyblokEntry = path.resolve('src/templates/blog-entry.js')
     resolve(

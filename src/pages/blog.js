@@ -2,6 +2,7 @@ import React from "react"
 import Page from '../components/Page'
 import Layout from "../components/Layout"
 import { graphql } from 'gatsby'
+import { Router } from '@reach/router'
 import StoryblokService from '../utils/storyblok-service'
 
 import "../assets/scss/blog.scss"
@@ -50,7 +51,9 @@ export default class extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
-        {this.state.story && <Page blok={this.state.story.content} />}
+        <Router>
+          {this.state.story && <Page blok={this.state.story.content} path='/blog' />}
+        </Router>
       </Layout>
     )
   }
