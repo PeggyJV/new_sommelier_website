@@ -11,7 +11,6 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
 
-    /*
     let content =  this.props.data.story ? JSON.parse(this.props.data.story.content) : {}
     // we need to join the story posts with the full posts information
     let posts = this.props.data.posts.edges.map(n => n.node)
@@ -25,9 +24,9 @@ export default class extends React.Component {
         })
         content.body[index].posts = joinedPosts
     }
-    */
+
     this.state = {
-      story: null
+      story: content
     };
   }
 

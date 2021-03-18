@@ -26,8 +26,8 @@ const PostsList = ({ blok }) => {
     getWindowDimensions()
   );
 
-  const featuredPosts = blok.posts.filter(post => post.content && post.content.featured == true)
-  const morePosts = blok.posts.filter(post => post.content && post.content.featured == false)
+  const featuredPosts = blok.posts.filter(post => post.content && post.content.featured && post.content.featured == true)
+  const morePosts = blok.posts.filter(post => post.content && post.content.featured && post.content.featured == false)
   const moreWidth = windowDimensions.width * morePosts.length
 
   return (
