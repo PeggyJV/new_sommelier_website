@@ -43,7 +43,7 @@ export default class extends React.Component {
   }
   render() {
     return (
-       <Layout location={this.props.location}>
+      <Layout location={this.props.location}>
         <DynamicComponent blok={this.state.story.content} key={this.props.pageContext.story._uid} />
       </Layout>
     )

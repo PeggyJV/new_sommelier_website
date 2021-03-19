@@ -8,6 +8,12 @@
 const path = require('path')
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
+
+  // if (page.path.match(/^\/blog/)) {
+  //   page.matchPath = `/blog/*`
+
+  //   createPage(page)
+  // }
   return new Promise((resolve, reject) => {
     const storyblokEntry = path.resolve('src/templates/blog-entry.js')
     resolve(

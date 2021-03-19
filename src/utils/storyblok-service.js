@@ -49,7 +49,6 @@ class StoryblokService {
       // })
       window.storyblok.on(['change', 'published'], () => {
         this.client.flushCache()
-
         window.location.reload()
       })
       window.storyblok.on(['change', 'unpublished'], () => {
