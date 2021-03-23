@@ -285,8 +285,7 @@ ul {
       }
       img {
         margin-top: 3.438rem;
-        width: 100%;
-        max-width: 37.75rem;
+        max-width: 22.625rem;
         border-radius: 2.75rem;
         @include respond-to(tablet) {
           max-width: 37.75rem;
