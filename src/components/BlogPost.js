@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import SbEditable from "storyblok-react"
-import { render } from "storyblok-rich-text-react-renderer"
+import { render, NODE_IMAGE } from "storyblok-rich-text-react-renderer"
 import {isMobileOnly} from 'react-device-detect'
 import { navigate } from 'gatsby-link';
 
@@ -47,7 +47,6 @@ const BlogPost = ({ blok }) => {
 
   const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
   const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0;
-
   const text = 'Check this article out.';
 
   return (
@@ -67,7 +66,11 @@ const BlogPost = ({ blok }) => {
                 <p>{blok.intro}</p>
                 <img className="" src={blok.image} />
                 <div className='post-container__content'>
-                  {render(blok.long_text)}
+                  {render(blok.long_text, {
+                    nodeResolvers: {
+                      [NODE_IMAGE]: (children, props) => <img {...props} />
+                    }
+                  })}
                 </div>
               </div>
             </div>
