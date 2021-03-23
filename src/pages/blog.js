@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import { graphql } from 'gatsby'
 import { Router } from '@reach/router'
 import StoryblokService from '../utils/storyblok-service'
+import SEO from "../components/Seo"
 
 import "../assets/scss/blog.scss"
 
@@ -51,6 +52,7 @@ export default class extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
+        <SEO title="Sommelier" description="Sommelier is the new Coprocessor for the Ethereum VM"/>
         <Router>
           {this.state.story && <Page blok={this.state.story.content} path='/blog' />}
         </Router>

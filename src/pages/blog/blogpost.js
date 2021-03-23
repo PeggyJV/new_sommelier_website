@@ -3,6 +3,7 @@ import React, {useState, useEffect, useCallback} from 'react'
 import Layout from "../../components/Layout"
 import BlogPost from "../../components/BlogPost"
 import StoryblokService from '../../utils/storyblok-service'
+import SEO from "../../components/Seo"
 
 const BlogPostContainer = ({location}) => {
   const [story, setStory] = useState(null)
@@ -41,6 +42,7 @@ const BlogPostContainer = ({location}) => {
 
   return (
     <Layout location={location}>
+      <SEO title={story ? story.content.title : "Sommelier"} description="Sommelier is the new Coprocessor for the Ethereum VM"/>
       {story && <BlogPost blok={story.content}/>}
     </Layout>
   )
