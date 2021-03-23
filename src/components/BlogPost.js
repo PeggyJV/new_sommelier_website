@@ -71,25 +71,6 @@ const BlogPost = ({ blok }) => {
                       [NODE_IMAGE]: (children, props) => <img {...props} />
                     }
                   })}
-                  {/* {story && documentToReactComponents('story', {
-                    renderText: {
-                      "embedded-entry-block": (node, next) => {
-                        const entry = node.data.target
-                        const contentType = node.data.target.sys.contentType.sys.id
-
-                        switch (contentType) {
-                          case "lessonCodeSnippets":
-                            return <pre>{entry.fields.swift["en-US"]}</pre>
-
-                          default:
-                            return null
-                        }
-                      },
-                    },
-                    renderMark: {
-                      bold: text => <b style={{ color: "red" }}>{text}</b>,
-                    },
-                  })} */}
                 </div>
               </div>
             </div>
