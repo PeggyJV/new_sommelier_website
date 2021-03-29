@@ -6,22 +6,9 @@
 
 // You can delete this file if you're not using it
 const path = require('path')
-const { createOpenGraphImage } = require("gatsby-plugin-open-graph-images");
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-
-  const openGraphImage = createOpenGraphImage(createPage, {
-    path: "/og-image/index.png", // (1)
-    component: path.resolve(`src/templates/index.og-image.js`), // (2)
-    size: {
-      width: 400,
-      height: 50,
-    }, // (3)
-    context: {
-      description: "a image created with gatsby-plugin-open-graph-images",
-    },
-  }); 
 
   return new Promise((resolve, reject) => {
     const storyblokEntry = path.resolve('src/templates/blog-entry.js')
