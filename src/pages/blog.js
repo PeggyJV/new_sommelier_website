@@ -8,6 +8,21 @@ import SEO from "../components/Seo"
 
 import "../assets/scss/blog.scss"
 
+setTimeout(function(){
+  var href = window.location.href;
+  const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
+  const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
+  const twitter_url = 'http://twitter.com/share?url='+ href;
+
+  const fb = document.getElementById('facebook')
+
+
+  if (fb) {
+    document.getElementById('facebook').setAttribute("href", facebook_url);
+    document.getElementById('linkedin').setAttribute("href", linkedin_url);
+    document.getElementById('twitter').setAttribute("href", twitter_url);
+  }
+}, 1500);
 
 export default class extends React.Component {
   constructor(props) {
