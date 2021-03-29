@@ -38,6 +38,18 @@
   }
 }
 
+@mixin blog-h4($color: $white, $textAlign: left) {
+  @include font-base($font-family-barlow-bold, bold, 500);
+  color: $color;
+  font-size: 1.5rem; // 24px
+  // letter-spacing: -0.01em;
+  line-height: 133.1%;
+  text-align: $textAlign;
+  @include respond-to(mobile) {
+    font-size: 1.375rem; // 22px
+  }
+}
+
 @mixin text-subtitle($color: $gray-dark, $textAlign: left) {
   @include font-base($font-family-source-light, normal, 400);
   color: $color;
@@ -277,6 +289,12 @@ ul {
 
       h1 {
         @include blog-h1();
+      }
+      h2 {
+        @include blog-h2();
+      }
+      h4 {
+        @include blog-h4();
       }
       p {
         margin-top: 1.2rem !important;

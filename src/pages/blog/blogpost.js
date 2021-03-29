@@ -42,7 +42,7 @@ const BlogPostContainer = ({location}) => {
 
   return (
     <Layout location={location}>
-      <SEO title={story ? story.content.title : "Sommelier"} description="Sommelier is the new Coprocessor for the Ethereum VM"/>
+      <SEO title={story ? story.content.title : "Sommelier"} description="Sommelier is the new Coprocessor for the Ethereum VM" image={story ? story.content.image : null}/>
       {story && <BlogPost blok={story.content}/>}
     </Layout>
   )

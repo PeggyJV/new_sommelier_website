@@ -3,6 +3,7 @@ module.exports = {
     title: `Sommelier: The New CoProcessor for Ethereum`,
     description: `Sommelier is a bet that Ethereum will be a dominant player in the global economy.`,
     author: `@sommfinance`,
+    baseUrl: ``, // used to create absolute URLs for
   },
   plugins: [
     {
@@ -24,7 +25,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-open-graph-images`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

@@ -84,15 +84,15 @@ const BlogPost = ({ blok }) => {
                 return (
                   <li key={post.name} style={{width: isMobileOnly ? windowDimensions.width : '33%'}}>
                     <div className='more-li__content'>
-                      <img src={post.content.image}></img>
-                      <div className='mt-2'>
-                        <a className='container__more-section__title' href='#' onClick={(e) => {
-                          e.preventDefault()
-                          navigate(`/blog/blogpost?${post.full_slug}`)
-                        }}>
+                      <a className='container__more-section__title' href='#' onClick={(e) => {
+                        e.preventDefault()
+                        navigate(`/blog/blogpost?${post.full_slug}`)
+                      }}>
+                        <img src={post.content.image}></img>
+                        <div className='mt-2'>
                           {post.content.title}
-                        </a>
-                      </div>
+                        </div>
+                      </a>
                     </div>
                   </li>
                 )
