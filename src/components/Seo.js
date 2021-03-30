@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, title, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,45 +19,52 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            baseUrl
           }
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const defaults = site.siteMetadata;
+
+  if (defaults.baseUrl === '' && typeof window !== 'undefined') {
+    defaults.baseUrl = window.location.origin;
+  }
+
+  if (defaults.baseUrl === '') {
+    console.error('Please set a baseUrl in your site metadata!');
+    return null;
+  }
+
+  const metaDescription = description || defaults.description;
+  const defaultTitle = defaults?.title;
+  const url = new URL('' || '', defaults.baseUrl);
+  let metaImage = null;
+  if (image) {
+    const imageBaseUrl = 'http://a.storyblok.com'
+    const imagePath = image.replace('//a.storyblok.com', '')
+    metaImage = new URL(imagePath, imageBaseUrl);
+  }
+  const author = defaults.author;
+
+  console.log('---seo---', metaImage);
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          name: `title`,
-          content: title,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-      ].concat(meta)}
-    />
+    <Helmet title={title} titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}>
+      <meta name="description" content={metaDescription} />
+      {metaImage && <meta name="image" content={metaImage} />}
+
+      <meta property="og:url" content={url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={metaDescription} />
+      {metaImage && <meta property="og:image" content={metaImage} />}
+
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      {metaImage && <meta name="twitter:image" content={metaImage} />}
+    </Helmet>
   )
 }
 
