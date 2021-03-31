@@ -14,7 +14,8 @@ module.exports = {
       options: {
         accessToken: 'Hx9jd3xuH0cARCTgIBio2Qtt',
         homeSlug: 'home',
-        version: 'published' // 'draft'
+        version: 'published',
+        mixpanel: 'd6a6208c71b46a6965913df792f505f9'
       }
     },
     `gatsby-plugin-react-helmet`,

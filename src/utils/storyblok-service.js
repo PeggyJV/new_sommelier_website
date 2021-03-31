@@ -1,9 +1,16 @@
 import StoryblokClient from 'storyblok-js-client'
 import config from '../../gatsby-config'
 const sbConfig = config.plugins.find((item) => item.resolve === 'gatsby-source-storyblok')
+var Mixpanel = require('mixpanel');
+
 
 class StoryblokService {
   constructor() {
+    //this.mixpanel = Mixpanel.init(process.env.MIXPANEL_TOKEN);
+    // console.log('****************');
+    // console.log(process.env);
+    // console.log('****************');
+    this.mixpanel = Mixpanel.init(sbConfig.options.mixpanel);
     this.devMode = false
     this.token = sbConfig.options.accessToken
     this.client = new StoryblokClient({
@@ -26,12 +33,11 @@ class StoryblokService {
     if (this.getQuery('_storyblok') || this.devMode || (typeof window !== 'undefined' && window.storyblok)) {
       params.version = 'published' //draft
     }
-    // this.client.flushCache()
-    /*
-    if (typeof window !== 'undefined' && typeof window.StoryblokCacheVersion !== 'undefined') {
-      params.cv = window.StoryblokCacheVersion
-    }
-    */
+
+
+    this.mixpanel.track('storyblok:api_call', { slug: slug });
+
+
     if (this.client.cacheVersion) params.cv = this.client.cacheVersion
     return this.client.get(slug, params)
   }
@@ -42,11 +48,7 @@ class StoryblokService {
       window.storyblok.init({
         accessToken: sbConfig.options.accessToken
       })
-      // window.storyblok.pingEditor(() => {
-      //   if (window.storyblok.isInEditor) {
-      //     window.storyblok.enterEditmode()
-      //   }
-      // })
+
       window.storyblok.on(['change', 'published'], () => {
         this.client.flushCache()
         window.location.reload()
