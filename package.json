@@ -18,7 +18,9 @@
     "gatsby-source-filesystem": "^2.11.0",
     "gatsby-source-storyblok": "^1.2.0",
     "gatsby-transformer-sharp": "^2.12.0",
+    "mixpanel": "^0.13.0",
     "nan": "^2.14.2",
+    "net": "^1.0.2",
     "node-sass": "^5.0.0",
     "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.7.2",
@@ -30,7 +32,8 @@
     "react-helmet": "^6.1.0",
     "storyblok-react": "^0.1.2",
     "storyblok-rich-text-react-renderer": "^2.1.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "tls": "^0.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",
