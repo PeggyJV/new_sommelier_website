@@ -6,10 +6,6 @@ var Mixpanel = require('mixpanel');
 
 class StoryblokService {
   constructor() {
-    //this.mixpanel = Mixpanel.init(process.env.MIXPANEL_TOKEN);
-    // console.log('****************');
-    // console.log(process.env);
-    // console.log('****************');
     this.mixpanel = Mixpanel.init(sbConfig.options.mixpanel);
     this.devMode = false
     this.token = sbConfig.options.accessToken
@@ -43,7 +39,7 @@ class StoryblokService {
   }
 
   initEditor(reactComponent) {
-    this.client.flushCache()
+    //this.client.flushCache()
     if (window.storyblok) {
       window.storyblok.init({
         accessToken: sbConfig.options.accessToken
@@ -80,10 +76,6 @@ class StoryblokService {
 
   getQuery(param) {
     return this.query.includes(param)
-  }
-
-  clearCache() {
-    this.client.flushCache()
   }
 }
 
