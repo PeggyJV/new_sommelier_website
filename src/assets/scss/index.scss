@@ -181,3 +181,12 @@ footer {
     }
   }
 }
+
+.md-post {
+  color: $white;
+  .pre {
+    .code {
+      color: $white;
+    }  
+  }
+}
