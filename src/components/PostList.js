@@ -45,7 +45,7 @@ const PostsList = ({ blok }) => {
                       {/* <a className='container__featured-section__title' href={`/${post.full_slug}`}> */}
                       <a className='container__featured-section__title' href='#' onClick={(e) => {
                         e.preventDefault()
-                        navigate(`/blog/blogpost?${post.full_slug}`)
+                        navigate(`/${post.full_slug}`)
                       }}>
                         {post.content.title}
                       </a>
@@ -61,7 +61,7 @@ const PostsList = ({ blok }) => {
                       <div className='featured-post__text'>
                         <a className='container__featured-section__title' href='#' onClick={(e) => {
                           e.preventDefault()
-                          navigate(`/blog/blogpost?${post.full_slug}`)
+                          navigate(`/${post.full_slug}`)
                         }}>
                           {post.content.title}
                         </a>
@@ -87,7 +87,7 @@ const PostsList = ({ blok }) => {
                     <div className='more-li__content'>
                       <a className='container__more-section__title' href='#' onClick={(e) => {
                         e.preventDefault()
-                        navigate(`/blog/blogpost?${post.full_slug}`)
+                        navigate(`/${post.full_slug}`)
                       }}>
                         <img src={post.content.image}></img>
                         <div className='mt-2'>
