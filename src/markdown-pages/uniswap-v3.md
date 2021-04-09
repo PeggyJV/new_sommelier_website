@@ -1,3 +1,9 @@
+---
+slug: "/uniswap_glossary"
+date: "2019-05-04"
+title: "Sommelier’s Uniswap v3 Glossary for Beginner Liquidity Providers"
+---
+
 # Sommelier’s Uniswap v3 Glossary for Beginner Liquidity Providers
 
 Welcome to the *Sommelier Uniswap v3 Glossary for Beginner Liquidity Providers.* This glossary covers the terms introduced in the Uniswap v3 whitepaper introduction section. These terms are important to understand how Uniswap v3 works and how Automated Market Makers function for Liquidity Providers.
@@ -59,7 +65,7 @@ For example, if Alice uses Uniswap v3, now she can choose a pool with a specific
 Constant function market makers (CFMMs) are a large class of automated market makers (AMMs) based on a constant function. It says that when a token x is withdrawn or bought, a proportional amount of y is deposited or sold to maintain the constant k. Suppose there are 50 apples and 50 oranges in a basket.Using this function, the total number of fruits in the basket will be 2500. The total number of fruits in the basket can’t be changed, and it must be 2500.
 
 Let’s say you want to buy an apple. To buy (or withdraw) an apple, you will have to pay (or deposit) some orange -- as the number of fruits in the basket has to be 2500. If an apple is withdrawn (or bought) from the basket, there will be 49 apples left. Since the total number of fruits in the basket can’t be changed, what will be the total number of oranges now? With a simple equation, we can find the number of oranges by dividing 2500 by 49 apples. This gives us 51.02 oranges. Prior, we had 50 oranges in the basket, and now it has increased to 51.02. This shows that for one apple, you will have to pay 1.02 oranges to maintain the basket of 2500 fruits.
-  
+
 That’s how popular market makers such as Uniswap and Balancer work. CFMMs are designed to enable the decentralized exchange of digital assets.
 
 **Key takeaways:**
@@ -669,7 +675,7 @@ It allows traders to compare the prices of tokens. It helps liquidity providers 
 
 
 ## Time Weighted Average Liquidity
- 
+
 ### What is time weighted average liquidity?
 
 Time-weighted average liquidity shows which pool will have the most reliable time-weighted average price. It is a unique feature of Uniswap v3. It helps liquidity providers to get an idea about the liquidity of that pool, so it is a liquidity accumulator that tracks the liquidity of the pool. It is tracked alongside the price accumulator. It helps to evaluate which fee-tier pool can be used for trading.
