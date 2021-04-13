@@ -61,10 +61,6 @@ const Nav = ({ settings, lang, pathname }) => {
                   <a href='/#about' onClick={(e) => handleMoveToSection(e, 'about')} className='nav-menu-item'>About</a>
                 </li>
 
-                <li key={4} >
-                  <a href='/jobs'  className='nav-menu-item'>Jobs</a>
-                </li>
-
 
                 <li key={5} >
                   <Link to={`https://t.me/getsomm`} className='nav-menu-item' target='new'>
@@ -73,6 +69,10 @@ const Nav = ({ settings, lang, pathname }) => {
                 </li>
 
                 <li key={6} >
+                  <a href='/jobs'  className='nav-menu-item'>Jobs</a>
+                </li>
+
+                <li key={7} >
                   <Link to={`/blog/`} className='nav-menu-item'>
                     {`Blog`}
                   </Link>
