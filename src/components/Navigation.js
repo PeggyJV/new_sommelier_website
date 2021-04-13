@@ -37,6 +37,7 @@ const Nav = ({ settings, lang, pathname }) => {
             <Link to='/'>
               <p className='nav-title m-0'>SOMMELIER</p>
             </Link>
+            
           </div>
           {showMenu && (
             <div className='flex-grow-1 nav-container__menu-container'>
@@ -61,18 +62,9 @@ const Nav = ({ settings, lang, pathname }) => {
                 </li>
 
                 <li key={4} >
-                  <a href='/jobs' onClick={(e) => handleMoveToSection(e, 'jobs')} className='nav-menu-item'>About</a>
+                  <a href='/jobs' onClick={(e) => handleMoveToSection(e, 'jobs')} className='nav-menu-item'>Jobs</a>
                 </li>
-                // <li class="nav-item dropdown">
-                //   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                //     Dropdown
-                //   </a>
-                //   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                //     <li><a class="dropdown-item" href="#">Action</a></li>
-                //     <li><a class="dropdown-item" href="#">Another action</a></li>
-                //     <li><a class="dropdown-item" href="#">Something else here</a></li>
-                //   </ul>
-                // </li>
+
 
                 <li key={5} >
                   <Link to={`https://t.me/getsomm`} className='nav-menu-item' target='new'>
