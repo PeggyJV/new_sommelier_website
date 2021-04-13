@@ -37,7 +37,7 @@ const Nav = ({ settings, lang, pathname }) => {
             <Link to='/'>
               <p className='nav-title m-0'>SOMMELIER</p>
             </Link>
-            
+
           </div>
           {showMenu && (
             <div className='flex-grow-1 nav-container__menu-container'>
@@ -62,7 +62,7 @@ const Nav = ({ settings, lang, pathname }) => {
                 </li>
 
                 <li key={4} >
-                  <a href='/jobs' onClick={(e) => handleMoveToSection(e, 'jobs')} className='nav-menu-item'>Jobs</a>
+                  <a href='/jobs'  className='nav-menu-item'>Jobs</a>
                 </li>
 
 
