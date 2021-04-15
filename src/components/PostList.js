@@ -77,6 +77,7 @@ const PostsList = ({ blok }) => {
             })}
           </ul>
         </div>
+        {(morePosts.length > 0) && (
         <div className='container__more-section'>
           <p>MORE ARTICLES</p>
           <div className='container__more-section__content'>
@@ -101,6 +102,7 @@ const PostsList = ({ blok }) => {
             </ul>
           </div>
         </div>
+      )}
       </div>
     </SbEditable>
   )

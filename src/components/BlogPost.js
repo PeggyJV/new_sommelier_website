@@ -92,6 +92,7 @@ const BlogPost = ({ blok }) => {
             </div>
           </div>
         </div>
+        {(morePosts.length > 0) && (
         <div className='container__more-section'>
           <p>MORE ARTICLES</p>
           <div className='container__more-section__content'>
@@ -116,6 +117,7 @@ const BlogPost = ({ blok }) => {
             </ul>
           </div>
         </div>
+      )}
       </div>
       {/* <div className="bg-white w-full">
         <div className="max-w-3xl mx-auto text-center pt-20 flex flex-col items-center">
