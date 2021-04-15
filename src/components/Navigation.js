@@ -68,14 +68,15 @@ const Nav = ({ settings, lang, pathname }) => {
                   </Link>
                 </li>
 
-                <li key={6} >
-                  <a href='/jobs'  className='nav-menu-item'>Jobs</a>
-                </li>
 
-                <li key={7} >
+                <li key={6} >
                   <Link to={`/blog/`} className='nav-menu-item'>
                     {`Blog`}
                   </Link>
+                </li>
+
+                <li key={7} >
+                  <a href='/jobs'  className='nav-menu-item'>Jobs</a>
                 </li>
 
                 <li key={999} className='d-flex align-items-center launch-button'>
