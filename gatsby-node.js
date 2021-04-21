@@ -37,17 +37,10 @@ exports.createPages = ({ graphql, actions }) => {
 
         const entries = result.data.stories.edges
         entries.forEach((entry) => {
-console.log('^^^^^^^^^^^^^^^^^^');
-console.log(entry.node.full_slug);
-console.log('^^^^^^^^^^^^^^^^^^');
+          console.log('^^^^^^^^^^^^^^^^^^');
+          console.log(entry.node.full_slug);
+          console.log('^^^^^^^^^^^^^^^^^^');
           if(entry.node.full_slug == 'jobs/jobs') {
-            console.log('************');
-            console.log('************');
-            console.log(entry.node.full_slug);
-            console.log(entry.node);
-            console.log('************');
-            console.log('************');
-            console.log('************');
             const page = {
               path: `/jobs`,
               component: jobsEntry,
@@ -57,14 +50,18 @@ console.log('^^^^^^^^^^^^^^^^^^');
             }
             createPage(page)
           } else {
-            const page = {
-              path: `/${entry.node.full_slug}`,
-              component: storyblokEntry,
-              context: {
-                story: entry.node
+            if(entry.node.full_slug.includes('blog/')) {
+              const page = {
+                path: `/${entry.node.full_slug}`,
+                component: storyblokEntry,
+                context: {
+                  story: entry.node
+                }
               }
+              createPage(page);
+              console.log('blog added');
+              console.log('**********')
             }
-            createPage(page)
           }
         })
       })
