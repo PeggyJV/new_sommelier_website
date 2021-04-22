@@ -59,7 +59,6 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
               createPage(page);
-              console.log('blog added');
               console.log('**********')
             }
           }

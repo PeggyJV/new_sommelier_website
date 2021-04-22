@@ -85,6 +85,13 @@ const BlogPost = ({ blok }) => {
                   {render(blok.long_text, {
                     nodeResolvers: {
                       [NODE_IMAGE]: (children, props) => <img {...props} />
+                    },
+                    blokResolvers: {
+                      ['YouTube-blogpost']: (props) => (
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src={ "https://www.youtube.com/embed/" + props.YouTube_id.replace('https://youtu.be/', '')  }></iframe>
+                        </div>
+                        )
                     }
                   })}
                 </div>
