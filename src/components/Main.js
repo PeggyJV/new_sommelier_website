@@ -94,7 +94,7 @@ const teamMembers2 = [
   },
   {
     name: 'Jehan Tremback',
-    role: 'Co-Founder',
+    role: 'Core Developer',
     avatar: '/images/avatar/avatar-jehan.png',
     twitter: 'https://twitter.com/JTremback',
     linkedin: 'https://www.linkedin.com/in/jehantremback/'
