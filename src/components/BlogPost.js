@@ -106,7 +106,7 @@ const BlogPost = ({ blok }) => {
 
               {morePosts.reverse().map((post, index) => {
                 return (
-                  <div className='col-1 col-sm-1 col-md-4' style={{ border:  '0px', padding: '0px', margin: '0px'}}>
+                  <div className='col-12  col-md-4' style={{ border:  '0px', padding: '0px', margin: '0px'}}>
                   <ul style={{width: '100%', border:  '0px', padding: '0px', margin: '0px'}}>
                   <li key={post.name} style={{width:  '100%', border:  '0px', padding: '0px', margin: '0px'}}>
                     <div className='more-li__content'>
