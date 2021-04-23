@@ -104,7 +104,7 @@ const BlogPost = ({ blok }) => {
           <p>MORE ARTICLES</p>
           <div className='container__more-section__content'>
             <ul style={{width: isMobileOnly ? moreWidth : '100%'}}>
-              {morePosts.map((post, index) => {
+              {morePosts.reverse().map((post, index) => {
                 return (
                   <li key={post.name} style={{width: isMobileOnly ? windowDimensions.width : '33%'}}>
                     <div className='more-li__content'>
