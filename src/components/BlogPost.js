@@ -102,11 +102,13 @@ const BlogPost = ({ blok }) => {
         {(morePosts.length > 0) && (
         <div className='container__more-section'>
           <p>MORE ARTICLES</p>
-          <div className='container__more-section__content'>
-            <ul style={{width: isMobileOnly ? moreWidth : '100%'}}>
+          <div className='container__more-section__content row'>
+
               {morePosts.reverse().map((post, index) => {
                 return (
-                  <li key={post.name} style={{width: isMobileOnly ? windowDimensions.width : '33%'}}>
+                  <div className='col-12  col-md-4' style={{ border:  '0px', padding: '0px', margin: '0px'}}>
+                  <ul style={{width: '100%', border:  '0px', padding: '0px', margin: '0px'}}>
+                  <li key={post.name} style={{width:  '100%', border:  '0px', padding: '0px', margin: '0px'}}>
                     <div className='more-li__content'>
                       <a className='container__more-section__title' href='#' onClick={(e) => {
                         e.preventDefault()
@@ -119,9 +121,11 @@ const BlogPost = ({ blok }) => {
                       </a>
                     </div>
                   </li>
+                  </ul>
+                  </div>
                 )
               })}
-            </ul>
+
           </div>
         </div>
       )}
