@@ -4,6 +4,7 @@ import DynamicComponent from "../components/DynamicComponent"
 import Layout from "../components/Layout"
 import blog from "../pages/blog"
 import StoryblokService from '../utils/storyblok-service'
+import SEO from "../components/Seo"
 
 export default class extends React.Component {
   state = {
@@ -44,6 +45,7 @@ export default class extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
+        <SEO title={this.state.story ? this.state.story.content.title : "Sommelier"} description="Sommelier is the new Coprocessor for the Ethereum VM" image={this.state.story ? this.state.story.content.image : null}/>
         <DynamicComponent blok={this.state.story.content} key={this.props.pageContext.story._uid} />
       </Layout>
     )
