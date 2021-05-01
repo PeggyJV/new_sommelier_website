@@ -28,7 +28,9 @@ setTimeout(function(){
 export default class extends React.Component {
   constructor(props) {
     super(props);
-
+    console.log("***");
+    console.log(props);
+    console.log("***");
     let content =  this.props.data.story ? JSON.parse(this.props.data.story.content) : {}
     // we need to join the story posts with the full posts information
     let posts = this.props.data.posts.edges.map(n => n.node)

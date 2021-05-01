@@ -47,7 +47,7 @@ const PostsList = ({ blok }) => {
                         e.preventDefault()
                         navigate(`/${post.full_slug}`)
                       }}>
-                        {post.content.title}
+                        {'blah'}
                       </a>
                       <p className='container__featured-section__intro mt-3'>{post.content.intro}</p>
                     </div>
