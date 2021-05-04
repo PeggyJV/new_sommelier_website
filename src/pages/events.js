@@ -8,6 +8,7 @@ import StoryblokService from '../utils/storyblok-service'
 import SEO from "../components/Seo"
 
 import "../assets/scss/blog.scss"
+import "../assets/scss/main.scss"
 
 setTimeout(function(){
   var href = window.location.href;
@@ -28,15 +29,11 @@ setTimeout(function(){
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    console.log("***");
-    console.log(props);
-    console.log("***");
     let content =  []
 
     props.data.stories.edges.forEach((story) => {
       console.log(story.node.full_slug);
       if(story.node.full_slug.includes('events/')) {
-        console.log("ADDD ^^^^^")
         content.push(story.node);
       }
     });
