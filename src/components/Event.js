@@ -5,7 +5,7 @@ import { google, outlook, office365, yahoo, ics } from "calendar-link";
 var validUrl = require('valid-url');
 
 const Event = ({ blok }) => {
-  const event = JSON.parse(blok.content);
+  const event = blok
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
   let event_dates = "";
@@ -27,11 +27,11 @@ const Event = ({ blok }) => {
     let date_data = event.start_date.split(" ")
     let date_str = date_data[0]
     start_time = date_data[1]
-    console.log(date_str);
 
     let s_date = new Date(date_str);
+    s_date.setDate(s_date.getDate() + 1);
     start_date = s_date.toLocaleDateString(undefined, options);
-    console.log(start_date);
+
     //start_date = Date(event.start_date.split(" ")[0]).toLocaleDateString(undefined, options)
   }
 
@@ -39,11 +39,10 @@ const Event = ({ blok }) => {
     let date_data = event.start_date.split(" ")
     let date_str = date_data[0]
     end_time = date_data[1]
-    console.log(date_str);
 
     let s_date = new Date(date_str);
+    s_date.setDate(s_date.getDate() + 1);
     end_date = s_date.toLocaleDateString(undefined, options);
-    console.log(end_date);
   }
 
   if (start_date != "") {
@@ -84,6 +83,8 @@ const Event = ({ blok }) => {
     column_size = "col-12";
   }
 
+  console.log(event.start_date);
+
   return (
     <div>
     <div class='row'>
@@ -109,7 +110,15 @@ const Event = ({ blok }) => {
                   )
               }
             })}</p>
-            <a href={google(invite_event)} class="card-link" target="_blank">Add To Google Calender</a>
+            <div title="Add to Calendar" class="addeventatc">
+    Add to Calendar
+    <span class="start">{ event.start_date }</span>
+    <span class="end">{ event.end_date }</span>
+    <span class="timezone">America/Los_Angeles</span>
+    <span class="title">{ event.title }</span>
+    <span class="description">{ event.description.content[0].content[0].text }</span>
+    <span class="location">{ event.location }</span>
+</div>
           </div>
         </div>
       </div>
