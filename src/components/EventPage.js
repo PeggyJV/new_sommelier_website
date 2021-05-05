@@ -8,11 +8,10 @@ const windowGlobal = typeof window !== 'undefined' && window
 
 
 const EventPage = ({ blok }) => {
-  console.log("*********************");
-  console.log(blok);
-  console.log("*********************");
-  console.log(blok.events.content);
-  console.log("*********************");
+  // console.log("*********************");
+  // console.log(blok);
+  // console.log("*********************");
+
   const events = blok.events.content;
   return (
     <SbEditable content={blok} key={blok._uid}>

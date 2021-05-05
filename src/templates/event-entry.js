@@ -15,16 +15,19 @@ export default class extends React.Component {
     super(props);
     let content =  []
 
-    props.data.stories.edges.forEach((story) => {
-      if(story.node.full_slug.includes('events/')) {
-        content.push(story.node);
-      }
-    });
-
+    content.push(props.pageContext.story);
+    // props.data.stories.edges.forEach((story) => {
+    //   console.log(story.node.full_slug);
+    //   if(story.node.full_slug.includes('events/')) {
+    //     content.push(story.node);
+    //   }
+    // });
+    //
     this.state = {
       events: { content }
     };
   }
+
 
   render() {
     console.log(this.state);
@@ -38,25 +41,3 @@ export default class extends React.Component {
     )
   }
 }
-
-export const query = graphql`
-{
-  stories: allStoryblokEntry {
-    edges {
-      node {
-        id
-        name
-        created_at
-        published_at
-        uuid
-        slug
-        full_slug
-        content
-        is_startpage
-        parent_id
-        group_id
-      }
-    }
-  }
-}
-`
