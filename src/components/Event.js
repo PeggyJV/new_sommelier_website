@@ -4,6 +4,18 @@ import { render, NODE_IMAGE } from "storyblok-rich-text-react-renderer"
 import { google, outlook, office365, yahoo, ics } from "calendar-link";
 var validUrl = require('valid-url');
 
+function tConvert(time) {
+    // Check correct time format and split into components
+    time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+
+    if (time.length > 1) { // If time format correct
+      time = time.slice(1); // Remove full string match value
+      time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
+      time[0] = +time[0] % 12 || 12; // Adjust hours
+    }
+    return time.join(''); // return adjusted time or original string
+  }
+
 const Event = ({ blok }) => {
   const event = blok
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -17,6 +29,7 @@ const Event = ({ blok }) => {
   let end_date = "";
   let start_time = "";
   let end_time = "";
+  let event_time = "";
 
   let invite_event = {
   title: event.title,
@@ -46,14 +59,14 @@ const Event = ({ blok }) => {
   }
 
   if (start_date != "") {
-    event_dates = <h6 class="card-subtitle">Event Date: { start_date + " - " + start_time}</h6>;
+    event_dates = <h6 class="card-subtitle">Event Date: {start_date}</h6>;
     invite_event.start = event.start_date;
+    event_time = <h6 class="card-subtitle">Event Time: {tConvert(start_time)} PT</h6>;
   }
 
   if (event.start_date != "" && event.end_date != "") {
     if (start_time != end_time) {
-      event_dates = <h6 class="card-subtitle">Event Date: { start_date + " - " + start_time + " to " + end_time }</h6>;
-      invite_event.end = event.end_date;
+      event_time = <h6 class="card-subtitle">Event Time: {tConvert(start_time)} + " to " + {tConvert(end_time)} PT</h6>;
     }
   }
 
@@ -65,13 +78,6 @@ const Event = ({ blok }) => {
     }
   }
 
-
-  // let card_div = <div class='col-12'>;
-  // if (event.event_image.filename != "") {
-  //   card_div = <div class='col-8'>;
-  // } else {
-  //   card_div = <div class='col-12'>;
-  // }
 
   let img_div = "";
   let img_style = "";
@@ -93,6 +99,7 @@ const Event = ({ blok }) => {
       <div class="card-body">
           <h5 class="card-title">{ event.title }</h5>
             {event_dates}
+            {event_time}
             {location}
             <br/>
             <div class='row'>
@@ -111,14 +118,14 @@ const Event = ({ blok }) => {
               }
             })}</p>
             <div title="Add to Calendar" class="addeventatc">
-    Add to Calendar
-    <span class="start">{ event.start_date }</span>
-    <span class="end">{ event.end_date }</span>
-    <span class="timezone">America/Los_Angeles</span>
-    <span class="title">{ event.title }</span>
-    <span class="description">{ event.description.content[0].content[0].text }</span>
-    <span class="location">{ event.location }</span>
-</div>
+                Add to Calendar
+                <span class="start">{ event.start_date }</span>
+                <span class="end">{ event.end_date }</span>
+                <span class="timezone">America/Los_Angeles</span>
+                <span class="title">{ event.title }</span>
+                <span class="description">{ event.description.content[0].content[0].text }</span>
+                <span class="location">{ event.location }</span>
+            </div>
           </div>
         </div>
       </div>
