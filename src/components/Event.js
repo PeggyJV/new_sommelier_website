@@ -42,6 +42,8 @@ const Event = ({ blok }) => {
   let start_time = "";
   let end_time = "";
   let event_time = "";
+  let s_date;
+  let e_date;
 
   let invite_event = {
   title: event.title,
@@ -56,7 +58,7 @@ const Event = ({ blok }) => {
     console.log(start_time);
     let utc_str = date_str + "T" + start_time + ":00.000+0000"
 
-    let s_date = new Date(utc_str);
+     s_date = new Date(utc_str);
 
     start_date = s_date.toLocaleDateString(undefined, options);
     start_time = getTime(s_date);
@@ -71,10 +73,10 @@ const Event = ({ blok }) => {
 
     let utc_str = date_str + "T" + end_time + ":00.000+0000"
 
-    let s_date = new Date(utc_str);
+     e_date = new Date(utc_str);
 
-    end_date = s_date.toLocaleDateString(undefined, options);
-    end_time = getTime(s_date);
+    end_date = e_date.toLocaleDateString(undefined, options);
+    end_time = getTime(e_date);
   }
 
   if (start_date != "") {
@@ -138,8 +140,8 @@ const Event = ({ blok }) => {
             })}</p>
             <div title="Add to Calendar" class="addeventatc">
                 Add to Calendar
-                <span class="start">{ event.start_date }</span>
-                <span class="end">{ event.end_date }</span>
+                <span class="start">{ s_date.toLocaleString() }</span>
+                <span class="end">{ e_date.toLocaleString() }</span>
                 <span class="timezone">America/Los_Angeles</span>
                 <span class="title">{ event.title }</span>
                 <span class="description">{ event.description.content[0].content[0].text }</span>
