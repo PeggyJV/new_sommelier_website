@@ -9,6 +9,7 @@
     "@loadable/component": "^5.14.1",
     "assert": "^2.0.0",
     "bootstrap": "^4.6.0",
+    "calendar-link": "^2.1.1",
     "gatsby": "^3.4.0",
     "gatsby-image": "^3.4.0",
     "gatsby-legacy-polyfills": "^1.4.0",
@@ -41,7 +42,8 @@
     "stream-http": "^3.2.0",
     "styled-components": "^5.2.1",
     "tls": "^0.0.1",
-    "util": "^0.12.3"
+    "util": "^0.12.3",
+    "valid-url": "^1.0.9"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",

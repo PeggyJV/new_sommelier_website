@@ -68,14 +68,19 @@ const Nav = ({ settings, lang, pathname }) => {
                   </Link>
                 </li>
 
-
                 <li key={6} >
+                  <Link to={`/events/`} className='nav-menu-item'>
+                    {`Events`}
+                  </Link>
+                </li>
+
+                <li key={7} >
                   <Link to={`/blog/`} className='nav-menu-item'>
                     {`Blog`}
                   </Link>
                 </li>
 
-                <li key={7} >
+                <li key={8} >
                   <a href='/jobs'  className='nav-menu-item'>Jobs</a>
                 </li>
 

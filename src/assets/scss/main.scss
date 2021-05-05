@@ -1,5 +1,62 @@
 @import 'global';
 
+.card {
+  background-color: $blue-extra-light;
+  color: $black;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+}
+
+.card-title {
+    font-family: "Barlow Condensed Bold";
+    font-style: bold;
+    font-weight: 500;
+    margin-top: 0;
+    color: #fff;
+    font-size: 1.9rem;
+    line-height: 133.1%;
+    text-align: left;
+}
+
+.card-subtitle {
+  font-family: "Source Sans Light";
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 0;
+  color: #f28cbc;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 149%;
+  text-align: left;
+}
+
+.card-text {
+    font-family: "Source Sans Light";
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 0;
+    color: #b5b2d6;
+    font-size: 1.125rem;
+    letter-spacing: -0.01em;
+    line-height: 149%;
+    text-align: left;
+}
+
+.card-body{
+  a {
+    font-family: "Source Sans Light";
+    color: white;
+    text-decoration: none;
+    text-align: left;
+  }
+  a:hover {
+    color: #00adff;
+  }
+}
+
 // Main Component
 .main-container {
   overflow: hidden;
@@ -45,7 +102,7 @@
     @include font-base($font-family-barlow-bold, bold, 500);
     font-size: 1.625rem; // 26px
     color: $dark-white;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     max-width: 19.625rem; // 314px
     height: 4.813rem; // 77px
     padding-left: 2rem;
@@ -153,7 +210,7 @@
     margin-left: 2.75rem;
     border-top-left-radius: 3.125rem; // 50px
     border-bottom-left-radius: 3.125rem; // 50px
-    
+
     @include respond-to(tablet) {
       // background-color: unset;
       // border-top-left-radius: 0;
@@ -339,7 +396,7 @@
         float: left;
         width: 100%;
         min-height: 27.125rem;
-        
+
         @include respond-to(tablet) {
           width: 100%;
           float: none;
@@ -400,7 +457,7 @@
       text-align: center;
       margin-bottom: 4.688rem; // 75px
     }
-    
+
   }
   .main-roadmap__content {
     background-color: none;
@@ -443,7 +500,7 @@
           line-height: 25px;
         }
       }
-    } 
+    }
     .main-roadmap__content__stick {
       width: 35px;
       display: block;

@@ -9,7 +9,8 @@ import BlogPost from './BlogPost'
 const Components = {
   'teaser': Teaser,
   'blogpost': BlogPost,
-  'posts-list': PostsList
+  'posts-list': PostsList,
+  'events': PostsList
 }
 
 const Component = ({blok}) => {

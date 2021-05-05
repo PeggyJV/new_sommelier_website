@@ -3,6 +3,7 @@ import SbEditable from "storyblok-react"
 
 const Footer = () => {
   return (
+    <div class="container">
     <footer className="text-center flex flex-col items-center py-20 mx-auto">
       <div className='footer_container'>
         <p>© 2021 Sommelier</p>
@@ -18,6 +19,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </div>
   )
 }
 
