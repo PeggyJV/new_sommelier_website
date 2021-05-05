@@ -16,6 +16,18 @@ function tConvert(time) {
     return time.join(''); // return adjusted time or original string
   }
 
+function getTime(dateTime) {
+  let hours = dateTime.getHours().toString();
+  if (hours.length == 1) {
+    hours = "0" + hours;
+  }
+  let minutes = dateTime.getMinutes().toString();
+  if (minutes.length == 1) {
+    minutes = "0" + minutes;
+  }
+  return hours + ":" + minutes;
+}
+
 const Event = ({ blok }) => {
   const event = blok
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -40,10 +52,14 @@ const Event = ({ blok }) => {
     let date_data = event.start_date.split(" ")
     let date_str = date_data[0]
     start_time = date_data[1]
+    console.log(date_str);
+    console.log(start_time);
+    let utc_str = date_str + "T" + start_time + ":00.000+0000"
 
-    let s_date = new Date(date_str);
-    s_date.setDate(s_date.getDate() + 1);
+    let s_date = new Date(utc_str);
+
     start_date = s_date.toLocaleDateString(undefined, options);
+    start_time = getTime(s_date);
 
     //start_date = Date(event.start_date.split(" ")[0]).toLocaleDateString(undefined, options)
   }
@@ -53,9 +69,12 @@ const Event = ({ blok }) => {
     let date_str = date_data[0]
     end_time = date_data[1]
 
-    let s_date = new Date(date_str);
-    s_date.setDate(s_date.getDate() + 1);
+    let utc_str = date_str + "T" + end_time + ":00.000+0000"
+
+    let s_date = new Date(utc_str);
+
     end_date = s_date.toLocaleDateString(undefined, options);
+    end_time = getTime(s_date);
   }
 
   if (start_date != "") {
@@ -89,7 +108,7 @@ const Event = ({ blok }) => {
     column_size = "col-12";
   }
 
-  console.log(event.start_date);
+
 
   return (
     <div>
