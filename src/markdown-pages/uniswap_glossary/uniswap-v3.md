@@ -103,6 +103,23 @@ In Uniswap v3, the trading fee is charged when a user wants to trade tokens with
 * The basic concept behind constant product reserve is that trades must not change the product.
 * If one token is withdrawn or bought, another token is deposited or sold, and the combination or product of both remains the same in the pool.
 
+## Core
+
+### What is Core?
+
+In Uniswap V1 and V2, the platform’s main structure relies on self-executing programs that allow decentralized, automatic and independent exchanges. These are called core contracts, and are also the primary part of Uniswap V3.
+
+The Uniswap v2 core contracts are in charge of funds management for liquidity providers, fees and enforcing trading protocols.
+
+Core contracts in Uniswap V3 can’t be changed and their operations can’t be stopped or manipulated by users or holders of the Uniswap token (UNI). 
+
+**Key Takeaways:**
+
+* Core are the non-changing, smart contracts for Uniswap v3
+* This smart contracts are part of the foundation of Uniswap’s infrastructure
+* Core contracts are in charge of fund management operations and enforcing core protocols.
+
+
 ## Curve
 
 ### What is Curve?
@@ -185,6 +202,24 @@ In Uniswap v3, all new pools that are created are child contracts of the Uniswap
 * A factory contract is a smart contract that creates a child contract
 * A Uniswap v3 factory contract to create a new Uniswap pool will create three child contracts for the three price tiers of each pool
 
+## Flash Swap
+
+### What is a flash swap?
+
+A flash swap is a function that allows users to borrow assets from the Uniswap’s pool in order to make other transactions in the chain, as long as they can pay for them within the same block that the transaction was created.
+
+In Uniswap v1 and v2, market participants can buy tokens by applying a feature that allows them to initially “flash-borrow” the token they want to buy to obtain the token they need to use for payment. 
+
+For example, let’s say Alice wants to buy UNI tokens. In a normal exchange, she’d use another token or cryptocurrency, like DAI, to make a payment and get UNI in return in a single transaction. But what if Alice doesn’t have the DAI she needs to buy UNI? In that case a flash swap lets Alice borrow UNI tokens to purchase DAI at a different trade and use it to make the final payment in exchange for UNI in Uniswap. 
+
+Once the trade between tokens is completed, the initial trade contract -DAI in exchange for UNI- will check if Alice has enough funds to proceed with the buying of UNI for DAI. If she doesn’t, the entire transaction will revert. Another way for Alice to pay for the UNI tokens is to repay the platform using the same type of tokens instead of other cryptocurrency.
+
+**Key Takeaways:**
+* Flash swaps are a type of loan on the blockchain that allows users to exchange tokens to do payments.
+* In Uniswap v1 and v2, users can borrow the same type of token they intend to purchase in order to obtain the asset needed to make the exchange in a different trade.
+* Users must provide enough liquidity to make the trade or otherwise this will revert.
+
+
 ## Fee Structure
 
 ### What is the fee structure?
@@ -209,8 +244,7 @@ For example, Uniswap currently has a 0.3% fee for each exchange of tokens. So ev
 
 ### What are flexible fees?
 
-Cryptocurrency exchanges charge fees on different types of user behavior, which is called the fee structure. The Uniswap v3 offers three different fee tiers: 0.05%, 0.30%, and 1.00%. These options are introduced so that liquidity providers make their strategies based on the risks they are willing to take. The lowest fee tier of 0.05% may be ideal for stablecoins.
-In Uniswap v3, there can be multiple pools for the same token pair.
+Cryptocurrency exchanges charge fees on different types of user behavior, which is called the fee structure. The Uniswap v3 offers three different fee tiers: 0.05%, 0.30%, and 1.00%. These options are introduced so that liquidity providers make their strategies based on the risks they are willing to take. The lowest fee tier of 0.05% may be ideal for stablecoins. In Uniswap v3, there can be multiple pools for the same token pair.
 
 So, for example, Alice can enter into one of multiple liquidity pools that manage ETH and DAI exchanges. Once she starts trading her tokens in these pools, she’ll notice that each pool manages a different fee level needed to complete an exchange, even though they trade the same pair of assets.
 
@@ -493,6 +527,7 @@ The Uniswap v2 contracts introduced the separation between the core and peripher
 
 Permissionless blockchain is a digital ledger of transactions that requires no permission to join. It is truly decentralized and has a transparent network. It is open for all and is known as a public blockchain. The copies of the ledger are stored. Bitcoin and Ehtereum are designed to be on permissionless networks.
 An example of a permissionless blockchain is Bitcoin. Being a public, transparent ledger, this type of blockchain is also the reason why it’s considered to be semi-anonymous, allowing anyone to follow the transactions made from an specific wallet address.
+
 **Key takeaways:**
 
 * A permissionless blockchain is a digital ledger that requires no permission to join.
@@ -516,6 +551,23 @@ In Uniswap, if a token is withdrawn or bought, it increases the supply of anothe
 * If a token is withdrawn or bought, it increases the supply of another token, which determines the price.
 * These tokens run on smart contracts which enforce the rules of pricing.
 * The relation of tokens in the pool, in combination with the constant product formula, ultimately determines the price.
+
+## Price Impact
+
+### What is price impact?
+
+A price is the agreed value of an asset in exchange for another between a buyer and a vendor. In Uniswap V3, the price range or variety between offers for buying and selling is controlled in part by the participants in the market, also called liquidity providers.
+
+A price impact is the gap between the highest and lowest value for an asset and the final price in an exchange. Uniswap V3 is an automated market maker that allows liquidity providers to select specific price ranges for their trades, providing more tokens at a prices closer to each other and less difference of prices in the pool. (See: Slippage)
+
+For example, if Bob wants to start trading his tokens in Uniswap, he can select a price nearest to his expectations in value for his assets. One Bob has agreed to an exchange, the final price he agrees to for his tokens is the price impact.
+
+**Key Takeaways:**
+
+* Price impact is the gap between a slippage and the final price of an exchange.
+* The price range for buying and selling offers in Uniswap V3 is controlled in part by the liquidity providers.
+* In Uniswap v3 users can choose to make trades with a smaller difference between prices.
+
 
 ## Price Range
 
