@@ -21,6 +21,7 @@
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-source-graphql": "^3.3.0",
     "gatsby-source-storyblok": "^3.0.0",
+    "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
     "https-browserify": "^1.0.0",
     "mixpanel": "^0.13.0",
