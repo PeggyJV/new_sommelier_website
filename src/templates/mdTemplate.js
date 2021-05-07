@@ -16,7 +16,6 @@ export default function Template({
           <br/><br/><br/>
             <div className="md-post">
               <h1><center>{frontmatter.title}</center></h1>
-              <br/><br/>
               <div
                 dangerouslySetInnerHTML={{ __html: html }}
               />
