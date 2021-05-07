@@ -10,6 +10,11 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
     <Layout location={frontmatter.slug}>
+      <style dangerouslySetInnerHTML={{__html: `
+        ul {all: revert}
+        li {all: revert}
+        p {all: revert}
+      `}}/>
       <div class="container">
         <div class="row">
           <div class="col">
