@@ -8,7 +8,8 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, tableOfContents} = markdownRemark
-  let toc = tableOfContents.replaceAll("ul", "ul style='list-style-type: none;margin: 0;padding: 0;'");
+  //let toc = tableOfContents.replaceAll("ul", "ul style='list-style-type: none;margin: 0;padding: 0;'");
+  let toc = tableOfContents.replace(/ul/g, "ul style='list-style-type: none;margin: 0;padding: 0;'");
   return (
     <Layout location={frontmatter.slug}>
       <style dangerouslySetInnerHTML={{__html: `
