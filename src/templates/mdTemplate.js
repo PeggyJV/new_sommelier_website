@@ -11,9 +11,11 @@ export default function Template({
   return (
     <Layout location={frontmatter.slug}>
       <style dangerouslySetInnerHTML={{__html: `
-        ul {all: revert}
-        li {all: revert}
-        p {all: revert}
+        ul {all: revert; font-size: 19px}
+        li {all: revert; font-size: 19px}
+        p {all: revert; font-size: 22px}
+        h2 { margin-top: 30px; text-decoration: underline; width: 100%}
+        h3 { margin-top: 20px; margin-bottom: 30px}
       `}}/>
       <div class="container">
         <div class="row">
