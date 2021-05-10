@@ -28,6 +28,7 @@ export default function Template({
               <h1><center>{frontmatter.title}</center></h1>
               <div class="row">
                 <div class="col-4">
+                <h3>Table of Contents</h3>
                   <div
                     dangerouslySetInnerHTML={{ __html: toc }}
                   />
@@ -55,7 +56,9 @@ export const pageQuery = graphql`
         slug
         title
       }
-      tableOfContents
+      tableOfContents(
+          maxDepth: 2
+        )
     }
   }
 `
