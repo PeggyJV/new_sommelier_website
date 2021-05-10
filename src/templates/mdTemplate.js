@@ -7,7 +7,8 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, tableOfContents} = markdownRemark
+  let toc = tableOfContents.replaceAll("ul", "ul style='list-style-type: none;margin: 0;padding: 0;'");
   return (
     <Layout location={frontmatter.slug}>
       <style dangerouslySetInnerHTML={{__html: `
@@ -16,6 +17,7 @@ export default function Template({
         p {all: revert; font-size: 22px}
         h2 { margin-top: 30px; text-decoration: underline; width: 100%}
         h3 { margin-top: 20px; margin-bottom: 30px}
+        a { all: revert;  color: hotpink; }
       `}}/>
       <div class="container">
         <div class="row">
@@ -23,9 +25,18 @@ export default function Template({
           <br/><br/><br/>
             <div className="md-post">
               <h1><center>{frontmatter.title}</center></h1>
-              <div
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
+              <div class="row">
+                <div class="col-4">
+                  <div
+                    dangerouslySetInnerHTML={{ __html: toc }}
+                  />
+                </div>
+                <div class="col-8">
+                  <div
+                    dangerouslySetInnerHTML={{ __html: html }}
+                  />
+                </div>
+              </div>
               <br/><br/>
             </div>
           </div>
@@ -43,6 +54,7 @@ export const pageQuery = graphql`
         slug
         title
       }
+      tableOfContents
     }
   }
 `

@@ -31,7 +31,7 @@ exports.createPages = ({ graphql, actions }) => {
 
 
   return new Promise((resolve, reject) => {
-    const blogPostTemplate = require.resolve(`./src/templates/mdTemplate.js`)
+    const mdTemplate = require.resolve(`./src/templates/mdTemplate.js`)
     const storyblokEntry = path.resolve('src/templates/blog-entry.js')
     const jobsEntry = path.resolve('src/templates/job-entry.js')
     const eventEntry = path.resolve('src/templates/event-entry.js')
@@ -57,7 +57,7 @@ exports.createPages = ({ graphql, actions }) => {
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
           createPage({
             path: node.frontmatter.slug,
-            component: blogPostTemplate,
+            component: mdTemplate,
             context: {
               // additional data can be passed via context
               slug: node.frontmatter.slug,
