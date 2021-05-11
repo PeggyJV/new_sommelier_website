@@ -148,9 +148,9 @@ footer {
     //margin: 0 5rem 5rem 5rem;
     padding: 3rem;
     background-color: $blue-extra-light;
-    height: 11rem;
+    height: 7rem;
     align-items: center;
-    border-radius: 50px;
+    border-radius: 30px;
     p {
       margin-bottom: 0;
     }
@@ -178,6 +178,15 @@ footer {
     a {
       padding-left: 3rem;
       color: $gray-dark;
+    }
+  }
+}
+
+.md-post {
+  color: $white;
+  .pre {
+    .code {
+      color: $white;
     }
   }
 }

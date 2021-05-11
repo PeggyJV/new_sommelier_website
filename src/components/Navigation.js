@@ -54,7 +54,7 @@ const Nav = ({ settings, lang, pathname }) => {
                 </li>
 
                 <li key={3} >
-                  <a href='/#roadmap' onClick={(e) => handleMoveToSection(e, 'roadmap')} className='nav-menu-item'>Road Map</a>
+                  <a href='/resources' className='nav-menu-item'>Resources</a>
                 </li>
 
                 <li key={4} >
@@ -80,8 +80,10 @@ const Nav = ({ settings, lang, pathname }) => {
                   </Link>
                 </li>
 
-                <li key={8} >
-                  <a href='/jobs'  className='nav-menu-item'>Jobs</a>
+                <li key={6} >
+                  <Link to={`/jobs`} className='nav-menu-item' >
+                    {`Jobs`}
+                  </Link>
                 </li>
 
                 <li key={999} className='d-flex align-items-center launch-button'>
