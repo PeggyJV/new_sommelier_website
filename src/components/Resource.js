@@ -54,7 +54,7 @@ const Resource = ({ blok }) => {
       <div class='col'>
       <div class="card" >
       <div class="card-body">
-          <h2 ><a href={event.location} >{ event.title }</a></h2>
+          <h2 ><a href={event.location} target="_blank">{ event.title }</a></h2>
             <br/>
             <div class='row'>
             {img_div}
