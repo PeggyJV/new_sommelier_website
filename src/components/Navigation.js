@@ -54,7 +54,7 @@ const Nav = ({ settings, lang, pathname }) => {
                 </li>
 
                 <li key={3} >
-                  <a href='/#roadmap' onClick={(e) => handleMoveToSection(e, 'roadmap')} className='nav-menu-item'>Road Map</a>
+                  <a href='/resources' className='nav-menu-item'>Resources</a>
                 </li>
 
                 <li key={4} >
