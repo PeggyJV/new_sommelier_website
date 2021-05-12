@@ -46,6 +46,9 @@ export default class extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
+      <style dangerouslySetInnerHTML={{__html: `
+        .blog-container .container__featured-section ul { all: revert; }
+      `}}/>
         <DynamicComponent blok={this.state.story.content} key={this.props.pageContext.story._uid} />
       </Layout>
     )
