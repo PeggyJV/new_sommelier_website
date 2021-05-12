@@ -39,7 +39,8 @@ const Resource = ({ blok }) => {
 
   let img_div = "";
   let img_style = "";
-  if (event.image.filename != "") {
+  
+  if (!!event.image.filename) {
     column_size = "col-6";
     img_style = "width:100%";
     img_div = <div class="col-6"><img src={event.image.filename} style={{width: 100 + '%'}} /></div>;
@@ -47,14 +48,21 @@ const Resource = ({ blok }) => {
     column_size = "col-12";
   }
 
-
+console.log(event.image.filename);
   return (
     <div>
     <div class='row'>
       <div class='col'>
       <div class="card" >
       <div class="card-body">
-          <h2 ><a href={event.location} target="_blank">{ event.title }</a></h2>
+          <h2 ><a href={event.location} target="_blank" style={{fontFamily: 'Barlow Condensed Bold',
+fontStyle: 'bold',
+fontWeight: 500,
+marginTop: 0,
+color: '#fff',
+fontSize: '1.9rem',
+lineHeight: '133.1%',
+textAlign: 'left'}}>{ event.title }</a></h2>
             <br/>
             <div class='row'>
             {img_div}
