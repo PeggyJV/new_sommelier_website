@@ -18,7 +18,7 @@ export default function Template({
         p {all: revert; font-size: 22px}
         h2 { margin-top: 30px; text-decoration: underline; width: 100%}
         h3 { margin-top: 20px; margin-bottom: 30px}
-        a { all: revert;  color: hotpink; }
+        a { color: hotpink; }
       `}}/>
       <div class="container">
         <div class="row">
