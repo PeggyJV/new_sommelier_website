@@ -18,9 +18,12 @@ const EventPage = ({ blok, title, history }) => {
 
   return (
     <SbEditable content={blok} key={blok._uid}>
+    <style dangerouslySetInnerHTML={{__html: `
+      a {  color: white; }
+    `}}/>
       <br/><br/><br/>
       <div class="container">
-      <h1>{title}</h1>
+      <h1><a href="/events">Upcoming Events</a><span  style={{float: 'right'}}><a href="/events/history">PAST EVENTS</a></span></h1>
 
       <br/><br/>
         {
@@ -31,7 +34,7 @@ const EventPage = ({ blok, title, history }) => {
           })
         }
         <br/>
-        <h2><center>{see_history}</center></h2>
+        
         <br/>
         <br/>
       </div>
