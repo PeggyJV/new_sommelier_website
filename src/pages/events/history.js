@@ -1,14 +1,14 @@
 
 import React from "react"
-import EventPage from '../components/EventPage'
-import Layout from "../components/Layout"
+import EventPage from '../../components/EventPage'
+import Layout from "../../components/Layout"
 import { graphql } from 'gatsby'
 import { Router } from '@reach/router'
-import StoryblokService from '../utils/storyblok-service'
-import SEO from "../components/Seo"
+import StoryblokService from '../../utils/storyblok-service'
+import SEO from "../../components/Seo"
 
-import "../assets/scss/blog.scss"
-import "../assets/scss/main.scss"
+import "../../assets/scss/blog.scss"
+import "../../assets/scss/main.scss"
 
 export default class extends React.Component {
   constructor(props) {
@@ -23,11 +23,12 @@ export default class extends React.Component {
         let today = new Date();
         s_date.setDate(s_date.getDate() + 2);
 
-        if (s_date > today) {
+        if (s_date < today) {
           content.push(story.node);
         }
       }
     });
+
 
     this.state = {
       events: { content }
@@ -40,7 +41,7 @@ export default class extends React.Component {
       <Layout location={this.props.location}>
         <SEO title="Events" description="Sommelier upcoming events."/>
         <Router>
-          {<EventPage blok={this.state} title='Upcoming Events' history={false} path='/events' />}
+          {<EventPage blok={this.state} title='Passed Events' history={true} path='/events/history' />}
         </Router>
       </Layout>
     )

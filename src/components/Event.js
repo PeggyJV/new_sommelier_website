@@ -28,7 +28,7 @@ function getTime(dateTime) {
   return hours + ":" + minutes;
 }
 
-const Event = ({ blok }) => {
+const Event = ({ blok, history }) => {
   const event = blok
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -54,8 +54,7 @@ const Event = ({ blok }) => {
     let date_data = event.start_date.split(" ")
     let date_str = date_data[0]
     start_time = date_data[1]
-    console.log(date_str);
-    console.log(start_time);
+
     let utc_str = date_str + "T" + start_time + ":00.000+0000"
 
      s_date = new Date(utc_str);
@@ -110,7 +109,10 @@ const Event = ({ blok }) => {
     column_size = "col-12";
   }
 
-
+  let add_to_calc = "";
+  if (!history) {
+    add_to_calc = <div title="Add to Calendar" class="addeventatc">Add to Calendar<span class="start">{ s_date.toLocaleString() }</span><span class="end">{ e_date.toLocaleString() }</span><span class="timezone">America/Los_Angeles</span><span class="title">{ event.title }</span><span class="description">{ event.description.content[0].content[0].text }</span><span class="location">{ event.location }</span></div>;
+  }
 
   return (
     <div>
@@ -138,15 +140,7 @@ const Event = ({ blok }) => {
                   )
               }
             })}</p>
-            <div title="Add to Calendar" class="addeventatc">
-                Add to Calendar
-                <span class="start">{ s_date.toLocaleString() }</span>
-                <span class="end">{ e_date.toLocaleString() }</span>
-                <span class="timezone">America/Los_Angeles</span>
-                <span class="title">{ event.title }</span>
-                <span class="description">{ event.description.content[0].content[0].text }</span>
-                <span class="location">{ event.location }</span>
-            </div>
+            {add_to_calc}
           </div>
         </div>
       </div>
