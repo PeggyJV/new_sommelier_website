@@ -12,6 +12,8 @@ const EventPage = ({ blok, title, history }) => {
   let see_history = "";
   if(!history) {
     see_history = <a href="/events/history">See passed events</a>
+  } else {
+    see_history = <a href="/events">See upcoming events</a>
   }
 
   return (
