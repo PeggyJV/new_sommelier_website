@@ -5,15 +5,7 @@ import { google, outlook, office365, yahoo, ics } from "calendar-link";
 var validUrl = require('valid-url');
 
 function tConvert(time) {
-    // Check correct time format and split into components
-    time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-
-    if (time.length > 1) { // If time format correct
-      time = time.slice(1); // Remove full string match value
-      time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
-      time[0] = +time[0] % 12 || 12; // Adjust hours
-    }
-    return time.join(''); // return adjusted time or original string
+  return time;
   }
 
 function getTime(dateTime) {
@@ -81,12 +73,12 @@ const Event = ({ blok, history }) => {
   if (start_date != "") {
     event_dates = <h6 class="card-subtitle">Event Date: {start_date}</h6>;
     invite_event.start = event.start_date;
-    event_time = <h6 class="card-subtitle">Event Time: {tConvert(start_time)} PT</h6>;
+    event_time = <h6 class="card-subtitle">Event Time: {tConvert(start_time)}</h6>;
   }
 
   if (event.start_date != "" && event.end_date != "") {
     if (start_time != end_time) {
-      event_time = <h6 class="card-subtitle">Event Time: {tConvert(start_time)} + " to " + {tConvert(end_time)} PT</h6>;
+      event_time = <h6 class="card-subtitle">Event Time: {tConvert(start_time)} + " to " + {tConvert(end_time)}</h6>;
     }
   }
 
@@ -111,7 +103,7 @@ const Event = ({ blok, history }) => {
 
   let add_to_calc = "";
   if (!history) {
-    add_to_calc = <div title="Add to Calendar" class="addeventatc">Add to Calendar<span class="start">{ s_date.toLocaleString() }</span><span class="end">{ e_date.toLocaleString() }</span><span class="timezone">America/Los_Angeles</span><span class="title">{ event.title }</span><span class="description">{ event.description.content[0].content[0].text }</span><span class="location">{ event.location }</span></div>;
+    add_to_calc = <div title="Add to Calendar" class="addeventatc">Add to Calendar<span class="start">{ s_date.toLocaleString() }</span><span class="end">{ e_date.toLocaleString() }</span><span class="title">{ event.title }</span><span class="description">{ event.description.content[0].content[0].text }</span><span class="location">{ event.location }</span></div>;
   }
 
   return (
