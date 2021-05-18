@@ -15,7 +15,10 @@ const EventPage = ({ blok, title, history }) => {
   } else {
     see_history = <a href="/events">See upcoming events</a>
   }
-
+  console.log("*********DSJHKFBJ*******");
+  console.log(events);
+  console.log(events.sort(function(a, b){return parseInt(JSON.parse(a.content).start_date.split(" ")[0].replace(/-/g, '')) - parseInt(JSON.parse(b.content).start_date.split(" ")[0].replace(/-/g, ''))}));
+  console.log("*********DSJHKFBJ*******");
   return (
     <SbEditable content={blok} key={blok._uid}>
     <style dangerouslySetInnerHTML={{__html: `
@@ -27,14 +30,14 @@ const EventPage = ({ blok, title, history }) => {
 
       <br/><br/>
         {
-          events.reverse().map((blok, index) => {
+          events.map((blok, index) => {
             const event = JSON.parse(blok.content);
-
+            //console.log(event);
             return(<Event blok={event} history={history} />)
           })
         }
         <br/>
-        
+        <h2><center>{see_history}</center></h2>
         <br/>
         <br/>
       </div>
