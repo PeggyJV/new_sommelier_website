@@ -66,7 +66,7 @@ const Event = ({ blok, history }) => {
   }
 
   if (event.end_date != "") {
-    let date_data = event.start_date.split(" ")
+    let date_data = event.end_date.split(" ")
     let date_str = date_data[0]
     end_time = date_data[1]
 
@@ -86,7 +86,7 @@ const Event = ({ blok, history }) => {
 
   if (event.start_date != "" && event.end_date != "") {
     if (start_time != end_time) {
-      event_time = <h6 class="card-subtitle">Event Time: {tConvert(start_time)} + " to " + {tConvert(end_time)}</h6>;
+      event_time = <h6 class="card-subtitle">Event Time: {tConvert(start_time)} to {tConvert(end_time)}</h6>;
     }
   }
 
