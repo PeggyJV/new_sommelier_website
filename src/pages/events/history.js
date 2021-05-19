@@ -21,7 +21,7 @@ export default class extends React.Component {
       if(story.node.full_slug.includes('events/')) {
         let s_date = new Date(event.start_date.split(" ")[0]);
         let today = new Date();
-        s_date.setDate(s_date.getDate() + 2);
+        s_date.setDate(s_date.getDate() + 1);
 
         if (s_date < today) {
           content.push(story.node);
