@@ -18,6 +18,7 @@ const EventPage = ({ blok, title, history }) => {
   console.log("*********DSJHKFBJ*******");
   console.log(events);
   console.log(events.sort(function(a, b){return parseInt(JSON.parse(a.content).start_date.split(" ")[0].replace(/-/g, '')) - parseInt(JSON.parse(b.content).start_date.split(" ")[0].replace(/-/g, ''))}));
+  if (history) { events.reverse(); }
   console.log("*********DSJHKFBJ*******");
   return (
     <SbEditable content={blok} key={blok._uid}>
@@ -36,8 +37,7 @@ const EventPage = ({ blok, title, history }) => {
             return(<Event blok={event} history={history} />)
           })
         }
-        <br/>
-        <h2><center>{see_history}</center></h2>
+
         <br/>
         <br/>
       </div>

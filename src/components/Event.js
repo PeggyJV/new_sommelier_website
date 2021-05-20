@@ -28,6 +28,10 @@ function getTime(dateTime) {
   return hours + ":" + minutes;
 }
 
+function isEmpty(str) {
+    return (!str || str.length === 0 );
+}
+
 const Event = ({ blok, history }) => {
   const event = blok
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -101,7 +105,10 @@ const Event = ({ blok, history }) => {
 
   let img_div = "";
   let img_style = "";
-  if (event.event_image.filename != "") {
+  if (!isEmpty(event.event_image.filename)) {
+    console.log("8327468723648327648723");
+    console.log(event.event_image.filename);
+    console.log("8327468723648327648723");
     column_size = "col-6";
     img_style = "width:100%";
     img_div = <div class="col-6"><img src={event.event_image.filename} style={{width: 100 + '%'}} /></div>;
