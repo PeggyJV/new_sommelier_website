@@ -137,7 +137,7 @@ const Event = ({ blok, history }) => {
               <div class={column_size}>
             <p class="card-text">{render(event.description, {
               nodeResolvers: {
-                [NODE_IMAGE]: (children, props) => <img {...props} />
+                [NODE_IMAGE]: (children, props) => <img {...props} style={{borderRadius: '0px', width: '100%'}}/>
               },
               blokResolvers: {
                 ['YouTube-blogpost']: (props) => (
