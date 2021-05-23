@@ -84,7 +84,7 @@ const BlogPost = ({ blok }) => {
                 <div className='post-container__content'>
                   {render(blok.long_text, {
                     nodeResolvers: {
-                      [NODE_IMAGE]: (children, props) => <img {...props} />
+                      [NODE_IMAGE]: (children, props) => <img {...props} style={{borderRadius: '0px', width: '100%'}}/>
                     },
                     blokResolvers: {
                       ['YouTube-blogpost']: (props) => (
