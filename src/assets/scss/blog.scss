@@ -292,9 +292,11 @@ ul {
       }
       h2 {
         @include blog-h2();
+        margin-top: 2.0rem !important;
       }
       h4 {
         @include blog-h4();
+
       }
       p {
         margin-top: 1.2rem !important;
@@ -302,7 +304,6 @@ ul {
 
       }
       img {
-        margin-top: 3.438rem;
         max-width: 20rem;
         border-radius: 2.75rem;
         @include respond-to(tablet) {
