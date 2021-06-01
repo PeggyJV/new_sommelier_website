@@ -30,6 +30,8 @@ function getWindowDimensions() {
   };
 }
 
+let morePosts = []
+
 const BlogPost = ({ blok }) => {
   useEffect(() => {
     function handleResize() {
@@ -61,16 +63,13 @@ const BlogPost = ({ blok }) => {
   }, 1500);
 
 
-  const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
+  morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
 
-  //console.log(events.sort(function(a, b){return parseInt(JSON.parse(a.content).start_date.split(" ")[0].replace(/-/g, '')) - parseInt(JSON.parse(b.content).start_date.split(" ")[0].replace(/-/g, ''))}));
-console.log('*****');
-  console.log(morePosts);
-  console.log(morePosts.sort(function(a, b){return parseInt(a.created_at.split(" ")[0].replace(/-/g, '')) - parseInt(b.created_at.split(" ")[0].replace(/-/g, ''))}));
+  if(Array.isArray(morePosts) && morePosts.length) {
+    morePosts.sort(function(a, b){return parseInt(a.content.created_at.split(" ")[0].replace(/-/g, '')) - parseInt(b.content.created_at.split(" ")[0].replace(/-/g, ''))});
+  }
+
   console.log('*****');
-  //this[0].first_published_at
-  //this[0].created_at
-  const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0;
   const text = 'Check this article out.';
 
   return (

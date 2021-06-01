@@ -18,6 +18,7 @@ const EventPage = ({ blok, title, history }) => {
   //console.log("*********DSJHKFBJ*******");
   // console.log(events);
   //console.log(events.sort(function(a, b){return parseInt(JSON.parse(a.content).start_date.split(" ")[0].replace(/-/g, '')) - parseInt(JSON.parse(b.content).start_date.split(" ")[0].replace(/-/g, ''))}));
+  //console.log(events);
   events.sort(function(a, b){return parseInt(JSON.parse(a.content).start_date.split(" ")[0].replace(/-/g, '')) - parseInt(JSON.parse(b.content).start_date.split(" ")[0].replace(/-/g, ''))})
   if (history) { events.reverse(); }
   //console.log("*********DSJHKFBJ*******");
