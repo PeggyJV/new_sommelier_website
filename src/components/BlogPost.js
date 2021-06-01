@@ -30,6 +30,8 @@ function getWindowDimensions() {
   };
 }
 
+let morePosts = []
+
 const BlogPost = ({ blok }) => {
   useEffect(() => {
     function handleResize() {
@@ -61,8 +63,13 @@ const BlogPost = ({ blok }) => {
   }, 1500);
 
 
-  const morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
-  const moreWidth = morePosts ? windowDimensions.width * morePosts.length : 0;
+  morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
+
+  if(Array.isArray(morePosts) && morePosts.length) {
+    morePosts.sort(function(a, b){return parseInt(a.content.created_at.split(" ")[0].replace(/-/g, '')) - parseInt(b.content.created_at.split(" ")[0].replace(/-/g, ''))});
+  }
+
+  console.log('*****');
   const text = 'Check this article out.';
 
   return (
