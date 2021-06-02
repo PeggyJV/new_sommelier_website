@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, title, image }) {
+function SEO({ description, title, image, content }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,6 +28,10 @@ function SEO({ description, title, image }) {
 
   const defaults = site.siteMetadata;
 
+  console.log("THE CONTENT");
+  console.log(content);
+  console.log("THE CONTENT");
+
   if (defaults.baseUrl === '' && typeof window !== 'undefined') {
     defaults.baseUrl = window.location.origin;
   }
@@ -37,27 +41,29 @@ function SEO({ description, title, image }) {
     return null;
   }
 
-  const metaDescription = description || defaults.description;
+  const metaDescription = content ? content.intro : (description || defaults.description);
   const defaultTitle = defaults?.title;
   const url = new URL('' || '', defaults.baseUrl);
-  let metaImage = null;
-  if (image) {
-    const imageBaseUrl = 'http://a.storyblok.com'
-    const imagePath = image.replace('//a.storyblok.com', '')
-    metaImage = new URL(imagePath, imageBaseUrl);
-  }
+
+  let metaImage = content ? content.image : null;
+  // if (image) {
+  //   const imageBaseUrl = 'http://a.storyblok.com'
+  //   const imagePath = image.replace('//a.storyblok.com', '')
+  //   metaImage = new URL(imagePath, imageBaseUrl);
+  // }
   const author = defaults.author;
 
   //console.log('---seo---', metaImage);
 
+  let pageTitle = content ? content.title : title
+
   return (
-    <Helmet title={title} titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}>
+    <Helmet title={pageTitle} titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}>
       <meta name="description" content={metaDescription} />
       {metaImage && <meta name="image" content={metaImage} />}
 
-      <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={metaDescription} />
       {metaImage && <meta property="og:image" content={metaImage} />}
 
