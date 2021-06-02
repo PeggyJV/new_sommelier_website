@@ -65,11 +65,33 @@ const BlogPost = ({ blok }) => {
 
   morePosts = blok.allPosts ? blok.allPosts.filter(post => post.content.featured == false) : [];
 
-  if(Array.isArray(morePosts) && morePosts.length) {
-    morePosts.sort(function(a, b){return parseInt(a.content.created_at.split(" ")[0].replace(/-/g, '')) - parseInt(b.content.created_at.split(" ")[0].replace(/-/g, ''))});
+  console.log('***beforesort**');
+  console.log(morePosts);
+  console.log('****beforesort*');
+
+
+
+  for (const post of morePosts)
+  {
+    if(post.content.created_at == "") {
+      post['ordering'] = parseInt(post.first_published_at.split("T")[0].replace(/-/g, ''));
+      console.log(parseInt(post.first_published_at.split("T")[0].replace(/-/g, '')));
+    } else {
+      post['ordering'] = parseInt(post.content.created_at.split(" ")[0].replace(/-/g, ''));
+    }
   }
 
-  console.log('*****');
+  console.log('***morePosts**');
+  morePosts.sort(function(a, b) { return a.ordering - b.ordering });
+  //morePosts.sort(function(a, b){return parseInt(a.content.created_at.split(" ")[0].replace(/-/g, '')) - parseInt(b.content.created_at.split(" ")[0].replace(/-/g, ''))});
+
+  console.log(morePosts);
+console.log('***morePosts**');
+
+
+  //console.log('***morePosts**');
+  //console.log(morePosts);
+  //console.log('****morePosts*');
   const text = 'Check this article out.';
 
   return (
