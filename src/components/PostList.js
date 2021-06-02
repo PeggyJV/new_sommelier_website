@@ -31,6 +31,23 @@ const PostsList = ({ blok }) => {
   const morePosts = blok.posts.filter(post => post.content && post.content.featured != null && post.content.featured == false)
   const moreWidth = windowDimensions.width * morePosts.length
 
+  for (const post of morePosts)
+  {
+    if(post.content.created_at == "") {
+      post['ordering'] = parseInt(post.first_published_at.split("T")[0].replace(/-/g, ''));
+      console.log(parseInt(post.first_published_at.split("T")[0].replace(/-/g, '')));
+    } else {
+      post['ordering'] = parseInt(post.content.created_at.split(" ")[0].replace(/-/g, ''));
+    }
+  }
+
+  console.log('***morePosts**');
+  morePosts.sort(function(a, b) { return a.ordering - b.ordering });
+  //morePosts.sort(function(a, b){return parseInt(a.content.created_at.split(" ")[0].replace(/-/g, '')) - parseInt(b.content.created_at.split(" ")[0].replace(/-/g, ''))});
+
+  console.log(morePosts);
+console.log('***morePosts**');
+
   return (
     <SbEditable content={blok} key={blok._uid}>
       <div className='blog-container mt-5 mb-5'>
