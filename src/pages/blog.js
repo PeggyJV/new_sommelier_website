@@ -81,17 +81,21 @@ export default class extends React.Component {
 export const query = graphql`
   query {
     story: storyblokEntry(full_slug: { eq: "blog/" }) {
+      id
       name
-      content
+      slug
+      field_component
       full_slug
-      uuid
+      content
     }
     posts: allStoryblokEntry(filter: {full_slug: {regex: "/blog/(.)+/"}}) {
       edges {
         node {
-          full_slug
-          uuid
+          id
           name
+          slug
+          field_component
+          full_slug
           content
         }
       }

@@ -48,7 +48,7 @@ function SEO({ description, title, image }) {
   }
   const author = defaults.author;
 
-  console.log('---seo---', metaImage);
+  //console.log('---seo---', metaImage);
 
   return (
     <Helmet title={title} titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}>
