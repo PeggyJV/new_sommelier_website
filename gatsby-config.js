@@ -10,6 +10,12 @@ module.exports = {
       resolve: `gatsby-plugin-sass`
     },
     {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/blog/*`],
+      },
+    },
+    {
       resolve: 'gatsby-source-storyblok',
       options: {
         accessToken: 'Hx9jd3xuH0cARCTgIBio2Qtt',
@@ -41,17 +47,17 @@ module.exports = {
       },
     },
     {
-     resolve: `gatsby-source-filesystem`,
-     options: {
-       name: `markdown-pages`,
-       path: `${__dirname}/src/markdown-pages`,
-     },
-   },
-   {
-   resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [`gatsby-remark-autolink-headers`],
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
+      },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-autolink-headers`],
+      },
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
