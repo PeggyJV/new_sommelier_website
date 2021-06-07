@@ -21,8 +21,9 @@ export default function Layout({ children, location, lang }){
   }
   `)
   let { pathname } = location
-  let language = pathname.split("/")[1].replace('/', '')
-  let activeLanguage = ['de', 'en'].includes(language) ? language : 'en'
+  //let language = pathname.split("/")[1].replace('/', '')
+  //let activeLanguage = ['de', 'en'].includes(language) ? language : 'en'
+  let activeLanguage = 'en'
 
   let correctSetting = settings.edges.filter(edge => edge.node.full_slug.indexOf('settings') > -1)
   let hasSetting = correctSetting && correctSetting.length ? correctSetting[0].node : {}
