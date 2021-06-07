@@ -13,8 +13,8 @@ export default class extends React.Component {
       <>
         <Helmet>
           <title>Home</title>
-          <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css" />
-          <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css" />
+
+          
           <link rel="stylesheet" href="assets/tether/tether.min.css" />
           <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
           <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css" />
@@ -31,8 +31,7 @@ export default class extends React.Component {
           <script src="assets/tether/tether.min.js"></script>
           <script src="assets/bootstrap/js/bootstrap.min.js"></script>
           <script src="assets/smoothscroll/smooth-scroll.js"></script>
-          <script src="assets/dropdown/js/nav-dropdown.js"></script>
-          <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+
           <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
           <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
           <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
