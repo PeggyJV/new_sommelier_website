@@ -1,0 +1,15 @@
+# Query: Connect Wallet
+# Flags: CaseSensitive WordMatch RegExp
+# ContextLines: 1
+
+2 results - 2 files
+
+index.html:
+  108  </div><div>Liquidity Providers (LPs) will be able to use the Sommelier to author and execute complex, and automated financial transactions, such as portfolio rebalancing, limit orders, batched orders, as well as a host of other features that traders have come to expect from CeFi, but that are not currently available in DeFi.</div></h4>
+  109:                 <div class="mbr-section-btn align-center"><a class="btn btn-primary display-7" href="https://t.me/getsomm"><span class="socicon socicon-telegram mbr-iconfont mbr-iconfont-btn"></span>Join Our Community</a> <a class="btn btn-secondary-outline display-7" href="https://app.sommelier.finance/"><span class="mobi-mbri mobi-mbri-to-local-drive mbr-iconfont mbr-iconfont-btn"></span>Connect Wallet</a></div>
+  110              </div>
+
+project.mobirise:
+  593            "_sourceTheme": "mobirise5",
+  594: ⟪ 3662 characters skipped ⟫ class=\"btn btn-secondary-outline\" href=\"https://app.sommelier.finance/\" data-app-placeholder=\"Type Text\"><span class=\"mobi-mbri mobi-mbri-to-local-drive mbr-iconfont mbr-iconfont-btn\"></span>Connect Wallet</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+  595            "_cid": "szgK3KUiOE",
