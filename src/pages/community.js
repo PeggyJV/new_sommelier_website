@@ -14,7 +14,7 @@ export default class extends React.Component {
         <Helmet>
           <title>Home</title>
 
-          
+
           <link rel="stylesheet" href="assets/tether/tether.min.css" />
           <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
           <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css" />
@@ -26,18 +26,7 @@ export default class extends React.Component {
           <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"/>
           <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css" />
 
-          <script src="assets/web/assets/jquery/jquery.min.js"></script>
-          <script src="assets/popper/popper.min.js"></script>
-          <script src="assets/tether/tether.min.js"></script>
-          <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-          <script src="assets/smoothscroll/smooth-scroll.js"></script>
 
-          <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-          <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
-          <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
-          <script src="assets/mbr-testimonials-slider/mbr-testimonials-slider.js"></script>
-          <script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
-          <script src="assets/theme/js/script.js"></script>
         </Helmet>
         <div className="bg-gray-300">
           <Navigation />
@@ -293,6 +282,18 @@ export default class extends React.Component {
             </section>
 
           </main>
+          <script src="assets/web/assets/jquery/jquery.min.js"></script>
+                    <script src="assets/popper/popper.min.js"></script>
+                    <script src="assets/tether/tether.min.js"></script>
+                    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+                    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+
+                    <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+                    <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+                    <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+                    <script src="assets/mbr-testimonials-slider/mbr-testimonials-slider.js"></script>
+                    <script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
+                    <script src="assets/theme/js/script.js"></script>
           <Footer />
         </div>
       </>
