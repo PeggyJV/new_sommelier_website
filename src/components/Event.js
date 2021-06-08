@@ -32,7 +32,7 @@ function isEmpty(str) {
     return (!str || str.length === 0 );
 }
 
-const Event = ({ blok, history, slug }) => {
+const Event = ({ blok, history, slug, join_community}) => {
   const event = blok
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -120,6 +120,11 @@ const Event = ({ blok, history, slug }) => {
   if (!history) {
     add_to_calc = <div title="Add to Calendar" class="addeventatc">Add to Calendar<span class="start">{ s_date.toLocaleString() }</span><span class="end">{ e_date.toLocaleString() }</span><span class="title">{ event.title }</span><span class="description">{ event.description.content[0].content[0].text }</span><span class="location">{ event.location }</span></div>;
   }
+
+   let join_community_area = "";
+   if(join_community) {
+     join_community_area = <span style={{float: 'right'}} ><a href="https://t.me/getsomm" class="btn  btn-lg active" style={{background: '#d3387c', borderColor:'d3387c'}} target="_blank">Join Our Community</a></span>;
+   }
 console.log(event);
   return (
     <div>
@@ -127,7 +132,14 @@ console.log(event);
       <div class='col'>
       <div class="card" >
       <div class="card-body">
-          <h5 class="card-title"><a href={ '/' + slug}>{ event.title }</a></h5>
+          <div class='row'>
+            <div class='col-9'>
+              <h5 class="card-title"><a href={ '/' + slug}>{ event.title }</a></h5>
+              </div>
+              <div class='col-3'>
+              {join_community_area}
+              </div>
+          </div>
             {event_dates}
             {event_time}
             {location}

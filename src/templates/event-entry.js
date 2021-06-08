@@ -36,7 +36,7 @@ export default class extends React.Component {
       <Layout location={this.props.location}>
         <SEO title="Events" description="Sommelier upcoming events."/>
 
-          <EventPage blok={this.state} title='Upcoming Events' history={false}  no_history={true} />
+          <EventPage blok={this.state} title='Upcoming Events' history={false}  join_community={true} />
 
       </Layout>
     )
