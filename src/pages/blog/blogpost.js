@@ -3,7 +3,7 @@ import React, {useState, useEffect, useCallback} from 'react'
 import Layout from "../../components/Layout"
 import BlogPost from "../../components/BlogPost"
 import StoryblokService from '../../utils/storyblok-service'
-import SEO from "../../components/Seo"
+import SEO from "../../components/HeadSeo"
 
 const BlogPostContainer = ({location}) => {
   const [story, setStory] = useState(null)
@@ -34,7 +34,7 @@ const BlogPostContainer = ({location}) => {
         // This is to be figured out later
         story.content['allPosts'] = blogContent[0]
       }
-  
+
       setStory(story)
     }
     fetchData()

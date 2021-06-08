@@ -1,7 +1,6 @@
 import React from "react"
 import Navigation from './Navigation'
 import Footer from './Footer'
-import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from "gatsby"
 
 import StoryblokService from '../utils/storyblok-service'
@@ -32,20 +31,6 @@ export default function Layout({ children, location, lang }){
 
   return (
     <div className="bg-gray-300">
-      <Helmet
-          script={[
-            {"src": `//app.storyblok.com/f/storyblok-latest.js?t=${StoryblokService.token}`,
-            "type": "text/javascript"}
-          ]}
-      />
-      <Helmet
-          script={[
-            {
-            "innerHTML": `var StoryblokCacheVersion = '${StoryblokService.getCacheVersion()}';`,
-            "type": "text/javascript"
-            }
-          ]}
-      />
       <Navigation settings={parsedSetting} lang={activeLanguage} pathname={pathname}/>
       <main>
       { children }

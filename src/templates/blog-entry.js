@@ -4,7 +4,7 @@ import DynamicComponent from "../components/DynamicComponent"
 import Layout from "../components/Layout"
 import blog from "../pages/blog"
 import StoryblokService from '../utils/storyblok-service'
-import SEO from "../components/Seo"
+import SEO from "../components/HeadSeo"
 import { Helmet } from "react-helmet"
 
 export default class extends React.Component {
