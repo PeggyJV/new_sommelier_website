@@ -3,7 +3,7 @@ import SbEditable from "storyblok-react"
 import { render, NODE_IMAGE } from "storyblok-rich-text-react-renderer"
 import {isMobileOnly} from 'react-device-detect'
 import { navigate } from 'gatsby-link';
-
+import SEO from "../components/Seo"
 const windowGlobal = typeof window !== 'undefined' && window
 
 setTimeout(function(){
@@ -97,6 +97,7 @@ console.log('***morePosts**');
   return (
 
     <SbEditable content={blok} key={blok._uid}>
+    <SEO description="Sommelier is the new Coprocessor for the Ethereum VM" content={blok} />
       <div className='blog-container mt-5 mb-5'>
         <div className='container__featured-section'>
           <div className='container__featured-section__top'>
