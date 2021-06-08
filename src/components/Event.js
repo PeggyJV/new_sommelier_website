@@ -83,14 +83,14 @@ const Event = ({ blok, history, slug, join_community}) => {
   }
 
   if (start_date != "") {
-    event_dates = <h6 class="card-subtitle">Event Date: {start_date}</h6>;
+    event_dates = <h6 class="card-subtitle">Event Date: &nbsp;&nbsp;<span style={{color: 'white'}}>{start_date}</span></h6>;
     invite_event.start = event.start_date;
-    event_time = <h6 class="card-subtitle">Event Time: {tConvert(start_time)}</h6>;
+    event_time = <h6 class="card-subtitle">Event Time: &nbsp;&nbsp;<span style={{color: 'white'}}>{tConvert(start_time)}</span></h6>;
   }
 
   if (event.start_date != "" && event.end_date != "") {
     if (start_time != end_time) {
-      event_time = <h6 class="card-subtitle">Event Time: {tConvert(start_time)} to {tConvert(end_time)}</h6>;
+      event_time = <h6 class="card-subtitle">Event Time: &nbsp;&nbsp;<span style={{color: 'white'}}>{tConvert(start_time)} to {tConvert(end_time)}</span></h6>;
     }
   }
 
@@ -118,13 +118,11 @@ const Event = ({ blok, history, slug, join_community}) => {
 
   let add_to_calc = "";
   if (!history) {
-    add_to_calc = <div title="Add to Calendar" class="addeventatc">Add to Calendar<span class="start">{ s_date.toLocaleString() }</span><span class="end">{ e_date.toLocaleString() }</span><span class="title">{ event.title }</span><span class="description">{ event.description.content[0].content[0].text }</span><span class="location">{ event.location }</span></div>;
+    add_to_calc = <div title="Add to Calendar" class="addeventatc">Register for Event<span class="start">{ s_date.toLocaleString() }</span><span class="end">{ e_date.toLocaleString() }</span><span class="title">{ event.title }</span><span class="description">{ event.description.content[0].content[0].text }</span><span class="location">{ event.location }</span></div>;
   }
 
-   let join_community_area = "";
-   if(join_community) {
-     join_community_area = <span style={{float: 'right'}} ><a href="https://t.me/getsomm" class="btn  btn-lg active" style={{background: '#d3387c', borderColor:'d3387c'}} target="_blank">Join Our Community</a></span>;
-   }
+   let join_community_area =  <a href="https://t.me/getsomm" class="btn  btn-lg active" style={{background: '#d9137b', borderColor:'d9137b', fontWeight: "600", borderRadius: '100px', fontFamily: "'Poppins', sans-serif"}} target="_blank">JOIN OUR COMMUNITY</a>;
+
 console.log(event);
   return (
     <div>
@@ -132,17 +130,15 @@ console.log(event);
       <div class='col'>
       <div class="card" >
       <div class="card-body">
-          <div class='row'>
-            <div class='col-9'>
-              <h5 class="card-title"><a href={ '/' + slug}>{ event.title }</a></h5>
-              </div>
-              <div class='col-3'>
-              {join_community_area}
-              </div>
-          </div>
+
+            <h5 class="card-title"><a href={ '/' + slug} style={{ fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif", fontWeight: "bold", fontSize: "1.85028rem" }}>{ event.title }</a></h5>
+
             {event_dates}
             {event_time}
             {location}
+            <br/>
+            {add_to_calc}
+            <br/>
             <br/>
             <div class='row'>
             {img_div}
@@ -158,8 +154,7 @@ console.log(event);
                   </div>
                   )
               }
-            })}</p>
-            {add_to_calc}
+            })}</p><br/><center>{join_community_area}</center>
           </div>
         </div>
       </div>
