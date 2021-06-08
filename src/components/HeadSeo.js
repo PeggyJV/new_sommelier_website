@@ -24,8 +24,9 @@ function SEO({ description, title, image, content }) {
   //const url = new URL('' || '', defaults.baseUrl);
 
   let metaImage = content ? content.image : null;
-
+metaImage = "http:" + metaImage;
   console.log(metaImage);
+
   // if (image) {
   //   const imageBaseUrl = 'http://a.storyblok.com'
   //   const imagePath = image.replace('//a.storyblok.com', '')
