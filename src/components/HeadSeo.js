@@ -19,13 +19,14 @@ function SEO({ description, title, image, content }) {
   console.log(content);
   console.log("THE CONTENT");
 
-  const metaDescription = content ? content.intro : description;
+  const metaDescription = content.intro;
 
   //const url = new URL('' || '', defaults.baseUrl);
 
   let metaImage = content ? content.image : null;
-metaImage = "http:" + metaImage;
+  metaImage = "http:" + metaImage;
   console.log(metaImage);
+  console.log(metaDescription);
 
   // if (image) {
   //   const imageBaseUrl = 'http://a.storyblok.com'
@@ -36,7 +37,8 @@ metaImage = "http:" + metaImage;
 
   //console.log('---seo---', metaImage);
 
-  let pageTitle = content ? content.title : title
+  let pageTitle = content.title;
+  console.log(pageTitle);
 
   return (
     <head>
