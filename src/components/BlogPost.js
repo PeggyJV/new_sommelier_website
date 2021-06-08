@@ -3,7 +3,7 @@ import SbEditable from "storyblok-react"
 import { render, NODE_IMAGE } from "storyblok-rich-text-react-renderer"
 import {isMobileOnly} from 'react-device-detect'
 import { navigate } from 'gatsby-link';
-import SEO from "../components/Seo"
+import SEO from "../components/HeadSeo"
 const windowGlobal = typeof window !== 'undefined' && window
 
 setTimeout(function(){

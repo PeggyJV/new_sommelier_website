@@ -5,7 +5,7 @@ import Layout from "../components/Layout"
 import { graphql } from 'gatsby'
 import { Router } from '@reach/router'
 import StoryblokService from '../utils/storyblok-service'
-import SEO from "../components/Seo"
+import SEO from "../components/HeadSeo"
 
 import "../assets/scss/blog.scss"
 import "../assets/scss/main.scss"

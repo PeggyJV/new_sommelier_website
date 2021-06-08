@@ -24,6 +24,8 @@ function SEO({ description, title, image, content }) {
   //const url = new URL('' || '', defaults.baseUrl);
 
   let metaImage = content ? content.image : null;
+
+  console.log(metaImage);
   // if (image) {
   //   const imageBaseUrl = 'http://a.storyblok.com'
   //   const imagePath = image.replace('//a.storyblok.com', '')
@@ -43,11 +45,11 @@ function SEO({ description, title, image, content }) {
       <meta property="og:type" content="website" />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={metaDescription} />
-      {metaImage && <meta property="og:image" content={metaImage} />}
+      <meta property="og:image" content={metaImage} />
 
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      {metaImage && <meta name="twitter:image" content={metaImage} />}
+      <meta name="twitter:image" content={metaImage} />
     </head>
   )
 }
