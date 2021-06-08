@@ -32,7 +32,7 @@ function isEmpty(str) {
     return (!str || str.length === 0 );
 }
 
-const Event = ({ blok, history }) => {
+const Event = ({ blok, history, slug }) => {
   const event = blok
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -120,14 +120,14 @@ const Event = ({ blok, history }) => {
   if (!history) {
     add_to_calc = <div title="Add to Calendar" class="addeventatc">Add to Calendar<span class="start">{ s_date.toLocaleString() }</span><span class="end">{ e_date.toLocaleString() }</span><span class="title">{ event.title }</span><span class="description">{ event.description.content[0].content[0].text }</span><span class="location">{ event.location }</span></div>;
   }
-
+console.log(event);
   return (
     <div>
     <div class='row'>
       <div class='col'>
       <div class="card" >
       <div class="card-body">
-          <h5 class="card-title">{ event.title }</h5>
+          <h5 class="card-title"><a href={ '/' + slug}>{ event.title }</a></h5>
             {event_dates}
             {event_time}
             {location}
