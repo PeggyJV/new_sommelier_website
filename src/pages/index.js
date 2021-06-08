@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import Main from "../components/Main"
 import { graphql } from 'gatsby'
 import StoryblokService from '../utils/storyblok-service'
-import SEO from "../components/Seo"
+import SEO from "../components/HeadSeo"
 
 setTimeout(function(){
   var href = window.location.href;

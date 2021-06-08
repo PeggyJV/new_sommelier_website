@@ -7,70 +7,51 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+//import { Helmet } from "react-helmet"
+//import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, title, image, content }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            baseUrl
-          }
-        }
-      }
-    `
-  );
 
-  const defaults = site.siteMetadata;
+
+  //const defaults = site.siteMetadata;
 
   console.log("THE CONTENT");
   console.log(content);
   console.log("THE CONTENT");
 
-  if (defaults.baseUrl === '' && typeof window !== 'undefined') {
-    defaults.baseUrl = window.location.origin;
-  }
+  const metaDescription = content.title;
 
-  if (defaults.baseUrl === '') {
-    console.error('Please set a baseUrl in your site metadata!');
-    return null;
-  }
+  //const url = new URL('' || '', defaults.baseUrl);
 
-  const metaDescription = content ? content.intro : (description || defaults.description);
-  const defaultTitle = defaults?.title;
-  const url = new URL('' || '', defaults.baseUrl);
+  let metaImage = content.event_image.filename;
 
-  let metaImage = content ? content.image : null;
+  console.log(metaImage);
   // if (image) {
   //   const imageBaseUrl = 'http://a.storyblok.com'
   //   const imagePath = image.replace('//a.storyblok.com', '')
   //   metaImage = new URL(imagePath, imageBaseUrl);
   // }
-  const author = defaults.author;
+  //const author = defaults.author;
 
   //console.log('---seo---', metaImage);
 
-  let pageTitle = content ? content.title : title
+  let pageTitle = metaDescription
 
   return (
-    <Helmet title={pageTitle} titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}>
+    <head>
+      <title>{pageTitle}</title>
       <meta name="description" content={metaDescription} />
-      {metaImage && <meta name="image" content={metaImage} />}
+      <meta name="image" content={metaImage} />
 
       <meta property="og:type" content="website" />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={metaDescription} />
-      {metaImage && <meta property="og:image" content={metaImage} />}
+      <meta property="og:image" content={metaImage} />
 
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      {metaImage && <meta name="twitter:image" content={metaImage} />}
-    </Helmet>
+      <meta name="twitter:image" content={metaImage} />
+    </head>
   )
 }
 

@@ -4,7 +4,7 @@ import DynamicComponent from "../components/DynamicComponent"
 import Layout from "../components/Layout"
 import blog from "../pages/blog"
 import StoryblokService from '../utils/storyblok-service'
-import SEO from "../components/Seo"
+import SEO from "../components/HeadSeo"
 import { Helmet } from "react-helmet"
 
 export default class extends React.Component {
@@ -46,6 +46,7 @@ export default class extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
+      <SEO description="Sommelier is the new Coprocessor for the Ethereum VM" content={this.state.story.content} />
       <style dangerouslySetInnerHTML={{__html: `
         .blog-container .container__featured-section ul { all: revert; }
       `}}/>
