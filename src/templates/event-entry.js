@@ -5,7 +5,7 @@ import Layout from "../components/Layout"
 import { graphql } from 'gatsby'
 import { Router } from '@reach/router'
 import StoryblokService from '../utils/storyblok-service'
-import SEO from "../components/HeadSeo"
+import SEO from "../components/EventSeo"
 
 import "../assets/scss/blog.scss"
 import "../assets/scss/main.scss"
@@ -34,7 +34,7 @@ export default class extends React.Component {
     console.log(this.state);
     return (
       <Layout location={this.props.location}>
-        <SEO title="Events" description="Sommelier upcoming events."/>
+        <SEO title="Events" description="Sommelier upcoming events." content={JSON.parse(this.props.pageContext.story.content)}/>
 
           <EventPage blok={this.state} title='Upcoming Events' history={false}  join_community={true} />
 

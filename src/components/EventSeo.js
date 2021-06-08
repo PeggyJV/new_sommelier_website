@@ -19,11 +19,11 @@ function SEO({ description, title, image, content }) {
   console.log(content);
   console.log("THE CONTENT");
 
-  const metaDescription = content ? content.intro : description;
+  const metaDescription = content.title;
 
   //const url = new URL('' || '', defaults.baseUrl);
 
-  let metaImage = content ? content.image : null;
+  let metaImage = content.event_image.filename;
 
   console.log(metaImage);
   // if (image) {
@@ -35,7 +35,7 @@ function SEO({ description, title, image, content }) {
 
   //console.log('---seo---', metaImage);
 
-  let pageTitle = content ? content.title : title
+  let pageTitle = metaDescription
 
   return (
     <head>
