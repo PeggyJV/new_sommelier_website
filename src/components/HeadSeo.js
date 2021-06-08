@@ -19,7 +19,7 @@ function SEO({ description, title, image, content }) {
   console.log(content);
   console.log("THE CONTENT");
 
-  const metaDescription = content.intro;
+  const metaDescription = content ? content.intro : null;
 
   //const url = new URL('' || '', defaults.baseUrl);
 
@@ -37,7 +37,7 @@ function SEO({ description, title, image, content }) {
 
   //console.log('---seo---', metaImage);
 
-  let pageTitle = content.title;
+  let pageTitle = content ? content.title : null;
   console.log(pageTitle);
 
   return (
