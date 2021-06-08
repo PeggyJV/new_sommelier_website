@@ -35,7 +35,7 @@ export default class extends React.Component {
   }
 
   render() {
-    //console.log(this.state);
+    console.log(this.state);
     return (
       <Layout location={this.props.location}>
         <SEO title="Events" description="Sommelier upcoming events."/>

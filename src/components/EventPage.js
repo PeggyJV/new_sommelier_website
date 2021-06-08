@@ -7,9 +7,11 @@ import Event from './Event'
 const windowGlobal = typeof window !== 'undefined' && window
 
 
-const EventPage = ({ blok, title, history }) => {
+const EventPage = ({ blok, title, history, join_community }) => {
+  console.log("wtf");
   const events = blok.events.content;
   let see_history = "";
+
   if(!history) {
     see_history = <a href="/events/history">See past events</a>
   } else {
@@ -36,7 +38,7 @@ const EventPage = ({ blok, title, history }) => {
           events.map((blok, index) => {
             const event = JSON.parse(blok.content);
             //console.log(event);
-            return(<Event blok={event} history={history} />)
+            return(<Event blok={event} history={history} slug={blok.full_slug} join_community={join_community}/>)
           })
         }
 
