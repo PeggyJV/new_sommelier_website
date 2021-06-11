@@ -4,6 +4,7 @@ import Footer from './Footer'
 import { useStaticQuery, graphql } from "gatsby"
 
 import StoryblokService from '../utils/storyblok-service'
+var Mixpanel = require('mixpanel');
 
 export default function Layout({ children, location, lang }){
   const { settings } = useStaticQuery(graphql`
@@ -28,6 +29,17 @@ export default function Layout({ children, location, lang }){
   let hasSetting = correctSetting && correctSetting.length ? correctSetting[0].node : {}
   let content = typeof hasSetting.content === 'string' ? JSON.parse(hasSetting.content) : hasSetting.content
   let parsedSetting = Object.assign({}, content, {content: content})
+  let origin = "";
+
+  if (typeof window !== 'undefined') {
+    origin = window.location.origin;
+  }
+console.log("origin");
+  console.log(origin);
+  console.log(location);
+  console.log("origin");
+  // mixpanel = Mixpanel.init(sbConfig.options.mixpanel);
+  // mixpanel.track('page', { slug: slug });
 
   return (
     <div className="bg-gray-300">
