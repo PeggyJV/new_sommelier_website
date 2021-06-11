@@ -109,9 +109,9 @@ const Event = ({ blok, history, slug, join_community}) => {
     console.log("8327468723648327648723");
     console.log(event.event_image.filename);
     console.log("8327468723648327648723");
-    column_size = "col-6";
+    column_size = "col-md-6";
     img_style = "width:100%";
-    img_div = <div class="col-6"><img src={event.event_image.filename} style={{width: 100 + '%'}} /></div>;
+    img_div = <div class="col-md-6"><img src={event.event_image.filename} style={{width: 100 + '%'}} /><br/><br/></div>;
   } else {
     column_size = "col-12";
   }
@@ -142,6 +142,7 @@ console.log(event);
             <br/>
             <div class='row'>
             {img_div}
+
               <div class={column_size}>
             <p class="card-text">{render(event.description, {
               nodeResolvers: {
