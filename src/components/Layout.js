@@ -2,6 +2,7 @@ import React from "react"
 import Navigation from './Navigation'
 import Footer from './Footer'
 import { useStaticQuery, graphql } from "gatsby"
+//const sbConfig = config.plugins.find((item) => item.resolve === 'gatsby-source-storyblok')
 
 import StoryblokService from '../utils/storyblok-service'
 var Mixpanel = require('mixpanel');
@@ -34,12 +35,9 @@ export default function Layout({ children, location, lang }){
   if (typeof window !== 'undefined') {
     origin = window.location.origin;
   }
-console.log("origin");
-  console.log(origin);
-  console.log(location);
-  console.log("origin");
-  // mixpanel = Mixpanel.init(sbConfig.options.mixpanel);
-  // mixpanel.track('page', { slug: slug });
+
+  let mixpanel = Mixpanel.init('d6a6208c71b46a6965913df792f505f9');
+  mixpanel.track('page_load', { current_url: location.href });
 
   return (
     <div className="bg-gray-300">
