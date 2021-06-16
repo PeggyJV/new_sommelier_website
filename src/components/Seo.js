@@ -13,8 +13,8 @@ import { useStaticQuery, graphql } from "gatsby"
 function SEO({ description, title, image, content }) {
 
 
-  const metaDescription = description;
-  const defaultTitle = title;
+  const metaDescription = "Sommelier is the new Coprocessor for the Ethereum VM";
+  const defaultTitle = "Sommelier";
 
 
   let metaImage = image;

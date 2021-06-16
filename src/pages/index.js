@@ -43,7 +43,7 @@ export default class extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
-        <SEO title="Sommelier" description="Sommelier is the new Coprocessor for the Ethereum VM" image="https://sommelier.finance/images/impermanent.png"/>
+        <SEO title="Sommelier" description="Sommelier is the new Coprocessor for the Ethereum VM" image="https://sommelier.finance/images/etherium.png"/>
         <Main />
         {/* <BlogPost blok={this.state.story.content} /> */}
       </Layout>
