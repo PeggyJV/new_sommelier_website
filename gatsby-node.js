@@ -91,9 +91,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         const entries = result.data.stories.edges
         entries.forEach((entry) => {
-          console.log('^^^^^^^^^^^^^^^^^^');
-          console.log(entry.node.full_slug);
-          console.log('^^^^^^^^^^^^^^^^^^');
+
           if(entry.node.full_slug == 'jobs/jobs') {
             const page = {
               path: `/jobs`,
@@ -114,7 +112,6 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
             createPage(page);
-            console.log('**********')
           }
 
         })
@@ -146,9 +143,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         const entries = result.data.stories.edges
         entries.forEach((entry) => {
-          console.log('^^^^^^^^^^^^^^^^^^');
-          console.log(entry.node.full_slug);
-          console.log('^^^^^^^^^^^^^^^^^^');
           if(entry.node.full_slug.includes('events/')) {
             const page = {
               path:  `/${entry.node.full_slug}`,

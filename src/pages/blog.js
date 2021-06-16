@@ -28,22 +28,8 @@ setTimeout(function(){
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    console.log("***");
-    console.log(props);
-    console.log("***");
+    
     let content =  this.props.data.story ? JSON.parse(this.props.data.story.content) : {}
-    // we need to join the story posts with the full posts information
-    let posts = this.props.data.posts.edges.map(n => n.node)
-    let postList = content.body.find(c => c.component === 'posts-list')
-    if(postList) {
-        let index = content.body.indexOf(postList)
-        let joinedPosts = postList.posts.map(uuid => {
-            let fullPost = posts.find(p => p.uuid === uuid)
-            let content = fullPost ? JSON.parse(fullPost.content) : ""
-            return Object.assign({}, fullPost, { content })
-        })
-        content.body[index].posts = joinedPosts
-    }
 
     this.state = {
       story: { content }
@@ -88,7 +74,7 @@ export const query = graphql`
       full_slug
       content
     }
-    posts: allStoryblokEntry(filter: {full_slug: {regex: "/blog/(.)+/"}}) {
+    posts: allStoryblokEntry(filter: {field_component: {eq: "blogpost"}}) {
       edges {
         node {
           id
