@@ -81,7 +81,11 @@ mixpanel.init("d6a6208c71b46a6965913df792f505f9");
     mixpanel.register(params);
   }
 
-  console.log(location.href);
+
+  mixpanel.people.set({ 'last touch':  location.href });
+  mixpanel.people.set_once({ 'first touch':  location.href });
+  mixpanel.people.increment('page_views');
+
   mixpanel.track('page_load', { current_url: location.href });
   campaignParams();
 </script>
