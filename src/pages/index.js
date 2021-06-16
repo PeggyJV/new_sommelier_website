@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import Main from "../components/Main"
 import { graphql } from 'gatsby'
 import StoryblokService from '../utils/storyblok-service'
-import SEO from "../components/HeadSeo"
+import SEO from "../components/Seo"
 
 setTimeout(function(){
   var href = window.location.href;
@@ -43,7 +43,7 @@ export default class extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
-        <SEO title="Sommelier" description="Sommelier is the new Coprocessor for the Ethereum VM"/>
+        <SEO title="Sommelier" description="Sommelier is the new Coprocessor for the Ethereum VM" image="https://sommelier.finance/images/impermanent.png"/>
         <Main />
         {/* <BlogPost blok={this.state.story.content} /> */}
       </Layout>

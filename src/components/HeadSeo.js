@@ -15,10 +15,6 @@ function SEO({ description, title, image, content }) {
 
   //const defaults = site.siteMetadata;
 
-  console.log("THE CONTENT");
-  console.log(content);
-  console.log("THE CONTENT");
-
   const metaDescription = content ? content.intro : null;
 
   //const url = new URL('' || '', defaults.baseUrl);
