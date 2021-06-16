@@ -36,9 +36,6 @@ export default function Layout({ children, location, lang }){
     origin = window.location.origin;
   }
 
-  let mixpanel = Mixpanel.init('d6a6208c71b46a6965913df792f505f9');
-  mixpanel.track('page_load', { current_url: location.href });
-
   return (
     <div className="bg-gray-300">
       <Navigation settings={parsedSetting} lang={activeLanguage} pathname={pathname}/>
