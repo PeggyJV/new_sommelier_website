@@ -86,7 +86,7 @@ mixpanel.init("d6a6208c71b46a6965913df792f505f9");
   mixpanel.people.set_once({ 'first touch':  location.href });
   mixpanel.people.increment('page_views');
 
-  mixpanel.track('page_load', { current_url: location.href });
+  mixpanel.track('page_load', { current_url: location.href, $current_url: location.href  });
   campaignParams();
 </script>
 
@@ -412,6 +412,7 @@ mixpanel.init("d6a6208c71b46a6965913df792f505f9");
             <div class="row row-copirayt">
                 <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                     © Copyright 2021 <a href="https://sommelier.finance/" class="text-white" target="_blank">Sommelier</a>. All Rights Reserved.
+                    <br/><br/>Sommelier is alpha software. Sommelier is non-custodial and has no warranties. We also do not endorse any pools that we share on our channels. Pools may be compromised and things on Sommelier break all the time and you may lose your money. We are not giving you investment advice with this update and Sommelier does not control your funds. Again, all our software is alpha and undergoing daily updates and things can break all the time.<br/><br/>
                 </p>
             </div>
         </div>
