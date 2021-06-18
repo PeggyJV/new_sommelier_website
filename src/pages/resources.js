@@ -10,6 +10,10 @@ import SEO from "../components/HeadSeo"
 import "../assets/scss/blog.scss"
 import "../assets/scss/main.scss"
 
+function isEmpty(str) {
+    return (!str || str.length === 0 );
+}
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -20,6 +24,19 @@ export default class extends React.Component {
         content.push(story.node);
       }
     });
+
+    for (const post of content)
+    {
+      let internal = JSON.parse(post.content);
+      if(isEmpty(internal.created_at)) {
+        post['ordering'] = parseInt(post.published_at.split("T")[0].replace(/-/g, ''));
+        console.log(parseInt(post.published_at.split("T")[0].replace(/-/g, '')));
+      } else {
+        post['ordering'] = parseInt(internal.created_at.split(" ")[0].replace(/-/g, ''));
+      }
+    }
+
+    content.sort(function(a, b) { return a.ordering - b.ordering });
 
     this.state = {
       events: { content }
