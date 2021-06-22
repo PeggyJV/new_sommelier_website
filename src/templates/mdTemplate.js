@@ -12,6 +12,7 @@ export default function Template({
   let toc = tableOfContents.replace(/<ul/g, "<ul style='list-style-type: none;margin: 0;padding: 0;'");
   return (
     <Layout location={frontmatter.slug}>
+
       <style dangerouslySetInnerHTML={{__html: `
         ul {all: revert; font-size: 19px}
         li {all: revert; font-size: 19px}
@@ -19,8 +20,28 @@ export default function Template({
         h2 { margin-top: 30px; text-decoration: underline; width: 100%}
         h3 { margin-top: 20px; margin-bottom: 30px}
         a { color: hotpink; }
+        #myBtn {
+          display: none;
+          position: fixed;
+          bottom: 20px;
+          right: 30px;
+          z-index: 99;
+          font-size: 18px;
+          border: none;
+          outline: none;
+          background-color: #d3387c;
+          color: white;
+          cursor: pointer;
+          padding: 15px;
+          border-radius: 4px;
+        }
+
+        #myBtn:hover {
+          background-color: #555;
+        }
       `}}/>
-      <div class="container">
+      <a class="btn btn-primary display-4" href="#top" id="myBtn">Top</a>
+      <div class="container" id="top">
         <div class="row">
           <div class="col">
           <br/><br/><br/>
