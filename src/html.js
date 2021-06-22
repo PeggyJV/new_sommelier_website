@@ -28,6 +28,7 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{ __html: mixpnl }}
         />
+        <script src='/scroll.js'/>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
