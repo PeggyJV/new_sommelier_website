@@ -40,7 +40,7 @@ export default function Template({
           background-color: #555;
         }
       `}}/>
-      <a class="btn btn-primary display-4" href="#top" id="myBtn">Top</a>
+      <a class="btn btn-primary display-4" href="#top" id="myBtn">⇧ Back To Top ⇧</a>
       <div class="container" id="top">
         <div class="row">
           <div class="col">
