@@ -146,7 +146,7 @@ const Event = ({ blok, history, slug, join_community, uid}) => {
               <div class='col-6'>
               <br/>
                 {join_us}
-                <h1 id={div_id} style={{textAlign: 'center'}}>------</h1>
+                <h1 id={div_id} style={{textAlign: 'center'}}></h1>
               </div>
             </div>
 
