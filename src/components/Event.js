@@ -121,7 +121,10 @@ const Event = ({ blok, history, slug, join_community, uid}) => {
 
   let join_community_area =  <a href="https://t.me/getsomm" class="btn  btn-lg active" style={{background: '#d9137b', borderColor:'d9137b', fontWeight: "600", borderRadius: '100px', fontFamily: "'Poppins', sans-serif"}} target="_blank">JOIN OUR COMMUNITY</a>;
   let div_id = uid;
-
+  let join_us = "";
+  if (!history) {
+    join_us = <h3 style={{textAlign: 'center'}}> JOIN US IN</h3>;
+  }
   return (
     <div>
     <div class='row'>
@@ -142,8 +145,8 @@ const Event = ({ blok, history, slug, join_community, uid}) => {
               </div>
               <div class='col-6'>
               <br/>
-                <h3 style={{textAlign: 'center'}}> JOIN US IN</h3>
-                <h1 id={div_id} style={{textAlign: 'center'}}></h1>
+                {join_us}
+                <h1 id={div_id} style={{textAlign: 'center'}}>------</h1>
               </div>
             </div>
 

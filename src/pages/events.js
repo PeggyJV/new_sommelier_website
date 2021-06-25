@@ -69,9 +69,9 @@ export default class extends React.Component {
       // If the count down is finished, write some text
       if (distance < 0) {
         clearInterval(x);
-        document.getElementById(elementId).innerHTML = "EXPIRED";
+        document.getElementById(elementId).innerHTML = "COMPLETED";
       }
-    }, 1000);
+    }, 250);
   }
 
   async componentDidMount() {
