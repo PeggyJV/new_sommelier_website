@@ -19,6 +19,7 @@ export default function HTML(props) {
         />
         <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
         <script type="text/javascript" src="/mp.js" ></script>
+        <script type="text/javascript" src="/countdown.js" ></script>
         <script
           dangerouslySetInnerHTML={{ __html: mtm }}
         />

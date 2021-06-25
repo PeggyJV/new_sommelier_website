@@ -32,7 +32,8 @@ function isEmpty(str) {
     return (!str || str.length === 0 );
 }
 
-const Event = ({ blok, history, slug, join_community}) => {
+
+const Event = ({ blok, history, slug, join_community, uid}) => {
   const event = blok
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -106,9 +107,6 @@ const Event = ({ blok, history, slug, join_community}) => {
   let img_div = "";
   let img_style = "";
   if (!isEmpty(event.event_image.filename)) {
-    console.log("8327468723648327648723");
-    console.log(event.event_image.filename);
-    console.log("8327468723648327648723");
     column_size = "col-md-6";
     img_style = "width:100%";
     img_div = <div class="col-md-6"><img src={event.event_image.filename} style={{width: 100 + '%'}} /><br/><br/></div>;
@@ -121,9 +119,9 @@ const Event = ({ blok, history, slug, join_community}) => {
     add_to_calc = <div title="Add to Calendar" class="addeventatc">Register for Event<span class="start">{ s_date.toLocaleString() }</span><span class="end">{ e_date.toLocaleString() }</span><span class="title">{ event.title }</span><span class="description">{ event.description.content[0].content[0].text }</span><span class="location">{ event.location }</span></div>;
   }
 
-   let join_community_area =  <a href="https://t.me/getsomm" class="btn  btn-lg active" style={{background: '#d9137b', borderColor:'d9137b', fontWeight: "600", borderRadius: '100px', fontFamily: "'Poppins', sans-serif"}} target="_blank">JOIN OUR COMMUNITY</a>;
+  let join_community_area =  <a href="https://t.me/getsomm" class="btn  btn-lg active" style={{background: '#d9137b', borderColor:'d9137b', fontWeight: "600", borderRadius: '100px', fontFamily: "'Poppins', sans-serif"}} target="_blank">JOIN OUR COMMUNITY</a>;
+  let div_id = uid;
 
-console.log(event);
   return (
     <div>
     <div class='row'>
@@ -132,14 +130,23 @@ console.log(event);
       <div class="card-body">
 
             <h5 class="card-title"><a href={ '/' + slug} style={{ fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif", fontWeight: "bold", fontSize: "1.85028rem" }}>{ event.title }</a></h5>
+            <div class='row'>
+              <div class='col-6'>
+                {event_dates}
+                {event_time}
+                {location}
+                <br/>
+                {add_to_calc}
+                <br/>
+                <br/>
+              </div>
+              <div class='col-6'>
+              <br/>
+                <h3 style={{textAlign: 'center'}}> JOIN US IN</h3>
+                <h1 id={div_id} style={{textAlign: 'center'}}></h1>
+              </div>
+            </div>
 
-            {event_dates}
-            {event_time}
-            {location}
-            <br/>
-            {add_to_calc}
-            <br/>
-            <br/>
             <div class='row'>
             {img_div}
 
@@ -155,7 +162,11 @@ console.log(event);
                   </div>
                   )
               }
-            })}</p><br/><center>{join_community_area}</center>
+            })}</p><br/>
+
+            <center>{join_community_area}</center>
+
+
           </div>
         </div>
       </div>
