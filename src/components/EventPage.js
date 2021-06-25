@@ -10,6 +10,7 @@ const windowGlobal = typeof window !== 'undefined' && window
 const EventPage = ({ blok, title, history, join_community }) => {
   console.log("wtf");
   const events = blok.events.content;
+
   let see_history = "";
 
   if(!history) {
@@ -23,6 +24,7 @@ const EventPage = ({ blok, title, history, join_community }) => {
   //console.log(events);
   events.sort(function(a, b){return parseInt(JSON.parse(a.content).start_date.split(" ")[0].replace(/-/g, '')) - parseInt(JSON.parse(b.content).start_date.split(" ")[0].replace(/-/g, ''))})
   if (history) { events.reverse(); }
+  console.log(events);
   //console.log("*********DSJHKFBJ*******");
   return (
     <SbEditable content={blok} key={blok._uid}>
@@ -38,7 +40,7 @@ const EventPage = ({ blok, title, history, join_community }) => {
           events.map((blok, index) => {
             const event = JSON.parse(blok.content);
             //console.log(event);
-            return(<Event blok={event} history={history} slug={blok.full_slug} join_community={join_community}/>)
+            return(<Event blok={event} history={history} slug={blok.full_slug} join_community={join_community} uid={blok.uid}/>)
           })
         }
 
