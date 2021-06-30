@@ -147,7 +147,7 @@ exports.createPages = ({ graphql, actions }) => {
           let event = JSON.parse(entry.node.content);
           let s_date = new Date(event.start_date.split(" ")[0]);
           let uid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 50);
-          s_date.setDate(s_date.getDate() + 1);
+          s_date.setDate(s_date.getDate());
 
           entry.node['uid'] = uid;
           entry.node['countDownDate'] = s_date.getTime();
