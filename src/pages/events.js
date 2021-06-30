@@ -22,7 +22,8 @@ export default class extends React.Component {
       if(story.node.full_slug.includes('events/')) {
         let s_date = new Date(event.start_date.split(" ")[0]);
         let today = new Date();
-        s_date.setDate(s_date.getDate() + 1);
+        //s_date.setDate(s_date.getDate());
+        s_date = new Date(s_date.toLocaleString(undefined));
 //var countDownDate = new Date(dateTime).getTime();
         if (s_date > today) {
           story.node['uid'] = uid;
@@ -52,6 +53,7 @@ export default class extends React.Component {
       // Get today's date and time
       var now_ish = new Date();
       var now = now_ish.getTime() +  now_ish.getTimezoneOffset() * 60000;
+      now  = new Date(now_ish.toLocaleString(undefined));
 
       // Find the distance between now and the count down date
       var distance = countDownDate - now;
