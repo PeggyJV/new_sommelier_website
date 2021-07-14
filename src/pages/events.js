@@ -22,6 +22,7 @@ export default class extends React.Component {
       if(story.node.full_slug.includes('events/')) {
         let s_date = new Date(event.start_date.split(" ")[0]);
         let today = new Date();
+        today.setDate(today.getDate() - 1);
         //s_date.setDate(s_date.getDate());
         s_date = new Date(s_date.toLocaleString(undefined));
 //var countDownDate = new Date(dateTime).getTime();
