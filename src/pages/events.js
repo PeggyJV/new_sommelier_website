@@ -22,16 +22,13 @@ export default class extends React.Component {
       if(story.node.full_slug.includes('events/')) {
         let s_date = new Date(event.start_date.split(" ")[0]);
         let today = new Date();
-        today.setDate(today.getDate() - 1);
-        //s_date.setDate(s_date.getDate());
+
         s_date = new Date(s_date.toLocaleString(undefined));
-//var countDownDate = new Date(dateTime).getTime();
+
         if (s_date > today) {
           story.node['uid'] = uid;
-          console.log("TESTETESTST");
-          console.log(s_date);
           let n_date = new Date(s_date.toLocaleString);
-          console.log(n_date);
+
           story.node['countDownDate'] = s_date.getTime();
 
           content.push(story.node);
@@ -78,11 +75,8 @@ export default class extends React.Component {
   }
 
   async componentDidMount() {
-    console.log("DID MOUNT");
-
-    //console.log(this.state.events.content);
     this.state.events.content.map((event, index) => {
-      console.log(event);
+
       this.countDown(event.countDownDate, event.uid);
     });
   }

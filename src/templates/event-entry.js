@@ -65,11 +65,8 @@ export default class extends React.Component {
   }
 
   async componentDidMount() {
-    console.log("DID MOUNT");
-
     //console.log(this.state.events.content);
     this.state.events.content.map((event, index) => {
-      console.log(event);
       this.countDown(event.countDownDate, event.uid);
     });
   }

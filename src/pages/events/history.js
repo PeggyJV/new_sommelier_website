@@ -18,12 +18,21 @@ export default class extends React.Component {
     props.data.stories.edges.forEach((story) => {
       const event = JSON.parse(story.node.content);
 
+      let uid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 50);
+
       if(story.node.full_slug.includes('events/')) {
         let s_date = new Date(event.start_date.split(" ")[0]);
         let today = new Date();
-        s_date.setDate(s_date.getDate() + 1);
+
+        s_date = new Date(s_date.toLocaleString(undefined));
 
         if (s_date < today) {
+          story.node['uid'] = uid;
+
+          let n_date = new Date(s_date.toLocaleString);
+          
+          story.node['countDownDate'] = s_date.getTime();
+
           content.push(story.node);
         }
       }
