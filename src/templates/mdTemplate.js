@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 //import DynamicComponent from "../components/DynamicComponent"
 import Layout from "../components/Layout"
+import { Helmet } from "react-helmet"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -12,6 +13,9 @@ export default function Template({
   let toc = tableOfContents.replace(/<ul/g, "<ul style='list-style-type: none;margin: 0;padding: 0;'");
   return (
     <Layout location={frontmatter.slug}>
+      <Helmet>
+        <title>Uniswap Glossary</title>
+      </Helmet>
 
       <style dangerouslySetInnerHTML={{__html: `
         ul {all: revert; font-size: 19px}
