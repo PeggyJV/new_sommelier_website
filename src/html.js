@@ -29,6 +29,23 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{ __html: mixpnl }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `{
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Sommelier Finance",
+              alternateName: "Sommelier",
+              url: "https://sommelier.finance/",
+              logo: "https://sommelier.finance/images/etherium.png",
+              sameAs: [
+                "https://twitter.com/sommfinance",
+                "https://sommelier.finance/",
+              ],
+            },`
+          }}
+        />
         <script src='/scroll.js' />
         {props.headComponents}
       </head>
