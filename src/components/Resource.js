@@ -24,7 +24,7 @@ const Resource = ({ blok }) => {
 
   let invite_event = {
   title: event.title,
-  description: event.description.content[0].content[0].text
+  description: event?.description?.content[0]?.content[0]?.text
   };
 
 
