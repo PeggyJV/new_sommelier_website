@@ -141,14 +141,36 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
+        /*
+        let date_data = event.start_date.split(" ")
+        let date_str = date_data[0]
+        start_time = date_data[1]
+
+        let utc_str = date_str + "T" + start_time + ":00.000+0000"
+
+        s_date = new Date(utc_str);
+
+        start_date = s_date.toLocaleDateString(undefined, options);
+        */
+
         const entries = result.data.stories.edges
         entries.forEach((entry) => {
-          console.log(entry.node);
-          let event = JSON.parse(entry.node.content);
-          let s_date = new Date(event.start_date.split(" ")[0]);
-          let uid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 50);
-          s_date.setDate(s_date.getDate());
+          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
+          let event = JSON.parse(entry.node.content);
+          //let s_date = new Date(event.start_date.split(" ")[0]);
+          let uid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 50);
+          //s_date.setDate(s_date.getDate());
+          let date_data = event.start_date.split(" ")
+          let date_str = date_data[0]
+          let start_time = date_data[1]
+
+          let utc_str = date_str + "T" + start_time + ":00.000+0000"
+
+          let s_date = new Date(utc_str);
+
+          let start_date = s_date.toLocaleDateString(undefined, options);
+          console.log("start",s_date,  s_date.getTime());
           entry.node['uid'] = uid;
           entry.node['countDownDate'] = s_date.getTime();
 

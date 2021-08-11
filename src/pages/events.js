@@ -10,17 +10,7 @@ import SEO from "../components/HeadSeo"
 import "../assets/scss/blog.scss"
 import "../assets/scss/main.scss"
 
-/*
-let date_data = event.start_date.split(" ")
-let date_str = date_data[0]
-start_time = date_data[1]
 
-let utc_str = date_str + "T" + start_time + ":00.000+0000"
-
-s_date = new Date(utc_str);
-
-start_date = s_date.toLocaleDateString(undefined, options);
-*/
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -99,7 +89,7 @@ export default class extends React.Component {
 
   async componentDidMount() {
     this.state.events.content.map((event, index) => {
-
+      console.log('count down date', event.countDownDate);
       this.countDown(event.countDownDate, event.uid);
     });
   }
