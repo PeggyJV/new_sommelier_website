@@ -42,6 +42,7 @@ export default class extends React.Component {
       // Get today's date and time
       var now_ish = new Date();
       var now = now_ish.getTime() +  now_ish.getTimezoneOffset() * 60000;
+      now  = new Date(now_ish.toLocaleString(undefined));
 
       // Find the distance between now and the count down date
       var distance = countDownDate - now;
@@ -67,10 +68,11 @@ export default class extends React.Component {
   async componentDidMount() {
     //console.log(this.state.events.content);
     this.state.events.content.map((event, index) => {
+      console.log('count down date', event.countDownDate);
       this.countDown(event.countDownDate, event.uid);
     });
   }
-  
+
   render() {
 
     return (

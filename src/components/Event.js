@@ -62,7 +62,7 @@ const Event = ({ blok, history, slug, join_community, uid}) => {
 
     let utc_str = date_str + "T" + start_time + ":00.000+0000"
 
-     s_date = new Date(utc_str);
+    s_date = new Date(utc_str);
 
     start_date = s_date.toLocaleDateString(undefined, options);
     start_time = getTime(s_date);

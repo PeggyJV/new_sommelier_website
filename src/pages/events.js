@@ -10,20 +10,33 @@ import SEO from "../components/HeadSeo"
 import "../assets/scss/blog.scss"
 import "../assets/scss/main.scss"
 
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
     let content =  []
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
     props.data.stories.edges.forEach((story) => {
       const event = JSON.parse(story.node.content);
       let uid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 50);
 
       if(story.node.full_slug.includes('events/')) {
-        let s_date = new Date(event.start_date.split(" ")[0]);
+        //let s_date = new Date(event.start_date.split(" ")[0]);
         let today = new Date();
 
-        s_date = new Date(s_date.toLocaleString(undefined));
+        //s_date = new Date(s_date.toLocaleString(undefined));
+        let date_data = event.start_date.split(" ")
+        let date_str = date_data[0]
+        let start_time = date_data[1]
+
+        let utc_str = date_str + "T" + start_time + ":00.000+0000"
+
+        let s_date = new Date(utc_str);
+
+        let start_date = s_date.toLocaleDateString(undefined, options);
+
+        //console.log(start_date, today);
 
         if (s_date > today) {
           story.node['uid'] = uid;
@@ -76,7 +89,7 @@ export default class extends React.Component {
 
   async componentDidMount() {
     this.state.events.content.map((event, index) => {
-
+      console.log('count down date', event.countDownDate);
       this.countDown(event.countDownDate, event.uid);
     });
   }
