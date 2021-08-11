@@ -8,7 +8,6 @@ const windowGlobal = typeof window !== 'undefined' && window
 
 
 const EventPage = ({ blok, title, history, join_community }) => {
-  console.log("wtf");
   const events = blok.events.content;
 
   let see_history = "";
