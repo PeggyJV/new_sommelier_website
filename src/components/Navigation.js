@@ -63,7 +63,7 @@ const Nav = ({ settings, lang, pathname }) => {
 
 
                 <li key={5} >
-                  <Link to={`https://t.me/getsomm`} className='nav-menu-item' target='new'>
+                  <Link to={`https://community.sommelier.finance/`} className='nav-menu-item' target='new'>
                     {`Community`}
                   </Link>
                 </li>
