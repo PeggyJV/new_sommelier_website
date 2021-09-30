@@ -1,12 +1,34 @@
 import Link from 'gatsby-link'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import SbEditable from 'storyblok-react'
 import {isMobileOnly} from 'react-device-detect'
 
+import { usePopperTooltip } from 'react-popper-tooltip';
+import 'react-popper-tooltip/dist/styles.css';
+
+import cn from 'classnames';
+
 const frameImg = '/images/Frame.png'
+const notificationOffImg = '/images/notification-off.png';
+const notificationOnImg = '/images/notification-on.png';
 
 const Nav = ({ settings, lang, pathname }) => {
   const [showMenu, setShowMenu] = React.useState(!isMobileOnly)
+
+  const [notification, setNotification] = useState(false);
+  const [notificationErrMsg, setNotificationErrMsg] = useState('');
+
+  const {
+    getArrowProps,
+    getTooltipProps,
+    setTooltipRef,
+    setTriggerRef,
+    visible,
+  } = usePopperTooltip();
+
+  useEffect(() => {
+    checkNotificationPermission();
+  }, [])
 
   const showAlert = () => {
       alert("I'm an alert");
@@ -24,6 +46,115 @@ const Nav = ({ settings, lang, pathname }) => {
         ref.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
+  }
+
+  const checkNotificationPermission = () => {
+    console.info('starting.....');
+    if (typeof window === `undefined`) {
+      setNotification(false);
+      return;
+    }
+
+    if (!("Notification" in window)) {
+      setNotification(false);
+      setNotificationErrMsg('This browser does not support notifications.');
+      return;
+    }
+
+    console.log('notification permission', Notification.permission);
+    if (Notification.permission === 'denied') {
+      setNotification(false);
+      setNotificationErrMsg('To allow Notifications, go to your Browser Settings.');
+      return;
+    }
+
+    if (Notification.permission === 'default') {
+      setNotification(false);
+      return;
+    }
+
+    if (Notification.permission === 'granted') {
+      setNotification(true);
+
+      enableNotifications();
+    }
+  }
+
+  const askNotificationPermission = () => {
+    if (typeof window === `undefined`) {
+      return;
+    }
+
+    if (!("Notification" in window)) {
+      setNotification(false);
+      setNotificationErrMsg('This browser does not support notifications.');
+    } else {
+      if(checkNotificationPromise()) {
+        Notification.requestPermission()
+        .then((permission) => {
+          checkNotificationPermission();
+        })
+      } else {
+        Notification.requestPermission(function(permission) {
+          checkNotificationPermission();
+        });
+      }
+    }
+  }
+
+  const checkNotificationPromise = () => {
+    try {
+      Notification.requestPermission().then();
+    } catch(e) {
+      return false;
+    }
+
+    return true;
+  }
+
+  const toggleNotification = (e) => {
+    e.preventDefault();
+
+    console.log(Notification.permission);
+
+    if (notification === false) {
+      askNotificationPermission();
+    } else {
+
+    }
+  }
+
+  const enableNotifications = async () => {
+    if (typeof window === `undefined`) {
+      return;
+    }
+    if (!('serviceWorker' in navigator)) {
+      return;
+    }
+    if (!('PushManager' in window)) {
+      return;
+    }
+    console.log(navigator);
+
+    const sw = await navigator.serviceWorker.ready;
+    console.log(sw);
+    const subscription = await sw.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: 'BNDpN_mS7a-Os4xUorT-NPjhgRpgK7GoWsggHFF5psOTgbn5SPeo_G6rJeFzjqtVazgmt5bZDdHrsrGZH4uSJkE'
+    });
+    
+    const apiBaseUrl = 'https://msg.sommelier.finance/api';
+    // const apiBaseUrl = 'http://localhost:8001/api';
+
+    await fetch(`${apiBaseUrl}/subscribe`, {
+      method: 'POST',
+      body: JSON.stringify(subscription),
+      headers: {
+        'content-type': 'application/json'
+      }
+    });
+
+    console.log('service worker', subscription);
   }
 
   return (
@@ -84,6 +215,26 @@ const Nav = ({ settings, lang, pathname }) => {
                   <Link to={`/jobs`} className='nav-menu-item' >
                     {`Jobs`}
                   </Link>
+                </li>
+                <li key={7}>
+                    <a
+                      className='nav-menu-item'
+                      onClick={(e) => toggleNotification(e)}
+                      ref={setTriggerRef}
+                    >
+                      {!notification && <img src={notificationOffImg} height={27} />}
+                      {notification && <img src={notificationOnImg} height={27} />}
+
+                    </a>
+                    {visible && !notification && notificationErrMsg && (
+                      <div
+                        ref={setTooltipRef}
+                        {...getTooltipProps({ className: 'tooltip-container' })}
+                      >
+                        <div {...getArrowProps({ className: 'tooltip-arrow' })} />
+                        {notificationErrMsg}
+                      </div>
+                    )}
                 </li>
 
                 <li key={999} className='d-flex align-items-center launch-button'>
