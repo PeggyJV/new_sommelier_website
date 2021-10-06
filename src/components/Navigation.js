@@ -27,7 +27,8 @@ const Nav = ({ settings, lang, pathname }) => {
   } = usePopperTooltip();
 
   useEffect(() => {
-    checkNotificationPermission();
+    // checkNotificationPermission();
+    askNotificationPermission();
   }, [])
 
   const showAlert = () => {
