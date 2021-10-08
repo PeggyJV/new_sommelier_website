@@ -17,6 +17,7 @@ const Nav = ({ settings, lang, pathname }) => {
 
   const [notification, setNotification] = useState(false);
   const [notificationErrMsg, setNotificationErrMsg] = useState('');
+  const [notificationErrMsgSub, setNotificationErrMsgSub] = useState('');
 
   const {
     getArrowProps,
@@ -59,6 +60,7 @@ const Nav = ({ settings, lang, pathname }) => {
     if (!("Notification" in window)) {
       setNotification(false);
       setNotificationErrMsg('This browser does not support notifications.');
+      setNotificationErrMsgSub('');
       return;
     }
 
@@ -66,11 +68,14 @@ const Nav = ({ settings, lang, pathname }) => {
     if (Notification.permission === 'denied') {
       setNotification(false);
       setNotificationErrMsg('To allow Notifications, go to your Browser Settings.');
+      setNotificationErrMsgSub('You will only receive notifications when your Browser is open');
       return;
     }
 
     if (Notification.permission === 'default') {
       setNotification(false);
+      setNotificationErrMsg('To receive Notifications, click to allow Notifications.');
+      setNotificationErrMsgSub('You will only receive notifications when your Browser is open');
       return;
     }
 
@@ -89,6 +94,7 @@ const Nav = ({ settings, lang, pathname }) => {
     if (!("Notification" in window)) {
       setNotification(false);
       setNotificationErrMsg('This browser does not support notifications.');
+      setNotificationErrMsgSub('');
     } else {
       if(checkNotificationPromise()) {
         Notification.requestPermission()
@@ -233,7 +239,8 @@ const Nav = ({ settings, lang, pathname }) => {
                         {...getTooltipProps({ className: 'tooltip-container' })}
                       >
                         <div {...getArrowProps({ className: 'tooltip-arrow' })} />
-                        {notificationErrMsg}
+                        <div style={{ textAlign: 'center' }}>{notificationErrMsg}</div>
+                        <div style={{ textAlign: 'center', padding: '0 10px' }}>{notificationErrMsgSub}</div>
                       </div>
                     )}
                 </li>
