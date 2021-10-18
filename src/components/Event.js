@@ -116,7 +116,13 @@ const Event = ({ blok, history, slug, join_community, uid}) => {
 
   let add_to_calc = "";
   if (!history) {
-    add_to_calc = <div title="Add to Calendar" class="addeventatc">Register for Event<span class="start">{ s_date.toLocaleString() }</span><span class="end">{ e_date.toLocaleString() }</span><span class="title">{ event.title }</span><span class="description">{ event.description.content[0].content[0].text }</span><span class="location">{ event.location }</span></div>;
+    //add_to_calc = <div title="Add to Calendar" class="addeventatc">Register for Event<span class="start">{ s_date.toLocaleString() }</span><span class="end">{ e_date.toLocaleString() }</span><span class="title">{ event.title }</span><span class="description">{ event.description.content[0].content[0].text }</span><span class="location">{ event.location }</span></div>;
+    let zone = Intl.DateTimeFormat().resolvedOptions().timeZone;//s_date.toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2];
+    let url = 'https://calndr.link/d/event/?service=google&start=' + s_date.toLocaleString() + '&end=' + e_date.toLocaleString() + '&title='+ encodeURIComponent(event.title) + '&timezone=' + zone + '&description=' + encodeURIComponent(event.description.content[0].content[0].text) +'&location=' + encodeURIComponent(event.location);
+    console.log(url);
+
+    console.log(zone);
+    add_to_calc = <a href={url} class="btn active" style={{background: '#d9137b', borderColor:'d9137b', fontWeight: "600", fontFamily: "'Poppins', sans-serif"}}>Add to Calendar</a>
   }
 
   let join_community_area =  <a href="https://t.me/getsomm" class="btn  btn-lg active" style={{background: '#d9137b', borderColor:'d9137b', fontWeight: "600", borderRadius: '100px', fontFamily: "'Poppins', sans-serif"}} target="_blank">JOIN OUR COMMUNITY</a>;
