@@ -2,7 +2,15 @@ import React from "react"
 import SbEditable from "storyblok-react"
 import { render, NODE_IMAGE } from "storyblok-rich-text-react-renderer"
 import { google, outlook, office365, yahoo, ics } from "calendar-link";
+import { openInEditor } from "../../.cache/fast-refresh-overlay/utils"
 var validUrl = require('valid-url');
+
+//import Mixpanel from 'mixpanel';
+var Mixpanel = require('mixpanel');
+
+// create an instance of the mixpanel client
+var mixpanel = Mixpanel.init("d6a6208c71b46a6965913df792f505f9");
+
 
 function tConvert(time) {
     // Check correct time format and split into components
@@ -122,10 +130,10 @@ const Event = ({ blok, history, slug, join_community, uid}) => {
     console.log(url);
 
     console.log(zone);
-    add_to_calc = <a href={url} class="btn active" style={{background: '#d9137b', borderColor:'d9137b', fontWeight: "600", fontFamily: "'Poppins', sans-serif"}}  target="_blank">Add to Calendar</a>
+    add_to_calc = <a href={url} class="btn active" style={{background: '#d9137b', borderColor:'d9137b', fontWeight: "600", fontFamily: "'Poppins', sans-serif"}}  target="_blank" onClick={() => mixpanel.track('EventAddToCal', { title: event.title })}>Add to Calendar</a>
   }
 
-  let join_community_area =  <a href="https://t.me/getsomm" class="btn  btn-lg active" style={{background: '#d9137b', borderColor:'d9137b', fontWeight: "600", borderRadius: '100px', fontFamily: "'Poppins', sans-serif"}} target="_blank">JOIN OUR COMMUNITY</a>;
+  let join_community_area =  <a href="https://t.me/getsomm" class="btn  btn-lg active" style={{background: '#d9137b', borderColor:'d9137b', fontWeight: "600", borderRadius: '100px', fontFamily: "'Poppins', sans-serif"}} target="_blank" >JOIN OUR COMMUNITY</a>;
   let div_id = uid;
   let join_us = "";
   if (!history) {
