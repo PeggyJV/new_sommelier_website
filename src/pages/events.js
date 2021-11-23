@@ -34,7 +34,7 @@ export default class extends React.Component {
 
         let s_date = new Date(utc_str);
 
-        let start_date = s_date.toLocaleDateString(undefined, options);
+        let start_date = s_date.toLocaleDateString("en-US", options);
 
         //console.log(start_date, today);
 
@@ -64,7 +64,7 @@ export default class extends React.Component {
       // Get today's date and time
       var now_ish = new Date();
       var now = now_ish.getTime() +  now_ish.getTimezoneOffset() * 60000;
-      now  = new Date(now_ish.toLocaleString(undefined));
+      now  = new Date(now_ish.toLocaleString("en-US"));
 
       // Find the distance between now and the count down date
       var distance = countDownDate - now;
