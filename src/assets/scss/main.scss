@@ -748,3 +748,37 @@
     }
   }
 }
+
+.jobs-container {
+  padding: 72px 122px 102px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond-to(mobile) {
+    padding: 25px;
+  }
+
+  &-header {
+    border-bottom: 1px solid #2F2B4F;
+    padding-bottom: 34px;
+    width: 100%;
+
+    @include respond-to(mobile) {
+      padding-bottom: 18px;
+    }
+  }
+
+  &-lever {
+    margin-top: 48px;
+    width: 1024px;
+    border: none;
+    min-height: 1200px;
+
+    @include respond-to(mobile) {
+      margin-top: 38px;
+      width: 100%;
+    }
+  }
+}
