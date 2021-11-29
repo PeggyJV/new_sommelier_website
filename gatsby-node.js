@@ -33,7 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const mdTemplate = require.resolve(`./src/templates/mdTemplate.js`)
     const storyblokEntry = path.resolve('src/templates/blog-entry.js')
-    const jobsEntry = path.resolve('src/templates/job-entry.js')
+    // const jobsEntry = path.resolve('src/templates/job-entry.js')
     const eventEntry = path.resolve('src/templates/event-entry.js')
 
     resolve(graphql(
@@ -92,16 +92,16 @@ exports.createPages = ({ graphql, actions }) => {
         const entries = result.data.stories.edges
         entries.forEach((entry) => {
 
-          if(entry.node.full_slug == 'jobs/jobs') {
-            const page = {
-              path: `/jobs`,
-              component: jobsEntry,
-              context: {
-                story: entry.node
-              }
-            }
-            createPage(page)
-          }
+          // if(entry.node.full_slug == 'jobs/jobs') {
+          //   const page = {
+          //     path: `/jobs`,
+          //     component: jobsEntry,
+          //     context: {
+          //       story: entry.node
+          //     }
+          //   }
+          //   createPage(page)
+          // }
 
           if(entry.node.full_slug.includes('blog/')) {
             const page = {
