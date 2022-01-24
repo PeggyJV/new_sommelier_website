@@ -1,5 +1,6 @@
 import React from "react"
 import Navigation from './Navigation'
+import TechCrunchBanner from "./TechCrunchBanner"
 import Footer from './Footer'
 import { useStaticQuery, graphql } from "gatsby"
 //const sbConfig = config.plugins.find((item) => item.resolve === 'gatsby-source-storyblok')
@@ -38,6 +39,7 @@ export default function Layout({ children, location, lang }){
 
   return (
     <div className="bg-gray-300">
+      <TechCrunchBanner />
       <Navigation settings={parsedSetting} lang={activeLanguage} pathname={pathname}/>
       <main>
       { children }

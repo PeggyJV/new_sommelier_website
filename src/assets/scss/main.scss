@@ -782,3 +782,74 @@
     }
   }
 }
+
+// TechCrunch Banner
+.tc-banner {
+  width: 100vw;
+  max-width: 100%;
+  // 
+  // padding: 0px 89px;
+
+  padding: 15px 11px;
+  background: #2E1451;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
+  &-icon {
+    display: none;
+  }
+
+  &-logo {
+    width: 100%;
+  }
+
+  &-button {
+    height: 25px;
+  }
+
+  @include respond-to(tablet) {
+    height: 72px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 51px;
+
+    &-logo {
+      height: 61px;
+      max-width: 300px;
+    }
+
+    &-icon {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  @include respond-to(desktop) {
+    height: 150px;
+    padding: 0px 89px;
+
+    &-logo {
+      height: 144px;
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    &-icon {
+      display: block;
+    }
+
+    &-button {
+      height: 50px;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    right: 23px;
+    top: 19px;
+    width: 15px
+  }
+}
