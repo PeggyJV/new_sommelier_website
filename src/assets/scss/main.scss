@@ -791,9 +791,14 @@
   padding: 0px 46px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: #fff;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1280px) {
+    padding: 0px 23px;
+  }
+
+  @media screen and (max-width: 425px) {
     height: 72px;
     padding: 9px 7px;
   }
@@ -812,53 +817,89 @@
     }
   }
 
-  
-
-  &-logo {
-    width: 40%;
-
-    img {
-      max-width: 90%;
-    }
-
-    @media screen and (max-width: 1024px) {
-      width: 60%;
-    }
+  &-buttons {
+    width: 342px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px;
   }
 
   &-icon {
-    width: 30%;
     height: 100%;
-
-    img {
-      height: 100%;
-    }
 
     @media screen and (max-width: 1024px) {
       display: none;
     }
   }
 
-  &-buttons {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  &-logo {
+    width: 573px;
 
-    img {
-      max-width: 90%;
-      &:first-child {
-        margin-bottom: 5px;
-      }
-    }
-
-    @media screen and (max-width: 1024px) {
-      width: 40%;
+    @media screen and (max-width: 1280px) {
+      width: 510px;
     }
 
     @media screen and (max-width: 768px) {
-      padding-right: 20px;
+      width: 401px;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 224px;
+    }
+
+    @media screen and (max-width: 320px) {
+      width: 169px;
+    }
+  }
+
+  &-tc {
+    width: 322px;
+
+    @media screen and (max-width: 1280px) {
+      width: 287px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 228px;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 125px;
+    }
+
+    @media screen and (max-width: 320px) {
+      width: 95px;
+    }
+  }
+
+  &-register {
+    width: 227px;
+    margin-top: 14px;
+
+    @media screen and (max-width: 1280px) {
+      width: 201px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 161px;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 88px;
+    }
+
+    @media screen and (max-width: 320px) {
+      width: 67px;
     }
   }
 }
+
+/*
+
+ @media screen and (max-width: 768px) {
+      padding-right: 20px;
+    }
+
+    */
