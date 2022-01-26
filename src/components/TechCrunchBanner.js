@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const bannerLogo = '/images/banner/event.svg';
-const tokensImg = '/images/banner/tokens.svg';
+const tokensImg = '/images/banner/tokens.png';
 const buttonImg = '/images/banner/button.svg';
 const tcImg = '/images/banner/tc.svg';
 const closeImg = '/images/banner/close.png';
@@ -16,15 +16,19 @@ const TechCrunchBanner = () => {
   return (
     <div className='tc-banner'>
       <img className='tc-banner-close' src={closeImg} onClick={(e) => setShow(false)} />
-      <img className='tc-banner-logo' src={bannerLogo} />
-      <img className='tc-banner-icon' src={tokensImg} />
+      <div className='tc-banner-logo'>
+        <img src={bannerLogo} />
+      </div>
+      <div className='tc-banner-icon'>
+        <img src={tokensImg} />
+      </div>
       <div className='tc-banner-buttons'>
-        <img className='tc-banner-button' src={tcImg} />
+        <img src={tcImg} />
         <a
           href="https://techcrunch.com/events/defi-the-future-of-programmable-money/?utm_medium=website&utm_campaign=defisummit&utm_content=somm_web&utm_source=sommelier&promo=community&display=true"
           target="_blank"
         >
-          <img className='tc-banner-button' src={buttonImg} />
+          <img src={buttonImg} />
         </a>
       </div>
     </div>
