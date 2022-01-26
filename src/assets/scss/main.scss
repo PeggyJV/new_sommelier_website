@@ -791,7 +791,7 @@
   // padding: 0px 89px;
 
   padding: 15px 11px;
-  background: #2E1451;
+  background: #FFF;
 
   display: flex;
   flex-direction: column;
@@ -807,6 +807,8 @@
 
   &-button {
     height: 25px;
+    margin-bottom: 5px;
+    margin-left: 10px;
   }
 
   @include respond-to(tablet) {
