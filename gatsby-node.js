@@ -12,7 +12,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
        alias: {
           path: require.resolve("util"),
           https: require.resolve("https-browserify"),
-          http: require.resolve("stream-http")
+          http: require.resolve("stream-http"),
+          url: require.resolve("url"),
        },
        fallback: {
          fs: false,

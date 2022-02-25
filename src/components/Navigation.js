@@ -149,7 +149,7 @@ const Nav = ({ settings, lang, pathname }) => {
       userVisibleOnly: true,
       applicationServerKey: 'BNDpN_mS7a-Os4xUorT-NPjhgRpgK7GoWsggHFF5psOTgbn5SPeo_G6rJeFzjqtVazgmt5bZDdHrsrGZH4uSJkE'
     });
-    
+
     const apiBaseUrl = 'https://msg.sommelier.finance/api';
     // const apiBaseUrl = 'http://localhost:8001/api';
 
@@ -243,13 +243,6 @@ const Nav = ({ settings, lang, pathname }) => {
                         <div style={{ textAlign: 'center', padding: '0 10px' }}>{notificationErrMsgSub}</div>
                       </div>
                     )}
-                </li>
-
-                <li key={999} className='d-flex align-items-center launch-button'>
-                  <a href="https://app.sommelier.finance" className='nav-menu-item nav-menu-item--launch' target="_blank">
-                  <img src={frameImg} alt='frame image' className='mr-2'/>
-                    Launch Application
-                  </a>
                 </li>
               </ul>
             </div>

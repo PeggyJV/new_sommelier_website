@@ -229,10 +229,6 @@ export default function Main() {
               Welcome to Sommelier the <span >new coprocessor</span><br />for Ethereum
             </h1>
             <p className='caption-text-small mt-3'>Move your DeFi assets into higher<br />yields faster and cheaper</p>
-            <a href="https://app.sommelier.finance" className='launch-button' target="_blank">
-              <img src={frameImg} alt='frame image' className='mr-2'/>
-              Launch Application
-            </a>
           </div>
         </div>
         <div className='main-top__right-container'>
@@ -401,11 +397,6 @@ export default function Main() {
           traders have come to expect from CeFi, but that are not
           currently available in DeFi.
           </p>
-
-          <a href="https://app.sommelier.finance" className='launch-button' style={{ marginTop: '4.063rem'}} target="_blank">
-          <img src={frameImg} alt='frame image' className='mr-2'/>
-            Launch Application
-          </a>
         </div>
       </div>
       <a name="team" id='team'></a>
