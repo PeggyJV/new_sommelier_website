@@ -1,4 +1,4 @@
-this.addEventListener('push', (ev) => {
+self.addEventListener('push', (ev) => {
     let title = 'Sommelier Cellar';
     let content = 'Sommelier Cellar Event';
     let image = '';
@@ -16,7 +16,7 @@ this.addEventListener('push', (ev) => {
         }
     }
 
-    this.registration.showNotification(title, {
+    self.registration.showNotification(title, {
         body: content,
         image: image,
         icon: 'https://sommelier.finance/images/etherium.png',
@@ -24,11 +24,11 @@ this.addEventListener('push', (ev) => {
     })
 })
 
-this.addEventListener("notificationclick", (ev) => {
+self.addEventListener("notificationclick", (ev) => {
     ev.notification.close();
     console.log(ev.notification.data);
 
-    if (window.clients) {
-        window.clients.openWindow(ev.notification.data);
+    if (clients) {
+        clients.openWindow(ev.notification.data);
     }
 })
