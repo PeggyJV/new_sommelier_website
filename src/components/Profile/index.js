@@ -100,7 +100,7 @@ const MobileProfile = ({data}) => {
       <img src={data.avatar} className='img-avatar' width={isMobileOnly ? 106 : 172}/>
       <div className='caption-container'>
         <h3>{data.name}</h3>
-        <p>Co-Founder</p>
+        <p>{data.role}</p>
         <div>
           <a href={data.twitter} target="_blank"><img src={twIcon} /></a>
           <a href={data.linkedin} target="_blank"><img src={liIcon} /></a>
@@ -121,7 +121,7 @@ const Profile = ({data, isPortrait}) => {
           <img src={data.avatar} className='img-avatar' width={isMobileOnly ? 106 : 172}/>
           <div className='caption-container'>
             <h3>{data.name}</h3>
-            <p>Co-Founder</p>
+            <p>{data.role}</p>
             <div>
               <a href={data.twitter} target="_blank"><img src={twIcon} /></a>
               <a href={data.linkedin} target="_blank"><img src={liIcon} /></a>
