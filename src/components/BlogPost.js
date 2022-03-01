@@ -7,6 +7,8 @@ import SEO from "../components/HeadSeo"
 const windowGlobal = typeof window !== 'undefined' && window
 
 setTimeout(function () {
+
+    if (typeof window.location.href !== 'undefined'){
     var href = windowGlobal.location.href;
     const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
     const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
@@ -21,6 +23,7 @@ setTimeout(function () {
       document.getElementById('twitter').setAttribute("href", twitter_url);
 
     }
+  }
 }, 1500);
 
 function getWindowDimensions() {
