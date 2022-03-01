@@ -23,7 +23,7 @@ setTimeout(function () {
 
     }
   } catch (err) {
-    console.error(error);
+    console.error(err);
   }
 }, 1500);
 
