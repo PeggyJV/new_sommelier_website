@@ -8,7 +8,7 @@ const windowGlobal = typeof window !== 'undefined' && window
 
 setTimeout(function () {
 
-    if (typeof window.location.href !== 'undefined'){
+    if (typeof window.location !== 'undefined'){
     var href = windowGlobal.location.href;
     const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
     const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
