@@ -1,24 +1,27 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import SbEditable from "storyblok-react"
 import { render, NODE_IMAGE } from "storyblok-rich-text-react-renderer"
-import {isMobileOnly} from 'react-device-detect'
+import { isMobileOnly } from 'react-device-detect'
 import { navigate } from 'gatsby-link';
 import SEO from "../components/HeadSeo"
 const windowGlobal = typeof window !== 'undefined' && window
 
-setTimeout(function(){
-  var href = window.location.href;
-  const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
-  const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
-  const twitter_url = 'http://twitter.com/share?url='+ href;
+setTimeout(function () {
+  if (typeof window !== undefined) {
+    var href = window.location.href;
+    const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
+    const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
+    const twitter_url = 'http://twitter.com/share?url=' + href;
 
-  const fb = document.getElementById('facebook')
+    const fb = document.getElementById('facebook')
 
 
-  if (fb) {
-    document.getElementById('facebook').setAttribute("href", facebook_url);
-    document.getElementById('linkedin').setAttribute("href", linkedin_url);
-    document.getElementById('twitter').setAttribute("href", twitter_url);
+    if (fb) {
+      document.getElementById('facebook').setAttribute("href", facebook_url);
+      document.getElementById('linkedin').setAttribute("href", linkedin_url);
+      document.getElementById('twitter').setAttribute("href", twitter_url);
+
+    }
   }
 }, 1500);
 
@@ -46,11 +49,11 @@ const BlogPost = ({ blok }) => {
     getWindowDimensions()
   );
 
-  setTimeout(function(){
+  setTimeout(function () {
     var href = window.location.href;
     const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
     const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
-    const twitter_url = 'http://twitter.com/share?url='+ href;
+    const twitter_url = 'http://twitter.com/share?url=' + href;
 
     const fb = document.getElementById('facebook')
 
@@ -71,9 +74,8 @@ const BlogPost = ({ blok }) => {
 
 
 
-  for (const post of morePosts)
-  {
-    if(post.content.created_at == "") {
+  for (const post of morePosts) {
+    if (post.content.created_at == "") {
       post['ordering'] = parseInt(post.first_published_at.split("T")[0].replace(/-/g, ''));
       console.log(parseInt(post.first_published_at.split("T")[0].replace(/-/g, '')));
     } else {
@@ -82,11 +84,11 @@ const BlogPost = ({ blok }) => {
   }
 
   console.log('***morePosts**');
-  morePosts.sort(function(a, b) { return a.ordering - b.ordering });
+  morePosts.sort(function (a, b) { return a.ordering - b.ordering });
   //morePosts.sort(function(a, b){return parseInt(a.content.created_at.split(" ")[0].replace(/-/g, '')) - parseInt(b.content.created_at.split(" ")[0].replace(/-/g, ''))});
 
   console.log(morePosts);
-console.log('***morePosts**');
+  console.log('***morePosts**');
 
 
   //console.log('***morePosts**');
@@ -97,7 +99,7 @@ console.log('***morePosts**');
   return (
 
     <SbEditable content={blok} key={blok._uid}>
-    <SEO description="Sommelier is the new Coprocessor for the Ethereum VM" content={blok} />
+      <SEO description="Sommelier is the new Coprocessor for the Ethereum VM" content={blok} />
       <div className='blog-container mt-5 mb-5'>
         <div className='container__featured-section'>
           <div className='container__featured-section__top'>
@@ -114,14 +116,14 @@ console.log('***morePosts**');
                 <div className='post-container__content'>
                   {render(blok.long_text, {
                     nodeResolvers: {
-                      [NODE_IMAGE]: (children, props) => <img {...props} style={{borderRadius: '0px', width: '100%'}}/>
+                      [NODE_IMAGE]: (children, props) => <img {...props} style={{ borderRadius: '0px', width: '100%' }} />
                     },
                     blokResolvers: {
                       ['YouTube-blogpost']: (props) => (
                         <div class="embed-responsive embed-responsive-16by9">
-                          <iframe class="embed-responsive-item" src={ "https://www.youtube.com/embed/" + props.YouTube_id.replace('https://youtu.be/', '')  }></iframe>
+                          <iframe class="embed-responsive-item" src={"https://www.youtube.com/embed/" + props.YouTube_id.replace('https://youtu.be/', '')}></iframe>
                         </div>
-                        )
+                      )
                     }
                   })}
                 </div>
@@ -130,35 +132,35 @@ console.log('***morePosts**');
           </div>
         </div>
         {(morePosts.length > 0) && (
-        <div className='container__more-section'>
-          <p>MORE ARTICLES</p>
-          <div className='container__more-section__content row'>
+          <div className='container__more-section'>
+            <p>MORE ARTICLES</p>
+            <div className='container__more-section__content row'>
 
               {morePosts.reverse().map((post, index) => {
                 return (
-                  <div className='col-12  col-md-4' style={{ border:  '0px', padding: '0px', margin: '0px'}}>
-                  <ul style={{width: '100%', border:  '0px', padding: '0px', margin: '0px'}}>
-                  <li key={post.name} style={{width:  '100%', border:  '0px', padding: '0px', margin: '0px'}}>
-                    <div className='more-li__content'>
-                      <a className='container__more-section__title' href='#' onClick={(e) => {
-                        e.preventDefault()
-                        navigate(`/${post.full_slug}`)
-                      }}>
-                        <img src={post.content.image}></img>
-                        <div className='mt-2'>
-                          {post.content.title}
+                  <div className='col-12  col-md-4' style={{ border: '0px', padding: '0px', margin: '0px' }}>
+                    <ul style={{ width: '100%', border: '0px', padding: '0px', margin: '0px' }}>
+                      <li key={post.name} style={{ width: '100%', border: '0px', padding: '0px', margin: '0px' }}>
+                        <div className='more-li__content'>
+                          <a className='container__more-section__title' href='#' onClick={(e) => {
+                            e.preventDefault()
+                            navigate(`/${post.full_slug}`)
+                          }}>
+                            <img src={post.content.image}></img>
+                            <div className='mt-2'>
+                              {post.content.title}
+                            </div>
+                          </a>
                         </div>
-                      </a>
-                    </div>
-                  </li>
-                  </ul>
+                      </li>
+                    </ul>
                   </div>
                 )
               })}
 
+            </div>
           </div>
-        </div>
-      )}
+        )}
       </div>
       {/* <div className="bg-white w-full">
         <div className="max-w-3xl mx-auto text-center pt-20 flex flex-col items-center">
