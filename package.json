@@ -21,7 +21,7 @@
     "gatsby-remark-autolink-headers": "^4.1.0",
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-source-graphql": "^3.3.0",
-    "gatsby-source-storyblok": "^3.0.0",
+    "gatsby-source-storyblok": "^3.1.2",
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
     "https-browserify": "^1.0.0",
