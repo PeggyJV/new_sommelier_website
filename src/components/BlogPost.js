@@ -52,6 +52,7 @@ const BlogPost = ({ blok }) => {
   );
 
   setTimeout(function () {
+    try{
     var href = window.location.href;
     const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
     const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
@@ -65,6 +66,9 @@ const BlogPost = ({ blok }) => {
       document.getElementById('linkedin').setAttribute("href", linkedin_url);
       document.getElementById('twitter').setAttribute("href", twitter_url);
     }
+  } catch (e) {
+    console.error(e);
+  }
   }, 1500);
 
 

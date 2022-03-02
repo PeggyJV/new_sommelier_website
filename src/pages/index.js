@@ -6,6 +6,7 @@ import StoryblokService from '../utils/storyblok-service'
 import SEO from "../components/Seo"
 
 setTimeout(function(){
+  try {
   var href = window.location.href;
   const facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' + href;
   const linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + href;
@@ -19,6 +20,9 @@ setTimeout(function(){
     document.getElementById('linkedin').setAttribute("href", linkedin_url);
     document.getElementById('twitter').setAttribute("href", twitter_url);
   }
+} catch (err) {
+  console.error(err);
+}
 }, 1500);
 
 export default class extends React.Component {
