@@ -12,8 +12,8 @@ export default class extends React.Component {
                 <h1>Sommelier Jobs</h1>
             </div>
             <iframe
-                src='https://jobs.lever.co/volume-finance'
-                className='jobs-container-lever'
+                src='https://sommelier.bamboohr.com/jobs/'
+                className='jobs-container-bamboo'
             />
         </div>
       </Layout>
