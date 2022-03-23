@@ -26,7 +26,14 @@ const Nav = ({ settings, lang, pathname }) => {
     setTriggerRef,
     visible,
   } = usePopperTooltip();
+  const [hover, setHover] = useState(false);
+  const onHover = () => {
+    setHover(true);
+  };
 
+  const onLeave = () => {
+    setHover(false);
+  };
   useEffect(() => {
     // checkNotificationPermission();
     askNotificationPermission();
@@ -244,9 +251,17 @@ const Nav = ({ settings, lang, pathname }) => {
                       </div>
                     )}
                 </li>
+                <li key={999} className='d-flex align-items-center launch-button'>
+                  <div onMouseEnter={onHover} onMouseLeave={onLeave}>
+                    <a className='nav-menu-item nav-menu-item--launch' target="_blank">
+                    <img src={frameImg} alt='frame image' className='mr-2'/>
+                      Launch Application
+                      <br/> {hover ? "(COMING SOON)" : null}
+                    </a>
+                  </div>
+                </li>
               </ul>
             </div>
-
           )}
         </div>
       </nav>

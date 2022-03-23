@@ -218,6 +218,15 @@ export default function Main() {
     getWindowDimensions()
   );
 
+  const [hover, setHover] = useState(false);
+  const onHover = () => {
+    setHover(true);
+  };
+
+  const onLeave = () => {
+    setHover(false);
+  };
+
   const teamItemWidth = 250
   const carsouselWidth = teamItemWidth * teamMembers3.length
   const carsouselUsecasesWidth = windowDimensions.width * usecasesData.length
@@ -234,6 +243,13 @@ export default function Main() {
               Welcome to Sommelier the <span >new coprocessor</span><br />for Ethereum
             </h1>
             <p className='caption-text-small mt-3'>Move your DeFi assets into higher<br />yields faster and cheaper</p>
+            <div onMouseEnter={onHover} onMouseLeave={onLeave}>
+                  <a className='launch-button' style={{ marginTop: '4.063rem', fontSize: '1.06rem' }} target="_blank">
+                    <img src={frameImg} alt='frame image' className='mr-2'/>
+                      Launch Application
+                      <br/> {hover ? "(COMING SOON)" : null}
+                    </a>
+            </div>
           </div>
         </div>
         <div className='main-top__right-container'>
@@ -402,6 +418,14 @@ export default function Main() {
           traders have come to expect from CeFi, but that are not
           currently available in DeFi.
           </p>
+
+          <div onMouseEnter={onHover} onMouseLeave={onLeave}>
+                  <a className='launch-button' style={{ marginTop: '4.063rem', fontSize: '1.6rem' }} target="_blank">
+                    <img src={frameImg} alt='frame image' className='mr-2'/>
+                      Launch Application
+                      <br/> {hover ? "(COMING SOON)" : null}
+                    </a>
+            </div>
         </div>
       </div>
       <a name="team" id='team'></a>
